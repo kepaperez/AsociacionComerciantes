@@ -1,0 +1,8 @@
+img#logo {
+    width: auto;
+    height: 50px;
+}
+.jumbotron{  
+    background-image: url("https://fichas-gr.s3.amazonaws.com/media/thumbnails/filer_public/a6/b6/a6b692b5-c724-45f6-920a-cf02419f4c40/etxano1_w_1906x600_q75_middle.jpg");
+    height: 40vh;
+}

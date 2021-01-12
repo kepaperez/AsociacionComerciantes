@@ -212,3 +212,43 @@ nav ul i{
 }
 /* ========================================================== */
 
+.comprar{
+  padding-top: 60px;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+.boxBuy{
+ background-color: grey;
+ width: auto;
+ height: 70%;
+}
+
+.boxBuy:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.boxImg, .boxData{
+  float: left;  
+  padding: 10px;
+  height: 100%;
+}
+.boxImg{
+  width: 70%; 
+  background-color: brown;
+}
+
+.boxData{
+  width: 30%;
+}
+
+.añadirBtn{
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  width: 70%;
+  height: 50px;
+}
