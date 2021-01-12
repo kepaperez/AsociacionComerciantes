@@ -2,6 +2,7 @@
 img#logo {
     width: auto;
     height: 50px;
+    margin-right: 5vh;
 }
 /*Video principal*/
 video {
