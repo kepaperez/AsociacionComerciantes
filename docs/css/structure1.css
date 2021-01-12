@@ -201,6 +201,22 @@ nav ul i{
     background-size: auto;
   }
 
+  .izquierdaBtnMove{
+
+    background-color: red;
+
+    width: 100px;
+    height: 100%;
+  }
+
+  .derechaBtnMove{
+
+    background-color: red;
+    display: inline-block;
+    float: right;
+    width: 100px;
+    height: 100%;
+  }
  .secundario .box  .comprarBoton{
     margin-top: 60%;
     margin-right: 50%;
