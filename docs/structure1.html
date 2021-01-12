@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIKE</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/logo/nike.jpg"
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo/nike.jpg" <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/structure1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -24,7 +24,7 @@
             </div>
 
             <ul class="ul-nav izquierda">
-                <li><a>Novedades</a></li>
+                <li onclick="ver('divTodo','Ver todo')"><a>Todo</a></li>
                 <li onclick="ver('divSecundario','Mujer')"><a>Mujer</a></li>
                 <li onclick="ver('divSecundario','Hombre')"><a>Hombre</a></li>
                 <li onclick="ver('divSecundario','Niño')"><a>Niño</a></li>
@@ -80,22 +80,22 @@
 
         <h2>MAS</h2>
         <section class="Mas">
-            <center>
-                <div class="rowMas">
-                    <div class="columnMas" style="background-color:#aaa;">
-                        <p>IMAGEN 1</p>
-                        <button class="comprarBoton">Text</button>
-                    </div>
-                    <div class="columnMas" style="background-color:#bbb;">
-                        <p>IMAGEN 2</p>
-                        <button class="comprarBoton">Text</button>
-                    </div>
-                    <div class="columnMas" style="background-color:#ccc;">
-                        <p>IMAGEN 3</p>
-                        <button class="comprarBoton">Text</button>
-                    </div>
+
+            <div class="rowMas">
+                <div class="columnMas" style="background-color:#aaa;">
+                    <p>IMAGEN 1</p>
+                    <button class="comprarBoton">Text</button>
                 </div>
-            </center>
+                <div class="columnMas" style="background-color:#bbb;">
+                    <p>IMAGEN 2</p>
+                    <button class="comprarBoton">Text</button>
+                </div>
+                <div class="columnMas" style="background-color:#ccc;">
+                    <p>IMAGEN 3</p>
+                    <button class="comprarBoton">Text</button>
+                </div>
+            </div>
+
         </section>
     </div>
 
@@ -105,74 +105,81 @@
         <br> <br> <br>
         <div class="divZapatillas" id="divZapatillas">
             <h3>Zapatillas</h3>
-           
-            
+            <button onclick="move('underbox1','izquierda')">-</button>
+            <button onclick="move('underbox1','derecha')">+</button>
 
             <div class="box">
-               <div class="botonIzquierdo"><button onclick="move('underbox1','izquierda')"><</button></div>
-               <div class="botonDerecho"><button onclick="move('underbox1','derecha')">></button></div>
-                <center>                    
-                <div class="underBox1" id="underbox1">
-                    <div id="move" class="move">1  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">2  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">3  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">4  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">5  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">6  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">7  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">8  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">9  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">10  <button class="comprarBoton">Comprar</button></div>
-                </div>
-            </center>
+
+                <center>
+                    <div class="underBox1" id="underbox1">
+                        <div id="move" class="move">1 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">2 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">3 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">4 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">5 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">6 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">7 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">8 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">9 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">10 <button class="comprarBoton">Comprar</button></div>
+                    </div>
+                </center>
             </div>
         </div>
 
         <div class="divVariado" id="divVariado">
             <h3>Variado</h3>
-            <button onclick="move('underbox2','izquierda')"><</button>
-            <button onclick="move('underbox2','derecha')">></button>
+            <button onclick="move('underbox2','izquierda')">+</button>
+            <button onclick="move('underbox2','derecha')">-</button>
 
             <div class="box">
-                <center>                    
-                <div class="underBox2" id="underbox2">
-                    <div id="move" class="move">1  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">2  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">3  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">4  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">5  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">6  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">7  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">8  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">9  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">10  <button class="comprarBoton">Comprar</button></div>
-                </div>
-            </center>
+                <center>
+                    <div class="underBox2" id="underbox2">
+                        <div id="move" class="move">1 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">2 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">3 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">4 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">5 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">6 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">7 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">8 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">9 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">10 <button class="comprarBoton">Comprar</button></div>
+                    </div>
+                </center>
             </div>
         </div>
 
         <div class="divPantalones" id="divPantalones">
             <h3>StreetWear</h3>
-            <button onclick="move('underbox3','izquierda')"><</button>
-            <button onclick="move('underbox3','derecha')">></button>
+            <button onclick="move('underbox3','izquierda')">+</button>
+            <button onclick="move('underbox3','derecha')">-</button>
 
             <div class="box">
-                <center>                    
-                <div class="underBox3" id="underbox3">
-                    <div id="move" class="move">1  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">2  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">3  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">4  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">5  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">6  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">7  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">8  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">9  <button class="comprarBoton">Comprar</button></div>
-                    <div id="move" class="move">10  <button class="comprarBoton">Comprar</button></div>
-                </div>
-            </center>
+                <center>
+                    <div class="underBox3" id="underbox3">
+                        <div id="move" class="move">1 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">2 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">3 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">4 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">5 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">6 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">7 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">8 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">9 <button class="comprarBoton">Comprar</button></div>
+                        <div id="move" class="move">10 <button class="comprarBoton">Comprar</button></div>
+                    </div>
+                </center>
             </div>
         </div>
+    </div>
+
+    <div class="Todo" id="divTodo">
+        <br> <br> <br>
+        <center> <h2 id="titulo">TODO</h2></center>
+       
+        <br> <br> <br>
+        
     </div>
 
     <div class="comprar" id="divComprar">
@@ -180,17 +187,44 @@
             <div class="boxImg"> IMG </div>
             <div class="boxData">
 
-                <h2 class ="nombre">Nombre</h3>
+                <h3 class="nombre">Nombre</h3>
                 <p class="genero">Sex</p>
                 <p class="precio">100$</p>
-                <h3 class ="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores optio vitae accusamus! Natus similique, dolorum sequi, dolores fuga eius omnis vel officia impedit, labore molestias reprehenderit aperiam quibusdam provident error.</h1>
-               <center><button class="añadirBtn">
-                    Comprar
-                </button> </center>    
-                </div>
-
+                <h3 class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores optio vitae
+                    accusamus! Natus similique, dolorum sequi, dolores fuga eius omnis vel officia impedit, labore
+                    molestias reprehenderit aperiam quibusdam provident error.</h1>
+                    <center>
+                        <button class="añadirBtn">
+                            Comprar
+                        </button>
+                    </center>
+            </div>
         </div>
+        <br><br><br><br>
+        <h2>Puede que te interese:</h2>
+        <section class="Mas">
+
+            <div class="rowMas">
+                <div class="columnMas" style="background-color:#aaa;">
+                    <p>IMAGEN 1</p>
+                    <button class="comprarBoton">Text</button>
+                </div>
+                <div class="columnMas" style="background-color:#bbb;">
+                    <p>IMAGEN 2</p>
+                    <button class="comprarBoton">Text</button>
+                </div>
+                <div class="columnMas" style="background-color:#ccc;">
+                    <p>IMAGEN 3</p>
+                    <button class="comprarBoton">Text</button>
+                </div>
+            </div>
+
+        </section>
+
+
     </div>
+
+
 
 </body>
 

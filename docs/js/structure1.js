@@ -4,12 +4,12 @@ document.addEventListener('click', function (evt) {
     }
 }, false);
 
-
 function ver(where, titulo) {
     $('#divComprar').hide();
     $('#divPrincipal').hide();
     $('#divSecundario').hide();
-    $('#' + where).show();
+    $('#divTodo').hide();
+    $('#' + where).show();    
     $('#titulo').html(titulo);
 
 }
