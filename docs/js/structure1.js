@@ -1,6 +1,9 @@
+document.addEventListener('click', function (evt) {
+    if (evt.target.className === 'comprarBoton') {
+        ver('divComprar');
+    }
+}, false);
 
-
-alert('hola');
 
 function ver(where, titulo) {
 
