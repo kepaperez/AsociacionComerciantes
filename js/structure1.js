@@ -1,5 +1,7 @@
 
 
+alert('hola');
+
 function ver(where, titulo) {
 
     $('#divPrincipal').hide();
