@@ -216,6 +216,7 @@ nav ul i{
   padding-top: 60px;
   padding-left: 90px;
   padding-right: 90px;
+  display: none;
 }
 .boxBuy{
  background-color: grey;
