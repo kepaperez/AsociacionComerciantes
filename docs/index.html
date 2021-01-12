@@ -1,59 +1,125 @@
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+<!doctype html>
+<html lang="en">
 
-  <title>lander</title>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="js/jsFunction.js"></script>
 
-  <!-- Bootstrap core CSS -->
-  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Asociacion comercio de Amorebieta</title>
 
-  <!-- Custom styles for this template -->
-  <link href="cover.css" rel="stylesheet">
 </head>
 
-<body class="text-center">
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <img id="logo" src="img/unnamed.jpg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand">Cover</h3>
-        <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link active" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Contact</a>
-        </nav>
-      </div>
-    </header>
-
-    <main role="main" class="inner cover">
-      <h1 class="cover-heading">Cover your page.</h1>
-      <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-      <p class="lead">
-        <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-      </p>
-    </main>
-
-    <footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      </div>
-    </footer>
-  </div>
-
-
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-  <script src="../../assets/js/vendor/popper.min.js"></script>
-  <script src="../../dist/js/bootstrap.min.js"></script>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Inicio <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tiendas</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+            </form>
+        </div>
+    </nav>
 
 
-</body></html>
+
+    <center>
+        <div class="video">
+            <video autoplay="autoplay" loop="loop" id="video_background" preload="auto" muted>
+                <source src="../asociacionComerciantes/video/dendariak-video-promocional.mp4" frameborder='0'
+                    type="video/mp4" />
+            </video>
+        </div>
+    </center>
+
+    <div class="informacion container">
+        <div class="grid-container">
+            <div class="grid-item">
+                <iframe class="mapa"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11629.995879389728!2d-2.7429991136915057!3d43.219997116214564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e3426975c2913%3A0x404f58273cb9dc0!2s48340%20Amorebieta-Echano%2C%20Vizcaya!5e0!3m2!1ses!2ses!4v1610102285232!5m2!1ses!2ses"
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+            <div class="grid-item quienes">
+                <div class="card">
+                    <div class="image">
+                      <img src="../asociacionComerciantes/img/dendariak.jpg"/>
+                    </div>
+                    <div class="details">
+                      <div class="center">
+                        <h1>¿Quienes somos?</h1>
+                        <p>Dendariak, es la Asociacion de Comerciantes de Amorebieta-Etxano. Dendariak esta compuesto por un amplio grupo de comercios, empresas de servicios y hosteleria.</p>
+                        <ul>
+                          <li><a href="https://www.facebook.com/dendariak"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                          <li><a href="https://twitter.com/Dendariak"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                          <li><a href="https://plus.google.com/108891243918346492294/posts"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                          <li><a href="https://www.pinterest.es/dendariak/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <h3>Noticias</h3>
+            
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+<footer>
+    <div class="container">
+        Asociacion de Comerciantes de Amorebieta-Etxano
+    </div>
+</footer>
+
+</html>
