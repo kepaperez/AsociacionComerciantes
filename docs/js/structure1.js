@@ -6,7 +6,7 @@ document.addEventListener('click', function (evt) {
 
 
 function ver(where, titulo) {
-
+    $('#divComprar').hide();
     $('#divPrincipal').hide();
     $('#divSecundario').hide();
     $('#' + where).show();
