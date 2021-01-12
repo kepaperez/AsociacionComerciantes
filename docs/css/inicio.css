@@ -127,6 +127,43 @@ video {
     background: #ff3636;
 }
 /*Quienes somos fin*/
+/*Noticias*/
+.noticias{
+    position: relative;
+    background: #f1f1f1f1;
+}
+.noticia{
+    display: none;
+    padding: 80px;
+    text-align: center;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev{
+    position: absolute;
+    left: 0;
+    border-radius: 3px 0 0 3px; 
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+  }
 /*Responsive*/
 @media screen and (max-width: 700px) {
     .mapa{
