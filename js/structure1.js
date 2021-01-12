@@ -1,6 +1,6 @@
 
 
-function show(where, titulo) {
+function ver(where, titulo) {
 
     $('#divPrincipal').hide();
     $('#divSecundario').hide();
