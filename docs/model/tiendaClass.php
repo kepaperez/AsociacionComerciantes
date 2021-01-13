@@ -1,5 +1,5 @@
 <?php
-class productoClass
+class tiendaClass
 {
     public $id;
     public $nombre;
