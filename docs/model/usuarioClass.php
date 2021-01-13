@@ -4,6 +4,7 @@ class usuarioClass{
     public $nombre;
     public $apellido;
     public $dni;
+    public $admin;
     public $telefono;
     public $nombreUsuario;
     public $contrasenaUsuario;
@@ -38,6 +39,14 @@ class usuarioClass{
     public function getDni()
     {
         return $this->dni;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdmin()
+    {
+        return $this->admin;
     }
 
     /**
@@ -105,6 +114,14 @@ class usuarioClass{
     }
 
     /**
+     * @param mixed $admin
+     */
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+    }
+
+    /**
      * @param mixed $telefono
      */
     public function setTelefono($telefono)
@@ -135,6 +152,8 @@ class usuarioClass{
     {
         $this->direccion = $direccion;
     }
+
+    
 
     
 }
