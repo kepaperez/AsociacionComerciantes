@@ -1,0 +1,301 @@
+body{
+    padding-right: 50px;
+    padding-left: 50px ;
+}
+/* NAVEGADOR=============================================== */
+nav{
+    background-color: white; 
+    width: 100%; 
+    display: flex;
+    z-index: 1000;   
+}
+nav a{
+    display: flex;
+    font-size:15px;
+    color:rgb(255, 255, 255);
+    padding:20px;
+    text-decoration: none;   
+}
+
+nav li:hover {    
+    border-bottom: 3px solid black;   
+}
+
+.borde{
+  border-bottom: 3px solid black !important;   
+
+}
+
+nav li{
+    display: flex; 
+}
+.ul-nav{  
+    display: flex;  
+}
+
+.izquierda {
+    margin-left: auto;  
+    padding: 0%;
+   }
+.logoimg {
+    height: 100%;
+    width: 60px;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav ul i{
+    margin-top: 4%;
+    margin-left: 2px;
+}
+#gsearch{
+    margin-top: 3%;
+    height: 50%;
+    border-radius: 100px;
+    border: 2px solid black;
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+
+#divSecundario{
+    display: none;
+}
+/* section  */
+.divPrincipal, .columnNew, .columnTrending, .columnMas, .move{
+
+  position: relative;
+}
+/* random=================================================== */
+.Random{
+    margin-bottom: 150px;
+}
+.divPrincipal{
+    margin-top: 35px;
+    background-color: grey;
+    width: 80%;
+    height: 500px;
+}
+
+.comprarBoton:hover{
+  bottom: 20%;
+  left: 8%;
+  border-radius: 100px;
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 13px;
+  width: 150px;
+  position: absolute;
+}
+
+.comprarBoton{
+    bottom: 20%;
+    left: 8%;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 13px;
+    width: 150px;
+    position: absolute;
+}
+.comprarBotonArt{
+    bottom: 20%;
+    left: 33.33%;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 13px;
+    width: 150px;
+    position: absolute;
+}
+/* New==================================================== */
+.New{
+    margin-bottom: 150px;
+
+}
+
+.columnNew {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 400px;
+  }
+  
+  
+  .rowNew:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Trending====================================================== */
+
+  .Trending{
+
+    margin-bottom: 150px;
+  }
+
+  .columnTrending {
+    float: left;
+    width: 48%;
+    margin: 1%;
+    padding: 10px;
+    height: 400px;
+  }
+  
+  
+  .rowTrending:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Mas====================================================== */
+.Mas{
+
+    margin-bottom: 150px;
+}
+.columnMas {
+    float: left;
+    margin: 1%;
+    width: 30%;
+    padding: 10px;
+    height: 300px; 
+  }
+  
+  
+  .rowMas:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+/* ========================================================== */
+
+  .box{
+    height: 400px;
+    margin-bottom: 130px;
+    overflow: hidden;
+    position: static;
+    position: relative;
+  }
+
+.underBox1, .underBox2, .underBox3{
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 400px;
+    margin-left: 0px;
+    
+}
+  .move{    
+    background-color: grey;
+    height: 400px;
+    width: 32vw;
+    display: inline-block;
+    /* border: 0.1px solid black; */
+  }
+
+  .move:nth-child(even){
+
+    background-color: grey;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+  .move:nth-child(odd){
+
+    background-color: indianred;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+
+
+  .Botones{
+    position: absolute;
+    
+    display: flex; justify-content: space-between;
+    width: 93.5%;
+    
+
+  }
+  .izquierdaBtnMove{
+    background-color: purple;
+    width: 100px;
+    height: 400px;
+    opacity: 30%;
+    z-index: 100;
+  }
+
+  .derechaBtnMove{
+    background-color:palegreen;    
+    width: 100px;
+    height: 400px;
+    opacity: 30%;
+    z-index: 100;
+  }
+  .derechaBtnMove:hover{
+    opacity: 90%;
+  }
+  .izquierdaBtnMove:hover{
+    opacity: 90%;
+  }
+
+
+ .secundario .box  .comprarBoton{
+    margin-top: 60%;
+    margin-right: 50%;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 13px;
+    width: 150px;
+}
+/* Div de comprar===================================================== */
+
+.comprar{
+  padding-top: 60px;
+  padding-left: 90px;
+  padding-right: 90px;
+  display: none;
+}
+.boxBuy{
+ background-color: grey;
+ width: auto;
+ height: 70%;
+}
+
+.boxBuy:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.boxImg, .boxData{
+  float: left;  
+  padding: 10px;
+  height: 100%;
+}
+.boxImg{
+  width: 70%; 
+  background-color: brown;
+}
+
+.boxData{
+  width: 30%;
+}
+
+.añadirBtn{
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  width: 70%;
+  height: 50px;
+}
+
