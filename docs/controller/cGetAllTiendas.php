@@ -6,7 +6,7 @@ $tienda= new tiendaModel();
 
 $response=array();
 
-$response['list']=$comentarios->setList(); 
+$response['list']=$tienda->setList(); 
 
 echo json_encode($response); 
 // var_dump($response);
