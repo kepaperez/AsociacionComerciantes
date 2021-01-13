@@ -33,7 +33,7 @@ class tiendaModel extends tiendaClass
         $sql = "CALL spAllTiendas()"; // SQL sententzia - sentencia SQL
 
         $result = $this->link->query($sql);
-        var_dump($sql);
+      
 
     
 
