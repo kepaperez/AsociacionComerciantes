@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     loadTiendas();
   
 });
+
+var Tiendas = [];
+
 function loadTiendas() {
 
     var url = "controller/cGetAllTiendas.php";
