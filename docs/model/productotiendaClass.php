@@ -1,62 +1,55 @@
 <?php
 class productoClass
 {
-    public $id;
-    public $nombre;
-    public $imagen;
-    public $descripcion;
-    public $marca;
+    public $id_producto;
+    public $stock;
+    public $precio;
+    public $id_tienda;
+
     /**
      * @return mixed
      */
 
 
 
-    public function getId()
+    public function getId_producto()
     {
-        return $this->id;
+        return $this->id_producto;
     }
-    public function getNombre()
+    public function getStock()
     {
-        return $this->nombre;
+        return $this->stock;
     }
-    public function getImagen()
+    public function getPrecio)
     {
-        return $this->imagen;
+        return $this->precio;
     }
-    public function getDescripcion()
+    public function getId_tienda()
     {
-        return $this->descripcion;
+        return $this->id_tienda;
     }
-    public function getMarca()
-    {
-        return $this->marca;
-    }
+ 
    
 
   
 
-    public function setId($id)
+    public function setId_producto($id_producto)
     {
-        $this->id = $id;
+        $this->id_producto = $id_producto;
     }
-    public function setNombre($nombre)
+    public function setStock($stock)
     {
-        $this->nombre = $nombre;
+        $this->stock = $stock;
     }
-    public function setImagen($imagen)
+    public function setPrecio($precio)
     {
-        $this->imagen = $imagen;
+        $this->precio = $precio;
     }
-    public function setDescripcion($descripcion)
+    public function setId_tienda($id_tienda)
     {
-        $this->descripcion = $descripcion;
+        $this->id_tienda = $id_tienda;
     }
-    public function setMarca($marca)
-    {
-        $this->marca = $marca;
-    }
-
+ 
 
 
  
