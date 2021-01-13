@@ -1,5 +1,5 @@
 <?php
-class productoClass
+class productoTiendaClass
 {
     public $id_producto;
     public $stock;
