@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 function loadTiendas() {
 
-    var url = "../controller/cGetAllTiendas.php";
+    var url = "controller/cGetAllTiendas.php";
 
     fetch(url, {
             method: 'GET',
