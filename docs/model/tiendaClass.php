@@ -26,15 +26,15 @@ class tiendaClass
     {
         return $this->direccion;
     }
-    public function getHorario())
+    public function getHorario()
     {
         return $this->horario;
     }
-    public function getImagen())
+    public function getImagen()
     {
         return $this->imagen;
     }
-    public function getTipo())
+    public function getTipo()
     {
         return $this->tipo;
     }
@@ -70,5 +70,4 @@ class tiendaClass
    
    
 
-
- 
+}
