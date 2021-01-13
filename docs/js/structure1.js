@@ -2,17 +2,20 @@ document.addEventListener('click', function (evt) {
     if (evt.target.className === 'comprarBoton') {
         ver('divComprar');
     }
+    if (evt.target.className === 'comprarBotonArt') {
+        ver('divComprar');
+    }
 }, false);
 
-function ver(where, titulo,id) {
+function ver(where, titulo, id) {
     console.log(id);
 
-    $( "#btn1" ).removeClass("borde");
-    $( "#btn2" ).removeClass("borde");
-    $( "#btn3" ).removeClass("borde");
-    $( "#btn4" ).removeClass("borde");
+    $("#btn1").removeClass("borde");
+    $("#btn2").removeClass("borde");
+    $("#btn3").removeClass("borde");
+    $("#btn4").removeClass("borde");
 
-    $('#'+id).addClass("borde");
+    $('#' + id).addClass("borde");
 
     $('#divComprar').hide();
     $('#divPrincipal').hide();
@@ -25,6 +28,12 @@ function ver(where, titulo,id) {
 }
 
 function move(donde, action) {
+    
+    var btn = $(event.target);    
+    btn.prop('disabled', true);
+    setTimeout(function () {
+        btn.prop('disabled', false);
+    }, 900);
 
     var p = document.getElementById(donde);
 
@@ -41,7 +50,6 @@ function move(donde, action) {
             $('.' + donde).animate({ 'marginLeft': "+=32vw" });
 
         }
-
 
     } else if (action = 'derecha') {
 
