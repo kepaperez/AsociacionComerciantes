@@ -1,22 +1,23 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+var miApp = angular.module('miApp', []);
+miApp.controller('miControlador', function ($scope, $http) {
+
+
     loadTiendas();
-  
-});
+    $scope.tiendas = [];
 
-var Tiendas = [];
+    function loadTiendas() {
 
-function loadTiendas() {
+        var url = "controller/cGetAllTiendas.php";
 
-    var url = "controller/cGetAllTiendas.php";
-
-    fetch(url, {
+        fetch(url, {
             method: 'GET',
         })
-        .then(res => res.json()).then(result => {
-            Tiendas = result.list;
+            .then(res => res.json()).then(result => {
+                console.log(result.list);
+                $scope.tiendas = result.list;
 
-        
 
-        })
-        .catch(error => console.error('Error status:', error));
-};
+            })
+            .catch(error => console.error('Error status:', error));
+    };
+});
