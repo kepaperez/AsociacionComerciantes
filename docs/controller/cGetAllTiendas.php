@@ -11,4 +11,4 @@ $response['list']=$tienda->setList();
 echo json_encode($response); 
 
 unset ($tienda);
-unset ($response);
+unset ($response); 
