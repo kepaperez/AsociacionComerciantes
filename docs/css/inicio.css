@@ -255,5 +255,12 @@ video {
       width:100%;
     }
   }
+@media only screen and (max-width:992px ){
+    .grid-container{
+        direction: column;
+        justify-content:"center";
+        align-items:"center";
+    }
+}
 
   
