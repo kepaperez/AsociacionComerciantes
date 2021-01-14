@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app='miApp'></html>
+<html lang="en" ng-app='miApp'>
 
 
 <head>
@@ -53,75 +53,15 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 col-sm-6">
+                    <div class="col-md-3 col-sm-6" id="{{item.id}}" ng-repeat="item in tiendas">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" data-src="" alt="Thumbnail [100%x225]"
+                            <img class="card-img-top" data-src="{{item.imagen}}" alt="Thumbnail [100%x225]"
                                 style="height: 225px; width: 100%; display: block;"
-                                src="img/imgAsociaciones/ACBP_programacion.jpg" data-holder-rendered="true">
+                            src="{{item.imagen}}" data-holder-rendered="true">
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
-                                src="img/imgAsociaciones/ACBP_programacion.jpg" data-holder-rendered="true">
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
-                                src="img/imgAsociaciones/ACBP_programacion.jpg" data-holder-rendered="true">
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" data-src="" alt="Thumbnail [100%x225]"
-                                style="height: 225px; width: 100%; display: block;"
-                                src="img/imgAsociaciones/ACBP_programacion.jpg" data-holder-rendered="true">
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
-                                src="img/imgAsociaciones/ACBP_programacion.jpg" data-holder-rendered="true">
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
-                                src="img/imgAsociaciones/ACBP_programacion.jpg" data-holder-rendered="true">
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" data-src="" alt="Thumbnail [100%x225]"
-                                style="height: 225px; width: 100%; display: block;"
-                                src="img/imgAsociaciones/ACBP_programacion.jpg" data-holder-rendered="true">
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card mb-4 box-shadow">
-                            <img class="card-img-top"
-                                data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                                alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
-                                src="img/imgAsociaciones/ACBP_programacion.jpg" data-holder-rendered="true">
-                        </div>
-                    </div>
-
-
-
-
-
+                </div>
+                
 
                 </div>
             </div>
