@@ -54,7 +54,7 @@ function move(donde, action) {
     } else if (action = 'derecha') {
 
         console.log('>');
-        if (newMargen <= -224) {
+        if (newMargen <= -63) {
 
 
         } else {
