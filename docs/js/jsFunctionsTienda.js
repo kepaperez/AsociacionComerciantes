@@ -1,12 +1,13 @@
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
-
+   
     loadTiendas();
     $scope.tiendas = [];
 
     function loadTiendas() {
 
+    
         var url = "controller/cGetAllTiendas.php";
 
         fetch(url, {
