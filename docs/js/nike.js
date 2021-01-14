@@ -9,8 +9,9 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         $http.get("controller/cAllNike.php").then(function (response) {
 
-            $scope.lista = response.data.list;
+            $scope.listaTodo = response.data.list;
 
+            console.log($scope.listaTodo);
         })
     }
 
