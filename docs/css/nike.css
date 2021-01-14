@@ -4,7 +4,7 @@ body{
 }
 html {
     box-sizing: border-box;
-    font-size: 62.5%;
+   
 }
 /* NAVEGADOR=============================================== */
 nav{
@@ -66,11 +66,11 @@ nav ul i{
     display: none;
 }
 /* =================TODO=================================== */
-.Todo{
-
+ .Todo{  
   height: auto;
+  display: none;
 }
-
+ 
 .containerbottom{
 
   display: block !important;
@@ -84,7 +84,7 @@ nav ul i{
 .grid {
   display: grid;
   width: 100%;
-  grid-gap: 6rem;
+  grid-gap: 6rem 3rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   align-items: start;
 }
@@ -96,31 +96,33 @@ nav ul i{
 }
 
 .grid__item {
-  font-size: 62.5%;
-  width: 300px;
-  background-color: #fff;
-  border-radius: .4rem;
+  width: 500px;
+  background-color: #fff;  
   overflow: hidden;
-  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);    
   transition: 0.2s;
+  cursor: pointer;
 }
 
+.grid__item h1,.card_text{
+
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+}
 .grid__item:hover {
   transform: translateY(-0.5%);
   box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
 }
 
+.card{
+  border: none !important;
+  border-radius: none !important;
+}
 .card__img {
-  margin-top: 3%;
-  margin-left: 20%;
   display: block;
-  width: 60%;
+  width: 100%;
   height: 18rem;
   object-fit: cover;
-}
-
-.card__content {
-  padding: 3rem 3rem;
 }
 
 .card__header {
@@ -128,15 +130,27 @@ nav ul i{
   font-weight: 500;
   color: #0d0d0d;
   margin-bottom: 1.5rem;
+
 }
 
-.card__text {
-  font-size: 1.5rem;
+.card__text {  
   letter-spacing: .1rem;
   line-height: 1.7;
   color: #3d3d3d;
-  margin-bottom: 2.5rem;
+  
 }
+
+.card__content2{
+
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+/* .card__content2 .card__header, b {
+
+
+} */
 
 .card__btn {
   display: block;
@@ -176,10 +190,12 @@ nav ul i{
 .card__btn:active span {
   margin-left: 1.5rem;
 }
-.botones{
+
+.Todo .botones{
   margin-top: 20px;
 }
-.botones:after{
+
+.Todo .botones:after{
   content: "";
   display: table;
   clear: both;
@@ -187,7 +203,7 @@ nav ul i{
 
 .half{
   float: left; 
-  width: 50%;    
+      width: 50%;  
 }
 
 
@@ -207,9 +223,9 @@ nav ul i{
     background-color: #F6F6F6;
     width: 80%;
     height: 500px;
-    background-image: url(https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/q0rpef3dtu72cnfgjlgt/air-force-1-07-zapatillas-3nGnlt.jpg);
-    background-position: 200px center;
+    background-position: 110% 63%;
     background-repeat: no-repeat;
+    background-size: 45%;
     padding-top: 20px;
 }
 .divPrincipal h2{
@@ -318,8 +334,9 @@ nav ul i{
   .box{
     height: 400px;
     margin-bottom: 130px;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
+    overflow: hidden;
     position: static;
     position: relative;
   }
