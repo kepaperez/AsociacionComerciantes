@@ -1,3 +1,23 @@
+// ====================================ANGULAR=======================
+var miApp = angular.module('miApp', []);
+miApp.controller('miControlador', function ($scope, $http) {
+   
+    
+    $scope.getAll=function(){
+
+        alert("todo");
+
+        $http.get("controller/cAllNike.php").then(function (response) {
+
+            $scope.lista = response.data.list;
+
+        })
+    }
+
+})
+
+
+// ===================================JQUERY================================
 document.addEventListener('click', function (evt) {
     if (evt.target.className === 'comprarBoton') {
         ver('divComprar');
@@ -24,12 +44,15 @@ function ver(where, titulo, id) {
     $('#' + where).show();
     $('#titulo').html(titulo);
 
+    if (where == 'divTodo') {
 
+        angular.element(document.getElementById('miControlador')).scope().getAll();
+    }
 }
 
 function move(donde, action) {
-    
-    var btn = $(event.target);    
+
+    var btn = $(event.target);
     btn.prop('disabled', true);
     setTimeout(function () {
         btn.prop('disabled', false);
@@ -65,3 +88,9 @@ function move(donde, action) {
     }
     console.log(newMargen);
 }
+
+
+
+
+
+
