@@ -33,7 +33,7 @@ class tiendaModel extends tiendaClass
         $sql = "CALL spAllTiendas()"; // SQL sententzia - sentencia SQL
 
         $result = $this->link->query($sql);
-        var_dump($sql);
+        
 
     
 
@@ -41,7 +41,7 @@ class tiendaModel extends tiendaClass
         
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
 
-            $tienda = new tiendaClass();
+            $tienda = new tiendaModel();
 
             $tienda->id = $row['id'];
             $tienda->nombre = $row['nombre'];
