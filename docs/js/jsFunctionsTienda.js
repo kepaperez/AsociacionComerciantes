@@ -15,7 +15,7 @@ function loadTiendas() {
         .then(res => res.json()).then(result => {
             Tiendas = result.list;
 
-        console.log(Tiendas);
+        
 
         })
         .catch(error => console.error('Error status:', error));
