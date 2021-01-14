@@ -72,11 +72,20 @@ nav ul i{
 }
 .divPrincipal{
     margin-top: 35px;
-    background-color: grey;
+    background-color: #F6F6F6;
     width: 80%;
     height: 500px;
+    background-image: url(https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/q0rpef3dtu72cnfgjlgt/air-force-1-07-zapatillas-3nGnlt.jpg);
+    background-position: 200px center;
+    background-repeat: no-repeat;
+    padding-top: 20px;
 }
+.divPrincipal h2{
 
+  font-weight: bolder;
+  margin-right: 70%;
+  
+}
 .comprarBoton:hover{
   bottom: 20%;
   left: 8%;
@@ -177,7 +186,8 @@ nav ul i{
   .box{
     height: 400px;
     margin-bottom: 130px;
-    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
     position: static;
     position: relative;
   }
@@ -199,6 +209,11 @@ nav ul i{
     /* border: 0.1px solid black; */
   }
 
+  ::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius :10px;
+  }
+  
   .move:nth-child(even){
 
     background-color: grey;
