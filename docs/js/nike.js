@@ -23,8 +23,20 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         console.log($scope.listaTodo[x]);
 
+        // CARGA DE FONDOS
+        // ----Trending----
+        $('#columnTrending1').css('background-image', 'url(img/nike/' + $scope.listaTodo[7].producto.imagen + '.jpg)');
+        $('#columnTrending2').css('background-image', 'url(img/nike/' + $scope.listaTodo[28].producto.imagen + '.jpg)');
+        $('#columnTrending2').css('background-image', 'url(img/nike/' + $scope.listaTodo[28].producto.imagen + '.jpg)');
+
+        // -----Principal-----
         $('#divPrincipalImg').css('background-image', 'url(img/nike/' + $scope.listaTodo[x].producto.imagen + '.jpg)');
         $('#nombrePrincipal').html($scope.listaTodo[x].producto.nombre);
+
+        // --------Mas--------
+        $('.columnMas1').css('background-image', 'url(img/nike/nikeHombre.jpg)');
+        $('.columnMas2').css('background-image', 'url(img/nike/nikeMujer.jpg)');
+        $('.columnMas3').css('background-image', 'url(img/nike/NikeNino.jpg)');
     }
 
 
@@ -41,13 +53,15 @@ miApp.controller('miControlador', function ($scope, $http) {
     //     })
     // }
 
+
+
     // declara el array 
     $scope.listaActual=[];
 
     $scope.loadProduct =function(tipo) {
         // Se encarga de recoger los datos dependiendo del genero
         // se limpia el array 
-        
+
         $scope.listaActual=[];
     
         console.log(sex);
@@ -72,6 +86,9 @@ miApp.controller('miControlador', function ($scope, $http) {
             
         }
         console.log($scope.listaActual);
+
+
+        // rellenamos con los datos
     }
 
 })

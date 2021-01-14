@@ -214,6 +214,11 @@ nav ul i{
 
   position: relative;
 }
+
+/* .Trending, .New, .Random p{
+
+  font-size: x-large;
+} */
 /* random=================================================== */
 .Random{
     margin-bottom: 150px;
@@ -294,13 +299,19 @@ nav ul i{
 
     margin-bottom: 150px;
   }
+  .columnTrending{
+
+    background-position: 90% center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+  }
 
   .columnTrending {
     float: left;
     width: 48%;
     margin: 1%;
     padding: 10px;
-    height: 400px;
+    height: 700px;
   }
   
   
@@ -320,7 +331,11 @@ nav ul i{
     margin: 1%;
     width: 30%;
     padding: 10px;
-    height: 300px; 
+    height: 600px; 
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 70%;
   }
   
   
@@ -409,7 +424,7 @@ nav ul i{
   }
 
 
- .secundario .box  .comprarBoton{
+ .secundario .box  .comprarBoton,.comprarBotonn{
     margin-top: 60%;
     margin-right: 50%;
     border-radius: 100px;
