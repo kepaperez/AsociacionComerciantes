@@ -2,7 +2,6 @@
 
     include_once("connect_data_remote.php");
 
-    include_once("connect_data.php");
 
 
 include_once ("tiendaClass.php");
