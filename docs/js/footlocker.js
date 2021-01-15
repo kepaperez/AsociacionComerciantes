@@ -16,9 +16,9 @@ miApp.controller('miControlador', function ($scope, $http) {
 
 
         // ----Trending----
-        $('#columnTrending1').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[7].producto.imagen + '.jpg)');
-        $('#columnTrending2').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[28].producto.imagen + '.jpg)');
-        $('#columnTrending2').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[28].producto.imagen + '.jpg)');
+        $('#columnTrending1').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[40].producto.imagen + '.jpg)');
+        $('#columnTrending2').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[32].producto.imagen + '.jpg)');
+        
 
 
         // --------Mas--------
@@ -92,7 +92,7 @@ var sex = '';
 function ver(where, titulo, id) {
 
     console.log(where);
-    
+
     $("#btn1").removeClass("borde");
     $("#btn2").removeClass("borde");
     $("#btn3").removeClass("borde");
