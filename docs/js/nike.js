@@ -6,8 +6,6 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         $scope.listaTodo = response.data.list;
 
-        console.log($scope.listaTodo);
-
         $scope.calculate()
     })
 
@@ -15,13 +13,9 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         // calcula un numero random y elige un producto
         let index = 0;
-        for (index; index < $scope.listaTodo.length; index++) {
-
-        }
-
+        for (index; index < $scope.listaTodo.length; index++) { }
         var x = Math.floor((Math.random() * index) + 1);
 
-        console.log($scope.listaTodo[x]);
 
         // CARGA DE FONDOS
 
@@ -42,19 +36,6 @@ miApp.controller('miControlador', function ($scope, $http) {
         $('.columnMas3').css('background-image', 'url(img/nike/NikeNino.jpg)');
     }
 
-    // $scope.getAll=function(){
-
-    //     alert("todo");
-
-    //     $http.get("controller/cAllNike.php").then(function (response) {
-
-    //         $scope.listaTodo = response.data.list;
-
-    //         console.log($scope.listaTodo);
-    //     })
-    // }
-
-
     // declara el array 
     $scope.listaActual = [];
 
@@ -62,42 +43,29 @@ miApp.controller('miControlador', function ($scope, $http) {
         // Se encarga de recoger los datos dependiendo del genero
         // se limpia el array 
 
-        alert("hasiera");
+        //Genera un numero random para que se ordene la seccion Variado
         $scope.listaActual = [];
         $scope.random = function () {
             return 0.5 - Math.random();
         }
-        console.log(sex);
-
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
             if (tipo == 1) {
                 if ($scope.listaTodo[index].producto.sexo == sex || $scope.listaTodo[index].producto.sexo == 'Unisex') {
-
                     $scope.listaActual.push($scope.listaTodo[index].producto)
                 }
             }
-
             else if (tipo == 2) {
 
                 if ($scope.listaTodo[index].producto.sexo == sex) {
-
                     $scope.listaActual.push($scope.listaTodo[index].producto)
                 }
             }
-
-
         }
         console.log($scope.listaActual);
-        alert("bukaera");
-
     }
 
     $scope.loadProduct = function (id) {
-
-        $('.comprar').scrollTop(0);
-
-        console.log(id);
 
         // Buscamos el producto que hemos elegido por el id 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
@@ -121,8 +89,6 @@ miApp.controller('miControlador', function ($scope, $http) {
 // ===================================JQUERY================================
 document.addEventListener('click', function (evt) {
     if (evt.target.className === 'comprarBoton') {
-        console.log(evt.target.value)
-
         ver('divComprar', 'loadProducto', evt.target.value);
     }
     if (evt.target.className === 'comprarBotonArt') {
@@ -133,7 +99,6 @@ document.addEventListener('click', function (evt) {
 var sex = '';
 
 function ver(where, titulo, id) {
-    console.log(id);
 
     $("#btn1").removeClass("borde");
     $("#btn2").removeClass("borde");
@@ -201,16 +166,12 @@ function move(donde, action) {
     var newMargen = Math.trunc(margen);
 
     if (action == 'izquierda') {
-
-        console.log('<');
         if (newMargen != 0 || newMargen != -0) {
             $('.' + donde).animate({ 'marginLeft': "+=32vw" });
 
         }
 
     } else if (action = 'derecha') {
-
-        console.log('>');
         if (newMargen <= -224) {
 
 
@@ -220,7 +181,7 @@ function move(donde, action) {
 
 
     }
-    console.log(newMargen);
+  
 }
 
 
