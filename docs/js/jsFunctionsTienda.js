@@ -2,7 +2,7 @@ var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
     loadTiendas();
-  
+
 
     function loadTiendas() {
 
@@ -16,6 +16,11 @@ miApp.controller('miControlador', function ($scope, $http) {
                 console.log(result.list);
                 $scope.tiendas = result.list;
             });
+    }
+    function tipo(deviceValue) {
+
+        tipo = document.getElementById('comboMenus').value;
+        console.log(deviceValue);
     }
 
 });
