@@ -34,8 +34,6 @@
 
                 <input onkeypress="ver('divTodo','Ver todo',id)" placeholder="Buscar...." ng-model='gsearch'
                     type="search" id="gsearch" name="gsearch">
-
-
             </ul>
 
         </nav>
@@ -138,7 +136,7 @@
 
             <div class="box">
                 <div class="underBox2" id="underbox2">
-                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)" ng-repeat='item in listaActual'
+                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)" ng-repeat='item in listaActual | orderBy:random'
                         id="move" class="move">{{item.nombre}}
                         <button  value="{{item.id}}" class="comprarBotonArt">Comprar</button>
                     </div>
@@ -147,7 +145,7 @@
         </div>
 
         <div class="divPantalones" id="divPantalones">
-            <h3>StreetWear</h3>
+            <h3>Ropa</h3>
             <div class="Botones">
                 <button class="izquierdaBtnMove" onclick="move('underbox3','izquierda')">IZQ</button>
                 <button class="derechaBtnMove" onclick="move('underbox3','derecha')">DER</button>

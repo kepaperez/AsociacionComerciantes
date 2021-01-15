@@ -28,14 +28,14 @@ miApp.controller('miControlador', function ($scope, $http) {
         // -----Principal-Random----
         $('.divPrincipal').css('background-image', 'url(img/nike/' + $scope.listaTodo[x].producto.imagen + '.jpg)');
         $('#nombrePrincipal').html($scope.listaTodo[x].producto.nombre);
-        $('.Random .comprarBoton').attr('value',$scope.listaTodo[x].producto.id);
+        $('.Random .comprarBoton').attr('value', $scope.listaTodo[x].producto.id);
 
         // ----Trending----
         $('#columnTrending1').css('background-image', 'url(img/nike/' + $scope.listaTodo[7].producto.imagen + '.jpg)');
         $('#columnTrending2').css('background-image', 'url(img/nike/' + $scope.listaTodo[28].producto.imagen + '.jpg)');
         $('#columnTrending2').css('background-image', 'url(img/nike/' + $scope.listaTodo[28].producto.imagen + '.jpg)');
 
-    
+
         // --------Mas--------
         $('.columnMas1').css('background-image', 'url(img/nike/nikeHombre.jpg)');
         $('.columnMas2').css('background-image', 'url(img/nike/nikeMujer.jpg)');
@@ -62,8 +62,11 @@ miApp.controller('miControlador', function ($scope, $http) {
         // Se encarga de recoger los datos dependiendo del genero
         // se limpia el array 
 
+        alert("hasiera");
         $scope.listaActual = [];
-
+        $scope.random = function () {
+            return 0.5 - Math.random();
+        }
         console.log(sex);
 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
@@ -86,6 +89,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         }
         console.log($scope.listaActual);
+        alert("bukaera");
 
     }
 
@@ -118,11 +122,11 @@ miApp.controller('miControlador', function ($scope, $http) {
 document.addEventListener('click', function (evt) {
     if (evt.target.className === 'comprarBoton') {
         console.log(evt.target.value)
-        
-        ver('divComprar', 'loadProducto',evt.target.value);
+
+        ver('divComprar', 'loadProducto', evt.target.value);
     }
     if (evt.target.className === 'comprarBotonArt') {
-        ver('divComprar', 'loadProducto',evt.target.value);
+        ver('divComprar', 'loadProducto', evt.target.value);
     }
 }, false);
 
@@ -147,9 +151,9 @@ function ver(where, titulo, id) {
 
     if (titulo == 'loadProducto') {
 
-
         angular.element(document.getElementById('miControlador')).scope().loadProduct(id)
     }
+
     if (where == 'divTodo') {
 
         // angular.element(document.getElementById('miControlador')).scope().getAll();
