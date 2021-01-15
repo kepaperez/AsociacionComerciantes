@@ -254,6 +254,17 @@ nav ul i{
   position: absolute;
 }
 
+ .New .comprarBoton{
+  bottom: 20%;
+  left: 25%;
+  border-radius: 100px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 13px;
+  width: 150px;
+  position: absolute;
+ }
 .comprarBoton{
     bottom: 20%;
     left: 8%;
@@ -286,9 +297,24 @@ nav ul i{
     float: left;
     width: 50%;
     padding: 10px;
-    height: 400px;
+    height: 600px;
   }
   
+  .columnNew1, .columnNew2{
+
+    background-repeat: no-repeat;
+    
+    background-size: 80%;
+  }
+  .columnNew1{
+    background-image: url(../img/nike/offWhite1.jpg);
+    background-position: right center;
+  }
+
+  .columnNew2{
+    background-image: url(../img/nike/offWhite2.jpg);   
+    background-position: left center;
+  }
   
   .rowNew:after {
     content: "";
@@ -464,7 +490,7 @@ nav ul i{
 }
 .boxImg{
   width: 70%; 
-  background-color: brown;
+  background-color:#f6f6f6;
   background-position: center center;
 }
 

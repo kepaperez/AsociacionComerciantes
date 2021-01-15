@@ -48,17 +48,19 @@
                 </div>
             </center>
         </section>
-
-        <H2>NEW COLLECTION !</H2>
+        <center>
+            <H2>NEW COLLECTION !</H2>
+        </center>
+        <br><br>
         <section class="New">
 
             <div class="rowNew">
-                <div class="columnNew" style="background-color:#aaa;">
-                    <p>IMAGEN 1</p>
-                    <button class="comprarBoton">Comprar</button>
+                <div class="columnNew columnNew1">
+
+                    <button value="60" class="comprarBoton">Comprar</button>
                 </div>
-                <div class="columnNew" style="background-color:#bbb;">
-                    <p>IMAGEN 2</p>
+                <div class="columnNew columnNew2">
+
                 </div>
             </div>
 
@@ -121,11 +123,11 @@
                 <div class="underBox1" id="underbox1">
                     <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
                         ng-repeat='item in listaActual | filter: "Zapatillas"' id="move" class="move">{{item.nombre}}
-                        <button value="{{item.id}}"class="comprarBotonArt">Comprar</button>
+                        <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
                     </div>
                 </div>
             </div>
-        </div>       
+        </div>
 
         <div class="divPantalones" id="divPantalones">
             <h3>Ropa</h3>
@@ -138,7 +140,7 @@
                 <div class="underBox3" id="underbox3">
                     <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
                         ng-repeat='item in listaActual | filter:"Ropa"' id="move" class="move">{{item.nombre}}
-                        <button  value="{{item.id}}" class="comprarBotonArt">Comprar</button>
+                        <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
                     </div>
                 </div>
 
@@ -154,9 +156,9 @@
 
             <div class="box">
                 <div class="underBox2" id="underbox2">
-                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)" ng-repeat='item in listaActual | orderBy:random'
-                        id="move" class="move">{{item.nombre}}
-                        <button  value="{{item.id}}" class="comprarBotonArt">Comprar</button>
+                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
+                        ng-repeat='item in listaActual | orderBy:random' id="move" class="move">{{item.nombre}}
+                        <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
                     </div>
                 </div>
             </div>
