@@ -87,8 +87,6 @@ miApp.controller('miControlador', function ($scope, $http) {
         }
         console.log($scope.listaActual);
 
-
-        // rellenamos con los datos
     }
 
     $scope.loadProduct = function (id) {
@@ -120,10 +118,11 @@ miApp.controller('miControlador', function ($scope, $http) {
 document.addEventListener('click', function (evt) {
     if (evt.target.className === 'comprarBoton') {
         console.log(evt.target.value)
+        
         ver('divComprar', 'loadProducto',evt.target.value);
     }
     if (evt.target.className === 'comprarBotonArt') {
-        ver('divComprar');
+        ver('divComprar', 'loadProducto',evt.target.value);
     }
 }, false);
 

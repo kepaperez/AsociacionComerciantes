@@ -120,15 +120,12 @@
             </div>
 
             <div class="box">
-
                 <div class="underBox1" id="underbox1">
-
-                    <div ng-repeat='item in listaActual' id="move" class="move">{{item.nombre}} <button
-                            class="comprarBotonArt">Comprar</button></div>
-
+                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
+                        ng-repeat='item in listaActual | filter: "Zapatillas"' id="move" class="move">{{item.nombre}}
+                        <button value="{{item.id}}"class="comprarBotonArt">Comprar</button>
+                    </div>
                 </div>
-
-
             </div>
         </div>
 
@@ -140,15 +137,12 @@
             </div>
 
             <div class="box">
-
                 <div class="underBox2" id="underbox2">
-
-                    <div ng-repeat='item in listaActual' id="move" class="move">{{item.nombre}} <button
-                            class="comprarBotonArt">Comprar</button></div>
-
-
+                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)" ng-repeat='item in listaActual'
+                        id="move" class="move">{{item.nombre}}
+                        <button  value="{{item.id}}" class="comprarBotonArt">Comprar</button>
+                    </div>
                 </div>
-
             </div>
         </div>
 
@@ -160,12 +154,11 @@
             </div>
 
             <div class="box">
-
                 <div class="underBox3" id="underbox3">
-
-                    <div ng-repeat='item in listaActual' id="move" class="move">{{item.nombre}} <button
-                            class="comprarBotonArt">Comprar</button></div>
-
+                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
+                        ng-repeat='item in listaActual | filter:"Ropa"' id="move" class="move">{{item.nombre}}
+                        <button  value="{{item.id}}" class="comprarBotonArt">Comprar</button>
+                    </div>
                 </div>
 
             </div>
@@ -183,27 +176,28 @@
         <div class="containerbottom" ng-show="listaDiv">
 
             <div id="grid" class="grid">
-                
-                    <div id ="{{item.producto.id}}"   onclick="ver('divComprar','loadProducto',id)" class="grid__item" ng-repeat="item in listaTodo | filter:gsearch ">
 
-                        <div  class="card"><img class="card__img" src="img/nike/{{item.producto.imagen}}.jpg">
-                            <div class="card__content">
-                                <div class="card__content2">
-                                    <h1 class="card__header">{{item.producto.nombre}}</h1>
-                                    <b>
-                                        <p class="card__text">{{item.precio}}€</p>
-                                    </b>
-                                </div>
-                                <p class="card__text">Sexo: {{item.producto.sexo}}</p>
+                <div id="{{item.producto.id}}" onclick="ver('divComprar','loadProducto',id)" class="grid__item"
+                    ng-repeat="item in listaTodo | filter:gsearch ">
+
+                    <div class="card"><img class="card__img" src="img/nike/{{item.producto.imagen}}.jpg">
+                        <div class="card__content">
+                            <div class="card__content2">
+                                <h1 class="card__header">{{item.producto.nombre}}</h1>
+                                <b>
+                                    <p class="card__text">{{item.precio}}€</p>
+                                </b>
                             </div>
+                            <p class="card__text">Sexo: {{item.producto.sexo}}</p>
                         </div>
-
-
                     </div>
+
+
+                </div>
             </div>
 
         </div>
-        
+
     </div>
 
     <div class="comprar" id="divComprar">
@@ -213,15 +207,16 @@
 
                 <h3 class="nombre">Nombre</h3>
                 <p class="genero">Sex</p>
-                <p class="precio">100$</p>
-                <h3 class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores optio vitae
+                <h2 class="precio">100$</h2>
+                <br><br>
+                <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores optio vitae
                     accusamus! Natus similique, dolorum sequi, dolores fuga eius omnis vel officia impedit, labore
-                    molestias reprehenderit aperiam quibusdam provident error.</h1>
-                    <center>
-                        <button class="añadirBtn">
-                            Comprar
-                        </button>
-                    </center>
+                    molestias reprehenderit aperiam quibusdam provident error.</p>
+                <center>
+                    <button class="añadirBtn">
+                        Comprar
+                    </button>
+                </center>
             </div>
         </div>
         <br><br><br><br>

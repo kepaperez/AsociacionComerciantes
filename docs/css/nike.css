@@ -31,7 +31,8 @@ nav li:hover {
 }
 
 nav li{
-    display: flex; 
+    display: flex;
+    border-bottom: 3px solid transparent;
 }
 .ul-nav{  
     display: flex;  
@@ -59,6 +60,7 @@ nav ul i{
     border: 2px solid black;
     padding-right: 7px;
     padding-left: 7px;
+    outline-style: none;
 }
 
 
@@ -264,7 +266,7 @@ nav ul i{
     position: absolute;
 }
 .comprarBotonArt{
-    bottom: 20%;
+    bottom: 5%;
     left: 33.33%;
     border-radius: 100px;
     background-color: black;
@@ -367,10 +369,13 @@ nav ul i{
     
 }
   .move{    
-    background-color: grey;
+    background-color: #f6f6f6;
     height: 400px;
     width: 32vw;
     display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 90% !important;
     /* border: 0.1px solid black; */
   }
 
@@ -381,14 +386,12 @@ nav ul i{
   
   .move:nth-child(even){
 
-    background-color: grey;
+    background-color: white;
     background-repeat: no-repeat;
     background-size: auto;
   }
 
   .move:nth-child(odd){
-
-    background-color: indianred;
     background-repeat: no-repeat;
     background-size: auto;
   }
