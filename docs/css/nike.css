@@ -86,7 +86,7 @@ nav ul i{
   width: 100%;
   grid-gap: 6rem 3rem;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  align-items: start;
+  
 }
 
 @media (max-width: 60em) {
@@ -228,9 +228,9 @@ nav ul i{
     background-color: #F6F6F6;
     width: 80%;
     height: 500px;
-    background-position: 110% 63%;
+    background-position: 100% 63%;
     background-repeat: no-repeat;
-    background-size: 45%;
+    background-size: 60%;
     padding-top: 20px;
 }
 .divPrincipal h2{
