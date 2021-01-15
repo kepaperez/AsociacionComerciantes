@@ -101,6 +101,7 @@ nav ul i{
   overflow: hidden;
   transition: 0.2s;
   cursor: pointer;
+  margin: auto;
 }
 
 .grid__item h1,.card_text{
