@@ -18,228 +18,269 @@
 
 
 <body id="miControlador" ng-controller="miControlador">
+    <section class="secc">
+        <header>
+            <nav class="navbar">
+                <div class="">
+                    <h1 onclick="ver('divPrincipal')"><img style="height: 60px;" src="img/logo/nikelogo2.png" alt=""
+                            srcset=""></h1>
+                </div>
+                <ul class="ul-nav izquierda">
+                    <li id='btn1' class="izquierdaBtn" onclick="ver('divTodo','Ver todo',id)"><a>Todo</a></li>
+                    <li id='btn2' class="izquierdaBtn" onclick="ver('divSecundario','Mujer',id)"><a>Mujer</a></li>
+                    <li id='btn3' class="izquierdaBtn" onclick="ver('divSecundario','Hombre',id)"><a>Hombre</a></li>
+                    <li id='btn4' class="izquierdaBtn" onclick="ver('divSecundario','Niño',id)"><a>Niño</a></li>
 
-    <header>
-        <nav class="navbar">
-            <div class="">
-                <h1 onclick="ver('divPrincipal')"><img style="height: 60px;" src="img/logo/nikelogo2.png" alt=""
-                        srcset=""></h1>
-            </div>
-            <ul class="ul-nav izquierda">
-                <li id='btn1' class="izquierdaBtn" onclick="ver('divTodo','Ver todo',id)"><a>Todo</a></li>
-                <li id='btn2' class="izquierdaBtn" onclick="ver('divSecundario','Mujer',id)"><a>Mujer</a></li>
-                <li id='btn3' class="izquierdaBtn" onclick="ver('divSecundario','Hombre',id)"><a>Hombre</a></li>
-                <li id='btn4' class="izquierdaBtn" onclick="ver('divSecundario','Niño',id)"><a>Niño</a></li>
+                    <input onkeypress="ver('divTodo','Ver todo',id)" placeholder="Buscar...." ng-model='gsearch'
+                        type="search" id="gsearch" name="gsearch">
+                </ul>
 
-                <input onkeypress="ver('divTodo','Ver todo',id)" placeholder="Buscar...." ng-model='gsearch'
-                    type="search" id="gsearch" name="gsearch">
-            </ul>
+            </nav>
+        </header>
 
-        </nav>
-    </header>
-
-    <div class="principal" id="divPrincipal">
-        <section class="Random">
+        <div class="principal" id="divPrincipal">
+            <section class="Random">
+                <center>
+                    <div class="divPrincipal">
+                        <h2 id='nombrePrincipal'>Cargando..</h2>
+                        <button class="comprarBoton">Comprar</button>
+                    </div>
+                </center>
+            </section>
             <center>
-                <div class="divPrincipal">
-                    <h2 id='nombrePrincipal'>Cargando..</h2>
-                    <button class="comprarBoton">Comprar</button>
-                </div>
+                <H2>NEW COLLECTION !</H2>
             </center>
-        </section>
-        <center>
-            <H2>NEW COLLECTION !</H2>
-        </center>
-        <br><br>
-        <section class="New">
-            <div class="rowNew">
-                <div class="columnNew columnNew1">
+            <br><br>
+            <section class="New">
+                <div class="rowNew">
+                    <div class="columnNew columnNew1">
 
-                    <button value="60" class="comprarBoton">Comprar</button>
-                </div>
-                <div class="columnNew columnNew2">
-
-                </div>
-            </div>
-        </section>
-
-        <h2>Puede que te Interese: </h2>
-        <section class="Trending">
-            <center>
-                <div class="rowTrending">
-                    <div id="columnTrending1" class="columnTrending" style="background-color:#f6f6f6;">
-                        <b>
-                            <p>{{listaTodo[34].producto.nombre}}</p>
-                        </b>
-                        <button value="{{listaTodo[7].producto.id}}" class="comprarBoton">Comprar</button>
+                        <button value="60" class="comprarBoton">Comprar</button>
                     </div>
-                    <div id="columnTrending2" class="columnTrending" style="background-color:#f6f6f6;">
-                        <b>
-                            <p>{{listaTodo[26].producto.nombre}}</p>
-                        </b>
-                        <button value="{{listaTodo[28].producto.id}}" class="comprarBoton">Comprar</button>
+                    <div class="columnNew columnNew2">
+
                     </div>
                 </div>
-            </center>
-        </section>
+            </section>
+
+            <h2>Puede que te Interese: </h2>
+            <section class="Trending">
+                <center>
+                    <div class="rowTrending">
+                        <div id="columnTrending1" class="columnTrending" style="background-color:#f6f6f6;">
+                            <b>
+                                <p>{{listaTodo[34].producto.nombre}}</p>
+                            </b>
+                            <button value="{{listaTodo[7].producto.id}}" class="comprarBoton">Comprar</button>
+                        </div>
+                        <div id="columnTrending2" class="columnTrending" style="background-color:#f6f6f6;">
+                            <b>
+                                <p>{{listaTodo[26].producto.nombre}}</p>
+                            </b>
+                            <button value="{{listaTodo[28].producto.id}}" class="comprarBoton">Comprar</button>
+                        </div>
+                    </div>
+                </center>
+            </section>
 
 
-        <h2>MAS</h2>
-        <section class="Mas">
+            <h2>MAS</h2>
+            <section class="Mas">
 
-            <div class="rowMas">
-                <div class="columnMas columnMas1" style="background-color:#f5f5f5;">
+                <div class="rowMas">
+                    <div class="columnMas columnMas1" style="background-color:#f5f5f5;">
 
-                    <button onclick="ver('divSecundario','Hombre')" class="comprarBotonn">Hombre</button>
-                </div>
-                <div class="columnMas columnMas2" style="background-color:#f6f6f6;">
+                        <button onclick="ver('divSecundario','Hombre')" class="comprarBotonn">Hombre</button>
+                    </div>
+                    <div class="columnMas columnMas2" style="background-color:#f6f6f6;">
 
-                    <button onclick="ver('divSecundario','Mujer')" class="comprarBotonn">Mujer</button>
-                </div>
-                <div class="columnMas columnMas3" style="background-color:#f6f6f6;">
+                        <button onclick="ver('divSecundario','Mujer')" class="comprarBotonn">Mujer</button>
+                    </div>
+                    <div class="columnMas columnMas3" style="background-color:#f6f6f6;">
 
-                    <button onclick="ver('divSecundario','Nino')" class="comprarBotonn">Niñ@s</button>
-                </div>
-            </div>
-
-        </section>
-    </div>
-
-    <div class="secundario" id="divSecundario">
-        <br> <br> <br>
-        <h2 id="titulo"></h2>
-        <br> <br> <br>
-        <div class="divZapatillas" id="divZapatillas">
-            <h3>Zapatillas</h3>
-            <div class="Botones">
-                <button class="izquierdaBtnMove" onclick="move('underbox1','izquierda')">IZQ</button>
-                <button class="derechaBtnMove" onclick="move('underbox1','derecha')">DER</button>
-            </div>
-
-            <div class="box">
-                <div class="underBox1" id="underbox1">
-                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
-                        ng-repeat='item in listaActual | filter: "Zapatillas"' id="move" class="move">{{item.nombre}}
-                        <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
+                        <button onclick="ver('divSecundario','Nino')" class="comprarBotonn">Niñ@s</button>
                     </div>
                 </div>
-            </div>
+
+            </section>
         </div>
 
-        <div class="divPantalones" id="divPantalones">
-            <h3>Ropa</h3>
-            <div class="Botones">
-                <button class="izquierdaBtnMove" onclick="move('underbox3','izquierda')">IZQ</button>
-                <button class="derechaBtnMove" onclick="move('underbox3','derecha')">DER</button>
-            </div>
-
-            <div class="box">
-                <div class="underBox3" id="underbox3">
-                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
-                        ng-repeat='item in listaActual | filter:"Ropa"' id="move" class="move">{{item.nombre}}
-                        <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
-                    </div>
+        <div class="secundario" id="divSecundario">
+            <br> <br> <br>
+            <h2 id="titulo"></h2>
+            <br> <br> <br>
+            <div class="divZapatillas" id="divZapatillas">
+                <h3>Zapatillas</h3>
+                <div class="Botones">
+                    <button class="izquierdaBtnMove" onclick="move('underbox1','izquierda')">IZQ</button>
+                    <button class="derechaBtnMove" onclick="move('underbox1','derecha')">DER</button>
                 </div>
 
-            </div>
-        </div>
-
-        <div class="divVariado" id="divVariado">
-            <h3>Variado</h3>
-            <div class="Botones">
-                <button class="izquierdaBtnMove" onclick="move('underbox2','izquierda')">IZQ</button>
-                <button class="derechaBtnMove" onclick="move('underbox2','derecha')">DER</button>
-            </div>
-
-            <div class="box">
-                <div class="underBox2" id="underbox2">
-                    <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
-                        ng-repeat='item in listaActual | orderBy:random' id="move" class="move">{{item.nombre}}
-                        <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
+                <div class="box">
+                    <div class="underBox1" id="underbox1">
+                        <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
+                            ng-repeat='item in listaActual | filter: "Zapatillas"' id="move" class="move">
+                            {{item.nombre}}
+                            <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="Todo" id="divTodo">
-        <br> <br> <br>
-        <center>
-            <h2 id="titulo">TODO</h2>
-        </center>
-        <br>
-        <hr>
-        <br>
-        <div class="containerbottom" ng-show="listaDiv">
+            <div class="divPantalones" id="divPantalones">
+                <h3>Ropa</h3>
+                <div class="Botones">
+                    <button class="izquierdaBtnMove" onclick="move('underbox3','izquierda')">IZQ</button>
+                    <button class="derechaBtnMove" onclick="move('underbox3','derecha')">DER</button>
+                </div>
 
-            <div id="grid" class="grid">
-
-                <div id="{{item.producto.id}}" onclick="ver('divComprar','loadProducto',id)" class="grid__item"
-                    ng-repeat="item in listaTodo | filter:gsearch ">
-
-                    <div class="card"><img class="card__img" src="img/nike/{{item.producto.imagen}}.jpg">
-                        <div class="card__content">
-                            <div class="card__content2">
-                                <h1 class="card__header">{{item.producto.nombre}}</h1>
-                                <b>
-                                    <p class="card__text">{{item.precio}}€</p>
-                                </b>
-                            </div>
-                            <p class="card__text">Sexo: {{item.producto.sexo}}</p>
+                <div class="box">
+                    <div class="underBox3" id="underbox3">
+                        <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
+                            ng-repeat='item in listaActual | filter:"Ropa"' id="move" class="move">{{item.nombre}}
+                            <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
                         </div>
                     </div>
 
-
                 </div>
+            </div>
+
+            <div class="divVariado" id="divVariado">
+                <h3>Variado</h3>
+                <div class="Botones">
+                    <button class="izquierdaBtnMove" onclick="move('underbox2','izquierda')">IZQ</button>
+                    <button class="derechaBtnMove" onclick="move('underbox2','derecha')">DER</button>
+                </div>
+
+                <div class="box">
+                    <div class="underBox2" id="underbox2">
+                        <div style="background-image: url(img/nike/{{item.imagen}}.jpg)"
+                            ng-repeat='item in listaActual | orderBy:random' id="move" class="move">{{item.nombre}}
+                            <button value="{{item.id}}" class="comprarBotonArt">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Todo" id="divTodo">
+            <br> <br> <br>
+            <center>
+                <h2 id="titulo">TODO</h2>
+            </center>
+            <br>
+            <hr>
+            <br>
+            <div class="containerbottom" ng-show="listaDiv">
+
+                <div id="grid" class="grid">
+
+                    <div id="{{item.producto.id}}" onclick="ver('divComprar','loadProducto',id)" class="grid__item"
+                        ng-repeat="item in listaTodo | filter:gsearch ">
+
+                        <div class="card"><img class="card__img" src="img/nike/{{item.producto.imagen}}.jpg">
+                            <div class="card__content">
+                                <div class="card__content2">
+                                    <h1 class="card__header">{{item.producto.nombre}}</h1>
+                                    <b>
+                                        <p class="card__text">{{item.precio}}€</p>
+                                    </b>
+                                </div>
+                                <p class="card__text">Sexo: {{item.producto.sexo}}</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
-    </div>
+        <div class="comprar" id="divComprar">
+            <div class="boxBuy">
+                <div class="boxImg"></div>
+                <div class="boxData">
 
-    <div class="comprar" id="divComprar">
-        <div class="boxBuy">
-            <div class="boxImg"></div>
-            <div class="boxData">
+                    <h3 class="nombre">Nombre</h3>
+                    <p class="genero">Sex</p>
+                    <h2 class="precio">100$</h2>
+                    <br><br>
+                    <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores optio vitae
+                        accusamus! Natus similique, dolorum sequi, dolores fuga eius omnis vel officia impedit, labore
+                        molestias reprehenderit aperiam quibusdam provident error.</p>
+                    <center>
+                        <button class="añadirBtn">
+                            Comprar
+                        </button>
+                    </center>
+                </div>
+            </div>
+            <br><br><br><br>
+            <h2>Puede que te interese:</h2>
+            <section class="Mas">
 
-                <h3 class="nombre">Nombre</h3>
-                <p class="genero">Sex</p>
-                <h2 class="precio">100$</h2>
-                <br><br>
-                <p class="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores optio vitae
-                    accusamus! Natus similique, dolorum sequi, dolores fuga eius omnis vel officia impedit, labore
-                    molestias reprehenderit aperiam quibusdam provident error.</p>
-                <center>
-                    <button class="añadirBtn">
-                        Comprar
-                    </button>
-                </center>
+                <div class="rowMas">
+                    <div class="columnMas" style="background-color:#aaa;">
+                        <p>IMAGEN 1</p>
+                        <button class="comprarBoton">Text</button>
+                    </div>
+                    <div class="columnMas" style="background-color:#bbb;">
+                        <p>IMAGEN 2</p>
+                        <button class="comprarBoton">Text</button>
+                    </div>
+                    <div class="columnMas" style="background-color:#ccc;">
+                        <p>IMAGEN 3</p>
+                        <button class="comprarBoton">Text</button>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </section>
+
+    <div id='body'>
+        <div id="container">
+            <div id="part1">
+                <div id="companyinfo"> <img src="img/logo/nikelogo2.png" style="height: 80px;" alt="" srcset="">
+                    <p id="title">Cool and Perfect Snippet code</p>
+                    <p id="detail">We create awesome code snippets that will help you in creating your own beautiful
+                        site.
+                    </p>
+                </div>
+                <div id="explore">
+                    <p id="txt1">Explore</p> <a class="link" href="#">Home</a> <a class="link" href="#">About</a> <a
+                        class="link" href="#">Snippet</a> <a class="link" href="#">Careers</a>
+                </div>
+                <div id="visit">
+                    <p id="txt2">Visit</p>
+                    <p class="text">Lincoln House </p>
+                    <p class="text">78 Bhulabhai Desai Road </p>
+                    <p class="text">Mumbai 400 026 </p>
+                    <p class="text">Phone: (22) 2363-3611 </p>
+                    <p class="text">Fax: (22) 2363-0350 </p>
+                </div>
+                <div id="legal">
+                    <p id="txt3">Legal</p> <a class="link1" href="#">Terms and Conditions</a> <a class="link1"
+                        href="#">Private Policy</a>
+                </div>
+                <div id="subscribe">
+                    <p id="txt4">Subscribe to US</p>
+                    <form> <input id="email" type="email" placeholder="Email"> </form> <a
+                        class="waves-effect waves-light btn">Subscribe</a>
+                    <p id="txt5">Connect With US</p> <i class="fab fa-facebook-square social fa-2x"></i> <i
+                        class="fab fa-linkedin social fa-2x"></i> <i class="fab fa-twitter-square social fa-2x"></i>
+                </div>
+            </div>
+            <div id="part2">
+                <p id="txt6"><i class="material-icons tiny"> copyright</i>copyright 2019 BBbootstrap - All right
+                    reserved
+                </p>
             </div>
         </div>
-        <br><br><br><br>
-        <h2>Puede que te interese:</h2>
-        <section class="Mas">
-
-            <div class="rowMas">
-                <div class="columnMas" style="background-color:#aaa;">
-                    <p>IMAGEN 1</p>
-                    <button class="comprarBoton">Text</button>
-                </div>
-                <div class="columnMas" style="background-color:#bbb;">
-                    <p>IMAGEN 2</p>
-                    <button class="comprarBoton">Text</button>
-                </div>
-                <div class="columnMas" style="background-color:#ccc;">
-                    <p>IMAGEN 3</p>
-                    <button class="comprarBoton">Text</button>
-                </div>
-            </div>
-
-        </section>
-
-
     </div>
-
 
 
 </body>

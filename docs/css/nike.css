@@ -1,6 +1,7 @@
-body{
-    padding-right: 50px;
-    padding-left: 50px ;
+.secc{
+  padding-right: 50px;
+  padding-left: 50px ;
+  
 }
 html {
     box-sizing: border-box;
@@ -493,6 +494,7 @@ nav ul i{
   width: 70%; 
   background-color:#f6f6f6;
   background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .boxData{
@@ -510,3 +512,276 @@ nav ul i{
   height: 50px;
 }
 
+/* ============================================ */
+#body
+#body #container {
+  width: 100%;
+  height: 330px
+}
+
+#body #part1 {
+  width: 100%;
+  height: 280px;
+  background-color: #292929
+}
+
+#body #part2 {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  position: relative;
+  top: -15px
+}
+
+#body #companyinfo {
+  width: 14%;
+  height: 280px;
+  position: relative;
+  left: 8%;
+  top: 30px
+}
+
+#body #sitelink {
+  font-size: 35px;
+  color: #f44336
+}
+
+#body #sitelink:hover {
+  color: #e65100
+}
+
+#body #title {
+  color: gray;
+  position: relative;
+  top: 0px;
+  font-size: 14.1px
+}
+
+#body #detail {
+  color: #aaa7a7;
+  font-size: 16px
+}
+
+#body #explore {
+  width: 14%;
+  height: 280px;
+  position: relative;
+  top: -235px;
+  left: 29%
+}
+
+#body #txt1,
+#body #txt2,
+#body #txt3,
+#body #txt4,
+#body #txt5 {
+  color: white;
+  font-size: 20px
+}
+
+#body .link {
+  display: flex;
+  width: 90px;
+  height: 40px;
+  color: #aaa7a7;
+  background-color: transparent;
+  border-top: 2px solid white;
+  position: relative;
+  top: -10px
+}
+
+#body .link:hover,
+#body .link1:hover {
+  color: white
+}
+
+#body #visit {
+  width: 14%;
+  height: 280px;
+  position: relative;
+  top: -515px;
+  left: 42%
+}
+
+#body .text {
+  color: #aaa7a7;
+  font-size: 14px;
+  margin-top: -10px
+}
+
+#body #legal {
+  width: 14%;
+  height: 280px;
+  position: relative;
+  top: -800px;
+  left: 59.5%
+}
+
+#body .link1 {
+  display: flex;
+  width: 150px;
+  height: 40px;
+  color: #aaa7a7;
+  background-color: transparent;
+  border-top: 2px solid white;
+  position: relative;
+  top: -10px;
+  margin-top: 7px
+}
+
+#body #subscribe {
+  position: relative;
+  top: -1080px;
+  left: 78%;
+  width: 14%;
+  height: 280px
+}
+
+#body #email {
+  color: white;
+  position: relative;
+  top: -20px
+}
+
+#body .btn {
+  position: relative;
+  top: -10px
+}
+
+#body #txt5 {
+  position: relative;
+  top: 0px
+}
+
+#body .social {
+  position: relative;
+  top: -5px;
+  margin-right: 10px;
+  color: white;
+  cursor: pointer
+}
+
+#body .fa-facebook-square:hover {
+  color: #3B579D
+}
+
+#body .fa-linkedin:hover {
+  color: #007BB6
+}
+
+#body .fa-twitter-square:hover {
+  color: #2CAAE1
+}
+
+#body #txt6 {
+  color: white;
+  position: relative;
+  top: 13px;
+  left: 8%;
+  width: 80%;
+  color: #aaa7a7
+}
+
+#body .material-icons {
+  position: relative;
+  top: 3px
+}
+
+@media only screen and (max-width:1000px) {
+  #body #companyinfo {
+      width: 20%
+  }
+
+  #body #sitelink {
+      font-size: 30px
+  }
+
+  #body #txt5,
+  #body #txt4 {
+      font-size: 17px
+  }
+
+  #body #txt5,
+  #body .social {
+      position: relative;
+      top: -5px
+  }
+}
+
+@media only screen and (max-width:850px) {
+  #body #companyinfo {
+      position: relative;
+      left: 3%
+  }
+
+  #body #txt6 {
+      position: relative;
+      left: 3%
+  }
+
+  #body #txt1,
+  #body #txt2,
+  #body #txt3,
+  #body #txt4,
+  #body #txt5 {
+      font-size: 15px
+  }
+
+  #body #explore {
+      position: relative;
+      top: -240px;
+      left: 26%
+  }
+
+  #body #sitelink {
+      font-size: 25px
+  }
+
+  #body #detail {
+      font-size: 13px
+  }
+
+  #body .link {
+      width: 60px
+  }
+
+  #body #visit {
+      position: relative;
+      top: -520px;
+      left: 37%
+  }
+
+  #body .text {
+      font-size: 13px
+  }
+
+  #body #legal {
+      position: relative;
+      top: -800px;
+      left: 54%
+  }
+
+  #body #subscribe {
+      position: relative;
+      top: -1080px;
+      left: 76%;
+      width: 20%
+  }
+
+  #body #txt5,
+  #body .social {
+      position: relative;
+      left: -110%;
+      top: px
+  }
+
+  #body #email,
+  #body .btn {
+      position: relative;
+      top: 0px
+  }
+
+  #body #part1 {
+      height: 250px
+  }
+}
