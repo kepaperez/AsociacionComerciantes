@@ -463,6 +463,7 @@ nav ul i{
 .boxImg{
   width: 70%; 
   background-color: brown;
+  background-position: center center;
 }
 
 .boxData{

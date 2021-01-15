@@ -44,7 +44,7 @@
     <div class="principal" id="divPrincipal">
         <section class="Random">
             <center>
-                <div class="divPrincipal" id=divPrincipalImg>
+                <div class="divPrincipal">
                     <h2 id='nombrePrincipal'>Cargando..</h2>
                     <button class="comprarBoton">Comprar</button>
                 </div>
@@ -184,10 +184,9 @@
 
             <div id="grid" class="grid">
                 
-                    <div class="grid__item" ng-repeat="item in listaTodo | filter:gsearch ">
+                    <div id ="{{item.producto.id}}"   onclick="ver('divComprar','loadProducto',id)" class="grid__item" ng-repeat="item in listaTodo | filter:gsearch ">
 
-
-                        <div class="card"><img class="card__img" src="img/nike/{{item.producto.imagen}}.jpg">
+                        <div  class="card"><img class="card__img" src="img/nike/{{item.producto.imagen}}.jpg">
                             <div class="card__content">
                                 <div class="card__content2">
                                     <h1 class="card__header">{{item.producto.nombre}}</h1>
@@ -209,7 +208,7 @@
 
     <div class="comprar" id="divComprar">
         <div class="boxBuy">
-            <div class="boxImg"> IMG </div>
+            <div class="boxImg"></div>
             <div class="boxData">
 
                 <h3 class="nombre">Nombre</h3>
