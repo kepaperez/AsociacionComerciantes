@@ -119,7 +119,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 // ===================================JQUERY================================
 document.addEventListener('click', function (evt) {
     if (evt.target.className === 'comprarBoton') {
-
+        console.log(evt.target.value)
         ver('divComprar', 'loadProducto',evt.target.value);
     }
     if (evt.target.className === 'comprarBotonArt') {

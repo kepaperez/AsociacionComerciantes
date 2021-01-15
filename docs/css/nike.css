@@ -444,7 +444,6 @@ nav ul i{
   display: none;
 }
 .boxBuy{
- background-color: grey;
  width: auto;
  height: 70%;
 }
@@ -468,6 +467,7 @@ nav ul i{
 
 .boxData{
   width: 30%;
+  padding-left: 30px;
 }
 
 .añadirBtn{
