@@ -70,11 +70,164 @@ nav ul i{
 #divSecundario{
     display: none;
 }
+/* =================TODO=================================== */
+ .Todo{  
+  height: auto;
+  display: none;
+}
+ 
+.containerbottom{
+
+  display: block !important;
+}
+@media (max-width: 60em) {
+  .containerbottom {
+      padding: 3rem;
+  }
+} 
+
+.grid {
+  display: grid;
+  width: 100%;
+  grid-gap: 6rem 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  
+}
+
+@media (max-width: 60em) {
+  .grid {
+      grid-gap: 3rem;
+  }
+}
+
+.grid__item {
+  width: 500px;
+  background-color: #fff;  
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: auto;
+  
+}
+
+.grid__item h1,.card_text{
+
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+}
+.grid__item:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
+}
+
+.card{
+  border: none !important;
+  border-radius: none !important;
+}
+.card__img {
+  display: block;
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  background-color: #f6f6f6;
+  border:4px dashed black;
+}
+
+.card__header {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  margin-bottom: 1.5rem;
+
+}
+
+.card__text {  
+  letter-spacing: .1rem;
+  line-height: 1.7;
+  color: #3d3d3d;
+  
+}
+
+.card__content2{
+
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+/* .card__content2 .card__header, b {
+
+
+} */
+
+.card__btn {
+  display: block;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #3363ff;
+  background-color: #e6ecff;
+  border: none;
+  border-radius: .4rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.card__btn__Del {
+  display: block;
+  width:20%;
+  margin-left: 40%;
+  padding: 1.5rem;
+  font-size: 2rem;
+  text-align: center;    
+  border: none;    
+  background-color: none !important;
+}
+.card__btn span {
+  margin-left: 1rem;
+  transition: 0.2s;
+}
+
+.card__btn:hover,
+.card__btn:active {
+  background-color: #dce4ff;
+}
+
+.card__btn:hover span,
+.card__btn:active span {
+  margin-left: 1.5rem;
+}
+
+.Todo .botones{
+  margin-top: 20px;
+}
+
+.Todo .botones:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.half{
+  float: left; 
+      width: 50%;  
+}
+
+
+
+
 /* section  */
 .divPrincipal, .columnNew, .columnTrending, .columnMas, .move{
 
   position: relative;
 }
+
+/* .Trending, .New, .Random p{
+
+  font-size: x-large;
+} */
 /* random=================================================== */
 .Random{
     margin-bottom: 150px;
@@ -176,9 +329,24 @@ nav ul i{
     float: left;
     width: 50%;
     padding: 10px;
-    height: 400px;
+    height: 600px;
   }
   
+  .columnNew1, .columnNew2{
+
+    background-repeat: no-repeat;
+    
+    background-size: 80%;
+  }
+  .columnNew1{
+    background-image: url(../img/nike/offWhite1.jpg);
+    background-position: right center;
+  }
+
+  .columnNew2{
+    background-image: url(../img/nike/offWhite2.jpg);   
+    background-position: left center;
+  }
   
   .rowNew:after {
     content: "";
@@ -192,13 +360,19 @@ nav ul i{
 
     margin-bottom: 150px;
   }
+  .columnTrending{
+
+    background-position: 90% center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+  }
 
   .columnTrending {
     float: left;
     width: 48%;
     margin: 1%;
     padding: 10px;
-    height: 400px;
+    height: 700px;
   }
   
   
@@ -218,7 +392,11 @@ nav ul i{
     margin: 1%;
     width: 30%;
     padding: 10px;
-    height: 300px; 
+    height: 600px; 
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 70%;
   }
   
   
@@ -232,6 +410,8 @@ nav ul i{
   .box{
     height: 400px;
     margin-bottom: 130px;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
     overflow: hidden;
     position: static;
     position: relative;
@@ -247,23 +427,29 @@ nav ul i{
     
 }
   .move{    
-    background-color: grey;
+    background-color: #f6f6f6;
     height: 400px;
     width: 32vw;
     display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 90% !important;
     /* border: 0.1px solid black; */
   }
 
+  ::-webkit-scrollbar-thumb {
+    background: black; 
+    border-radius :10px;
+  }
+  
   .move:nth-child(even){
 
-    background-color: grey;
+    background-color: white;
     background-repeat: no-repeat;
     background-size: auto;
   }
 
   .move:nth-child(odd){
-
-    background-color: indianred;
     background-repeat: no-repeat;
     background-size: auto;
   }
@@ -300,7 +486,7 @@ nav ul i{
   }
 
 
- .secundario .box  .comprarBoton{
+ .secundario .box  .comprarBoton,.comprarBotonn{
     margin-top: 60%;
     margin-right: 50%;
     border-radius: 100px;
@@ -319,7 +505,6 @@ nav ul i{
   display: none;
 }
 .boxBuy{
- background-color: grey;
  width: auto;
  height: 70%;
 }
@@ -337,11 +522,13 @@ nav ul i{
 }
 .boxImg{
   width: 70%; 
-  background-color: brown;
+  background-color:#f6f6f6;
+  background-position: center center;
 }
 
 .boxData{
   width: 30%;
+  padding-left: 30px;
 }
 
 .añadirBtn{
@@ -354,10 +541,3 @@ nav ul i{
   height: 50px;
 }
 
-/* Div de ver todo===================================================== */
-
-
-.Todo{
-
-  display: none;
-}
