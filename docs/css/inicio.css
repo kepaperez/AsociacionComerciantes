@@ -118,8 +118,10 @@ video {
 }
 /*Quienes somos*/
 .quienes{
-    margin: 0 auto;
+    margin-left: 230px;
     float: left;
+    margin-top: 230px;
+    
     
 }
 .grid-container {
@@ -232,9 +234,10 @@ video {
     bottom:25px;
     color:#fff;
     background-color:#000;
-    max-width: auto;
+    max-width: 500;
     opacity:0.5;
     font-weight:bold;
+    padding: 0;
 }
 .prev, .next {
     cursor: pointer;
