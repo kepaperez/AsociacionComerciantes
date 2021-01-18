@@ -32,67 +32,36 @@
 
     <main role="main">
         <section class="container">
-            <div class="card">
+            <!-- <div class="card">
                 <img src="img/imgInicio/dendariak.jpg" alt="Avatar">
                 <div class="container">
                     <h4><b>John Doe</b></h4>
                     <p>Architect & Engineer</p>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="card">
-                <img src="img/imgInicio/dendariak.jpg" alt="Avatar">
-                <div class="container">
-                    <h4><b>John Doe</b></h4>
-                    <p>Architect & Engineer</p>
-                </div>
-            </div>
 
-            <div class="card">
-                <img src="img/imgInicio/dendariak.jpg" alt="Avatar">
-                <div class="container">
-                    <h4><b>John Doe</b></h4>
-                    <p>Architect & Engineer</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="img/imgInicio/dendariak.jpg" alt="Avatar">
-                <div class="container">
-                    <h4><b>John Doe</b></h4>
-                    <p>Architect & Engineer</p>
-                </div>
-            </div>
-
-      
-            <div class="containerbottom" ng-show="listaDiv">
-
-                <div id="grid" class="grid">
-    
-                    <div id="{{item.producto.id}}" onclick="ver('divComprar','loadProducto',id)" class="grid__item"
-                        ng-repeat="item in listaTodo | filter:gsearch ">
-    
-                        <div class="card"><img class="card__img" src="img/nike/{{item.producto.imagen}}.jpg">
-                            <div class="card__content">
-                                <div class="card__content2">
-                                    <h1 class="card__header">{{item.producto.nombre}}</h1>
-                                    <b>
-                                        <p class="card__text">{{item.precio}}€</p>
-                                    </b>
-                                </div>
-                                <p class="card__text">Sexo: {{item.producto.sexo}}</p>
-                            </div>
-                        </div>
-    
-    
+            <div class="cards">
+                <div class="card">
+                    <img src="img/footlocker/adidasNmd1.jpg"alt="Avatar">
+                    <div class="info">
+                        <h4>NOMBRE</h4>
+                        <p>2445 $</p>
                     </div>
+                
                 </div>
-    
+                <div class="card">TWO</div>
+                <div class="card">THREE</div>
+                <div class="card">FOUR</div>
+                <div class="card">FIVE</div>
+                <div class="card">SIX</div>
+                <div class="card">SEVEN</div>
+                <div class="card">EIGHT</div>
+                <div class="card">NINE</div>
+                <div class="card">TEN</div>
+                <div class="card">ELEVEN</div>
+                <div class="card">TWELVE</div>
             </div>
-        </section>
-
-
-
     </main>
 
     <!-- Optional JavaScript -->
