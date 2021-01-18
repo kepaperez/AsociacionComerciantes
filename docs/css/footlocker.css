@@ -251,7 +251,21 @@ nav ul i{
   font-weight: bolder;
   
 }
-.comprarBoton:hover{
+
+.comprarBotonPrincipal{
+  bottom: 20%;
+  left: 70%;    
+  background-color: white;
+  border: 2px solid black;
+  border-bottom: 3px solid black;
+  color: black;
+  padding: 13px;
+  width: 150px;
+  position: absolute;
+  font-weight: bold;
+}
+
+.comprarBotonPrincipal:hover{
     bottom: 20%;
     left: 70%;    
     background-color: white;
@@ -263,7 +277,7 @@ nav ul i{
     position: absolute;
 }
  
-.comprarBoton:hover::before {
+.comprarBotonPrincipal:hover::before {
   content: '';
   position: absolute;
   top: 0;
@@ -274,17 +288,39 @@ nav ul i{
 }
 
 .comprarBoton{
-    bottom: 20%;
-    left: 70%;    
-    background-color: white;
-    border: 2px solid black;
-    border-bottom: 3px solid black;
-    color: black;
-    padding: 13px;
-    width: 150px;
-    position: absolute;
-    font-weight: bold;
+  left: 70%;    
+  background-color: white;
+  border: 2px solid black;
+  border-bottom: 3px solid black;
+  color: black;
+  padding: 13px;
+  width: 150px;
+  position: absolute;
+  font-weight: bold;
 }
+
+.comprarBoton:hover{
+  left: 70%;    
+  background-color: white;
+  border-bottom: 4px solid black;
+  color: black;
+  font-weight: bold;
+  padding: 13px;
+  width: 150px;
+  position: absolute;
+}
+
+.comprarBoton:hover::before {
+content: '';
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+border-bottom : 2px solid red;
+}
+
+
 
 .comprarBoton2{
   bottom: 20%;
@@ -320,6 +356,40 @@ nav ul i{
     width: 150px;
     position: absolute;
 }
+
+.btnInteres{
+  left: 30%;    
+  background-color: white;
+  border: 2px solid black;
+  border-bottom: 3px solid black;
+  color: black;
+  padding: 13px;
+  width: 150px;
+  position: absolute;
+  font-weight: bold;
+}
+
+.btnInteres:hover{
+  left: 30%;    
+  background-color: white;
+  border-bottom: 4px solid black;
+  color: black;
+  font-weight: bold;
+  padding: 13px;
+  width: 150px;
+  position: absolute;
+}
+
+.btnInteres:hover::before {
+content: '';
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+border-bottom : 2px solid red;
+}
+
 /* New==================================================== */
 .New{
     margin-bottom: 150px;
@@ -330,26 +400,25 @@ nav ul i{
     float: left;
     width: 50%;
     padding: 10px;
-    height: 900px;
+    height: 700px;
   }
   
   .columnNew1, .columnNew2{
 
     background-repeat: no-repeat;
-    
     background-size: 80%;
+    
   }
 
   .columnNew1{
     background-image: url(../img/footlocker/adidasNmd1.jpg);
     background-position: right center;
-    background-size: 80%;
-  }
+    }
 
   .columnNew2{
     background-image: url(../img/footlocker/adidasNmd2.jpg);   
     background-position: left center;
-  }
+    }
   
   .rowNew:after {
     content: "";
@@ -544,12 +613,12 @@ nav ul i{
   width: 70%;
   height: 50px;
 }
-
 /* ============================================ */
 #body
 #body #container {
   width: 100%;
-  height: 330px
+  height: 330px;
+  
 }
 
 #body #part1 {

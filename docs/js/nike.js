@@ -47,7 +47,10 @@ miApp.controller('miControlador', function ($scope, $http) {
         $scope.listaActual = [];
         $scope.random = function () {
             return 0.5 - Math.random();
+            
         }
+        
+
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
             if (tipo == 1) {
@@ -67,7 +70,7 @@ miApp.controller('miControlador', function ($scope, $http) {
     }
 
     $scope.loadProduct = function (id) {
-
+      
         // Buscamos el producto que hemos elegido por el id 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
