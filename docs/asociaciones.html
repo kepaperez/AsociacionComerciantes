@@ -44,13 +44,13 @@
                 <div class="dropdown mb-5">
 
 
-                    <select name="select" ng-model="TEXTObjusqueda">
-                        <option value="elegir" selected>Elige un tipo</option>
+                    <select name="select" ng-model="TEXTObusqueda">
+              
                         <option value="moda">Moda</option>
                         <option value="alimentacion">Alimentacion </option>
                         <option value="cosmetica">Cosmetica </option>
                     </select>
-                    <!-- <span>Buscar:</span><input type="text" ng-model="TEXTObusqueda" /><br> -->
+                   
 
                     <!-- <div id="buscar">
                         <form id="formagregar" >
@@ -61,7 +61,7 @@
                 </div>
                 <div class="row ">
                     <div class="col-md-3 col-sm-6 " id="{{item.id}}" ng-repeat="item in tiendas | filter:TEXTObusqueda">
-                        <div class="card mb-4 box-shadow shadow">
+                        <div class="card mb-4 box-shadow shadow" ng-click="abrirSociedad(item)">
                             <img class="card-img-top" data-src="{{item.imagen}}" alt="Thumbnail [100%x225]"
                                 style="height: 225px; width: 100%; display: block;" src="{{item.imagen}}"
                                 data-holder-rendered="true">
