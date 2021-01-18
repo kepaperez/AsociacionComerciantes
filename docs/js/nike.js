@@ -63,6 +63,7 @@ miApp.controller('miControlador', function ($scope, $http) {
             }
         }
         console.log($scope.listaActual);
+        $scope.$apply();
     }
 
     $scope.loadProduct = function (id) {
