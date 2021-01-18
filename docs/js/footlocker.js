@@ -52,8 +52,9 @@ miApp.controller('miControlador', function ($scope, $http) {
                     $scope.listaActual.push($scope.listaTodo[index].producto)
                 }
             }
-        }
+        }       
         console.log($scope.listaActual);
+        $scope.$apply();
     }
 
     $scope.loadProduct = function (id) {
