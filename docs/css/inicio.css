@@ -127,7 +127,7 @@ video {
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    padding: 10px;
+    
   }
   .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
@@ -287,6 +287,24 @@ video {
     margin-right: 5vh;
   }
 /*Footer fin*/
+/*Boton arriba*/
+.simplescrollup__button {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    transition: 1s all;
+    z-index: 10000;
+}
+.simplescrollup__button i{
+    color: rgb(0, 0, 0);
+    font-size: 28px;
+}
+.simplescrollup__button--show {
+    transform: translateX(0);
+}
+.simplescrollup__button--hide {
+    transform: translateX(100px);
+}
 /*Responsive*/
 @media screen and (max-width: 768px) {
     .mapa{
@@ -295,6 +313,7 @@ video {
     .comentarios{
         display: none;
     }
+    
 }
 @media only screen and (max-width:1200px) {
     

@@ -1,0 +1,162 @@
+body{
+    background-color: rgb(223, 174, 100);
+    margin: 0;
+}
+/*Navbar*/
+.navbar{
+    /* overflow: hidden; */
+    display: block;
+    
+    
+}
+.menu{
+    background-color: rgb(250, 219, 162);
+    padding: 1px;
+}
+
+li{
+    display: inline;
+}
+ul li img{
+    width: auto;
+    height: 50px;
+    margin-right: 5vh;
+    float: left;
+    object-fit: cover;
+}
+.navbar a{
+    
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Times New Roman", Times, serif;
+}
+.navbar a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #b35a08, #ebbc7f, #d39000);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  .navbar a:hover::before {
+    transform: scaleX(1);
+  }
+  a:hover {
+    transform-origin: center;
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+  }
+  .login{
+    overflow: hidden;
+    display: block;
+    margin-left: 700px;
+  }
+  .login li{
+      display: inline;
+      float: right;
+  }
+  .login a{
+    
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: "Times New Roman", Times, serif;
+}
+.login a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #16b138, #52ee15, #8ead02);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  .login a:hover::before {
+    transform: scaleX(1);
+  }
+  a:hover {
+    transform-origin: center;
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+  }
+  /*Navbar fin*/
+  /*Quienes somos*/
+
+  .info {
+    text-align: center;
+    width: 60%;
+    margin: 80px auto;
+    background-color: #976d33;
+    padding: 30px;
+}
+.card{
+  background-color: rgb(241, 199, 136);
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+}
+.cardTitulo{
+  display: block;
+    font-family: 'Ubuntu', arial, serif;
+    font-size: 20px;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #d84206;
+    border-bottom: 1px solid #d84206;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.card img{
+    width: auto;
+    height: 150px;
+    object-fit: cover;
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  text-align: center;
+  
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 900px) {
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
+  /*Quienes fin*/
+.panaderia{
+    text-align: center;
+    
+}
+.pan{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+    
+}
