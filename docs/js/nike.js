@@ -7,7 +7,9 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         $scope.listaTodo = response.data.list;
 
-        $scope.calculate()
+        $scope.calculate();
+
+        console.log($scope.listaTodo)
     })
 
     $scope.calculate = function () {
@@ -83,6 +85,7 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.genero').html($scope.listaTodo[index].producto.sexo)
                 $('.descripcion').html($scope.listaTodo[index].producto.descripcion)
                 $('.precio').html($scope.listaTodo[index].precio + '€')
+                $('.añadirBtn').attr('value',$scope.listaTodo[index].id_productoTienda)
             }
 
         }

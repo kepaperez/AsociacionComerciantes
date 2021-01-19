@@ -2,8 +2,8 @@
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
-    $scope.data = ({id: 2 });
-       
+    $scope.data = ({ id: 2 });
+
     $http.post("controller/cAllProductos.php", $scope.data).then(function (response) {
 
         $scope.listaTodo = response.data.list;
@@ -52,7 +52,7 @@ miApp.controller('miControlador', function ($scope, $http) {
                 }
             }
         }
-        console.log($scope.listaActual);
+
         $scope.$apply();
     }
 
@@ -62,7 +62,6 @@ miApp.controller('miControlador', function ($scope, $http) {
 
             if ($scope.listaTodo[index].producto.id == id) {
                 // cuando lo encontramos rellenamos 
-                console.log($scope.listaTodo[index]);
 
                 $('.boxImg').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[index].producto.imagen + '.jpg)');
                 $('.nombre').html($scope.listaTodo[index].producto.nombre)
@@ -76,9 +75,9 @@ miApp.controller('miControlador', function ($scope, $http) {
         for (let i = 1; i < 4; i++) {
             var x = Math.floor((Math.random() * index) + 1);
             $('#TextMas' + i).html($scope.listaTodo[x].producto.nombre);
-            $('#btnMas' + i).attr('value',$scope.listaTodo[x].producto.id);
-            $('#columnMas' + i).css('background-image','url("img/footlocker/'+$scope.listaTodo[x].producto.imagen+'.jpg")');
-            
+            $('#btnMas' + i).attr('value', $scope.listaTodo[x].producto.id);
+            $('#columnMas' + i).css('background-image', 'url("img/footlocker/' + $scope.listaTodo[x].producto.imagen + '.jpg")');
+
         }
 
 
@@ -111,8 +110,6 @@ document.addEventListener('click', function (evt) {
 var sex = '';
 
 function ver(where, titulo, id) {
-
-    console.log(where);
 
     $("#btn1").removeClass("borde");
     $("#btn2").removeClass("borde");
