@@ -34,11 +34,13 @@ class productoTiendaModel extends productoTiendaClass
         $this->OpenConnect(); // konexio zabaldu - abrir conexión
 
         $id=$this->id_tienda;
+       
         $sql = "CALL spAllProductoTienda($id)"; // SQL sententzia - sentencia SQL
 
         $result = $this->link->query($sql);
       
         $list = array();
+     
         
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
 

@@ -1,8 +1,9 @@
 // ====================================ANGULAR=======================
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
-
-    $http.get("controller/cAllNike.php").then(function (response) {
+ $scope.data = ({'idTienda':1})
+ 
+    $http.get("controller/cAllProductos.php",$scope.data).then(function (response) {
 
         $scope.listaTodo = response.data.list;
 
