@@ -14,6 +14,7 @@ var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
     let id = localStorage.getItem('idTienda');
+    alert(id);
     loadProductos(id);
 
     $scope.productos=[];

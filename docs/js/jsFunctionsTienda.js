@@ -33,8 +33,9 @@ miApp.controller('miControlador', function ($scope, $http) {
                 break;
             case 'Alimentacion':
                 console.log('alimetacion');
-                id= item.id;
-                var id = $(this).attr("id");
+                //id= item.id;
+                var idTienda= item.id;
+                //var id = $(this).attr("id");
                 localStorage.setItem('idTienda', idTienda);
 
                 window.location.href = "alimentacion.html";

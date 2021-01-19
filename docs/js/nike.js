@@ -45,7 +45,7 @@ miApp.controller('miControlador', function ($scope, $http) {
         // Se encarga de recoger los datos dependiendo del genero
         // se limpia el array 
 
-        //Genera un numero random para que se ordene la seccion Variado
+        //Genera un numero randgit om para que se ordene la seccion Variado
         $scope.listaActual = [];
         $scope.random = function () {
             return 0.5 - Math.random();
