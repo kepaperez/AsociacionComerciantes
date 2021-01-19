@@ -21,8 +21,6 @@ $scope.add = function (item, $index) {
         $scope.carro[$index].cantidad = parseInt($scope.carro[$index].cantidad) + 1;
     }
 
-
-
     console.log($scope.carro);
 
 

@@ -2,6 +2,7 @@
 
 include_once ("../model/productoTiendaModel.php");
 $data=json_decode(file_get_contents("php://input"),true);
+
 $id_tienda=$data['id'];
 
 $productoTienda = new productoTiendaModel();

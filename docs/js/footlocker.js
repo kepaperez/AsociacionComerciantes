@@ -68,6 +68,7 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.genero').html($scope.listaTodo[index].producto.sexo)
                 $('.descripcion').html($scope.listaTodo[index].producto.descripcion)
                 $('.precio').html($scope.listaTodo[index].precio + '€')
+                $('.añadirBtn').attr('value',$scope.listaTodo[index].id_productoTienda)
             }
 
         }
@@ -110,6 +111,7 @@ document.addEventListener('click', function (evt) {
 var sex = '';
 
 function ver(where, titulo, id) {
+
 
     $("#btn1").removeClass("borde");
     $("#btn2").removeClass("borde");

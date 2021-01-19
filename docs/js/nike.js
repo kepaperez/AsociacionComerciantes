@@ -9,7 +9,6 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         $scope.calculate();
 
-        console.log($scope.listaTodo)
     })
 
     $scope.calculate = function () {
@@ -78,8 +77,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
             if ($scope.listaTodo[index].producto.id == id) {
                 // cuando lo encontramos rellenamos 
-                console.log($scope.listaTodo[index]);
-
+               
                 $('.boxImg').css('background-image', 'url(img/nike/' + $scope.listaTodo[index].producto.imagen + '.jpg)');
                 $('.nombre').html($scope.listaTodo[index].producto.nombre)
                 $('.genero').html($scope.listaTodo[index].producto.sexo)
