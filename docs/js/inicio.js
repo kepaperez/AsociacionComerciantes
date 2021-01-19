@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", function(event) { 
   
   irArriba();
+  var navbar = document.querySelector(".navbar");
+  var sticky = navbar.offsetTop;
+  window.onscroll = () => {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add(".sticky")
+    }else{
+      navbar.classList.remove(".sticky")
+    }
+  }
+
 });
 
 function irArriba(){

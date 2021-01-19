@@ -94,8 +94,23 @@ ul li img{
     transform-origin: center;
     transform: scaleX(1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+  
   }
   /*Navbar fin*/
+  /*Carousel*/
+  .owl-carousel{
+    /* margin-top: 20px; */
+  }
+  .owl-carousel img{
+    /* width: auto;
+    height: 600px; */
+    width: 1024px;
+    height: 768px;
+    object-fit: cover;
+    
+    
+  }
+  /*Carousel fin*/
   /*Quienes somos*/
 
   .info {
@@ -107,7 +122,7 @@ ul li img{
 }
 .card{
   background-color: rgb(241, 199, 136);
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding: 1rem;
 }
 .cardTitulo{
@@ -136,7 +151,32 @@ ul li img{
   text-align: center;
   
 }
+/*Footer*/
+.footer{
+  margin-top: 10px;
+  background-color:#976d33;
+  text-align: center;
+  
+}
+.footer .grid-item{
+background-color: #afaeab;
+color: black;
+}
+.footer .titulo{
+  color: #8afc2e;
+}
+.footer img{
+width: auto;
+height: 50px;
+margin-right: 5vh;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  
+}
 
+/*Footer fin*/
 /* Screen larger than 600px? 2 column */
 @media (min-width: 600px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
