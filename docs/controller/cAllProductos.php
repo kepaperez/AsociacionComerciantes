@@ -5,6 +5,7 @@ $data=json_decode(file_get_contents("php://input"),true);
 
 $id_tienda=$data['id'];
 
+
 $productoTienda = new productoTiendaModel();
 
 $productoTienda->setId_tienda($id_tienda);

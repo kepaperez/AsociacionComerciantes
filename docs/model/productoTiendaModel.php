@@ -35,6 +35,7 @@ class productoTiendaModel extends productoTiendaClass
 
         $id=$this->id_tienda;
        
+
         $sql = "CALL spAllProductoTienda($id)"; // SQL sententzia - sentencia SQL
 
         $result = $this->link->query($sql);
