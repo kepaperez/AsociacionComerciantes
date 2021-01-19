@@ -1,14 +1,14 @@
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
-    let idTienda = localStorage.getItem('idTienda');
-    loadProductos(idTienda);
+    let id = localStorage.getItem('idTienda');
+    loadProductos(id);
 
-
-    function loadProductos(idTienda) {
+    $scope.productos=[];
+    function loadProductos(id) {
 
         var url = "controller/cAllProductos.php";
-        var data = { 'idTienda': idTienda };
+        var data = { 'id': id };
 
         fetch(url, {
             method: 'POST', // or 'POST'
@@ -17,8 +17,10 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         })
             .then(res => res.json()).then(result => {
-                productos = result.list;
-                console.log(productos);
+                
+                $scope.productos = result.list;
+                console.log($scope.productos);
+                
 
             })
             .catch(error => console.error('Error status:', error));
