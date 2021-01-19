@@ -2,11 +2,12 @@
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
-    $http.get("controller/cAllFootlocker.php").then(function (response) {
+    $scope.data = ({id: 2 });
+       
+    $http.post("controller/cAllProductos.php", $scope.data).then(function (response) {
 
         $scope.listaTodo = response.data.list;
 
-        console.log($scope.listaTodo)
         $scope.calculate()
     })
 

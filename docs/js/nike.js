@@ -1,9 +1,9 @@
 // ====================================ANGULAR=======================
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
- $scope.data = ({'idTienda':1})
- 
-    $http.get("controller/cAllProductos.php",$scope.data).then(function (response) {
+    $scope.data = ({id: 1 });
+       
+    $http.post("controller/cAllProductos.php", $scope.data).then(function (response) {
 
         $scope.listaTodo = response.data.list;
 
@@ -48,9 +48,9 @@ miApp.controller('miControlador', function ($scope, $http) {
         $scope.listaActual = [];
         $scope.random = function () {
             return 0.5 - Math.random();
-            
+
         }
-        
+
 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
@@ -71,7 +71,7 @@ miApp.controller('miControlador', function ($scope, $http) {
     }
 
     $scope.loadProduct = function (id) {
-      
+
         // Buscamos el producto que hemos elegido por el id 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
@@ -186,7 +186,7 @@ function move(donde, action) {
 
 
     }
-  
+
 }
 
 
