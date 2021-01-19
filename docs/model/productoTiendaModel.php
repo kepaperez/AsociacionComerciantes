@@ -46,6 +46,7 @@ class productoTiendaModel extends productoTiendaClass
 
             $productotienda = new productoTiendaModel();
 
+            $productotienda->id_productoTienda = $row['id_productoTienda']; 
             $productotienda->id_producto = $row['id_producto'];
             $productotienda->stock = $row['stock'];
             $productotienda->precio = $row['precio'];
@@ -61,6 +62,7 @@ class productoTiendaModel extends productoTiendaClass
             array_push($list, get_object_vars($productotienda));
 
         }
+     
         mysqli_free_result($result);
         $this->CloseConnect();
         return $list;

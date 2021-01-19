@@ -36,7 +36,6 @@ miApp.controller('miControlador', function ($scope, $http) {
         $('.columnMas2').css('background-image', 'url(img/nike/nikeMujer.jpg)');
         $('.columnMas3').css('background-image', 'url(img/nike/NikeNino.jpg)');
     }
-
     // declara el array 
     $scope.listaActual = [];
 

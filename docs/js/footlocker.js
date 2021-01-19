@@ -15,12 +15,9 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         // CARGA DE FONDOS
 
-
         // ----Trending----
         $('#columnTrending1').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[38].producto.imagen + '.jpg)');
         $('#columnTrending2').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[32].producto.imagen + '.jpg)');
-
-
 
         // --------Mas--------
         $('.columnMas1').css('background-image', 'url(img/footlocker/footlockerHombre.jpg)');

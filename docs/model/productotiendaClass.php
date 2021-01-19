@@ -1,6 +1,7 @@
 <?php
 class productoTiendaClass
-{
+{   
+    protected $id_productoTienda;
     protected $id_producto;
     protected $stock;
     protected $precio;
@@ -10,8 +11,10 @@ class productoTiendaClass
      * @return mixed
      */
 
-
-
+    function getId_ProductoTienda()
+    {
+        return $this->id_productoTienda;
+    }
      function getId_producto()
     {
         return $this->id_producto;
@@ -28,7 +31,11 @@ class productoTiendaClass
     {
         return $this->id_tienda;
     }
- 
+
+    function setId_ProductoTienda($id_productoTienda)
+    {
+         $this->$id_productoTienda=$id_productoTienda;
+    } 
      function setId_producto($id_producto)
     {
         $this->id_producto = $id_producto;
