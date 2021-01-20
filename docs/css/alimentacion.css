@@ -40,7 +40,6 @@ ul li img{
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, #b35a08, #ebbc7f, #d39000);
     z-index: 1;
     transform: scaleX(0);
     transform-origin: left;
@@ -80,7 +79,7 @@ ul li img{
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, #16b138, #52ee15, #8ead02);
+    background: linear-gradient(to right, #b11616, #ee1515, #ad0202);
     z-index: 1;
     transform: scaleX(0);
     transform-origin: left;
