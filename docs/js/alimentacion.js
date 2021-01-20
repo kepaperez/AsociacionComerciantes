@@ -23,10 +23,17 @@ miApp.controller('miControlador', function ($scope, $http) {
         console.log($scope.productos);
     })
     if (id == 3) {
-        
+        //Fruteria
+        $("#texto1").css("display", "none")
+        $("#texto").css("display", "block")
+        $("body").css("background-color", "rgb(162, 243, 129)")
+       
         
     } else {
-        alert("Panaderia");
+        //Panaderia
+        $("#texto1").css("display", "block")
+        $("#texto").css("display", "none")
+        $("body").css("background-color", "rgb(223, 174, 100)")
        
     }
 });
