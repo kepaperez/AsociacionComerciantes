@@ -3,6 +3,10 @@ document.addEventListener('click', function (evt) {
     if (evt.target.className === 'añadirBtn') {              
         añadirCarrito(evt.target.dataset);        
     }
+    if (evt.target.className === 'verCarrito') {              
+        alert('ey');    
+        window.location.href = "carritoCompra.html";    
+    }
 }, false);
 
 var listaTodo;
@@ -13,7 +17,7 @@ var carritoCompra = [];
 // miramos si el carrito esta vacio o no para recoger sus datos 
 if (localStorage.getItem('0') != null) {
     carritoCompra = JSON.parse(localStorage.getItem('0'));
-    alert('hay algo guardado');
+    alert('Tienes algo guardado en el carrito de la compra');
 }
 
 function añadirCarrito(data) {
@@ -26,10 +30,11 @@ function añadirCarrito(data) {
     var thisImg = data.thisimg;
     var thisMarca = data.thismarca;
     var thissexo = data.thissexo;
+    var thisPrecio = data.thisprecio;
 
     found = false;
     if (carritoCompra.length == 0) {
-        carritoCompra.push({ 'idProducto': thisIdProducto, 'idTienda': thisIdTienda, 'idProductoTienda': thisId_ProductoTienda, 'nombre': thisNombre, 'img': thisImg, 'marca': thisMarca, 'sex': thissexo, 'cantidad': 1 })
+        carritoCompra.push({ 'idProducto': thisIdProducto, 'idTienda': thisIdTienda, 'idProductoTienda': thisId_ProductoTienda, 'nombre': thisNombre, 'img': thisImg, 'marca': thisMarca, 'sex': thissexo,'precio':thisPrecio, 'cantidad': 1 })
     }
     else {
         for (let i = 0; i < carritoCompra.length; i++) {
@@ -50,6 +55,5 @@ function añadirCarrito(data) {
     localStorage.removeItem(0);
 
     console.log(angular.toJson(carritoCompra));
-    alert('stop');
     localStorage.setItem(0, JSON.stringify(carritoCompra));
 }

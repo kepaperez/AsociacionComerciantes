@@ -4,6 +4,10 @@
     
 }
 /* NAVEGADOR=============================================== */
+.miniNav{
+  position: fixed ;
+  margin-top: -100px;
+}
 nav{
     background-color: white; 
     width: 100%; 
@@ -16,6 +20,7 @@ nav{
   top: 0;
   height: 75px;
   margin-left: -4%;
+  margin-top: 17px;
 }
 nav a{
     display: flex;
