@@ -23,7 +23,7 @@ miApp.controller('miControlador', function ($scope, $http) {
         console.log($scope.productos);
     })
     if (id == 3) {
-        alert("Fruteria");
+        
         
     } else {
         alert("Panaderia");
