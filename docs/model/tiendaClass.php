@@ -7,6 +7,7 @@ class tiendaClass
     public $horario;
     public $imagen;
     public $tipo;
+    public $imgBanner;
 
     /**
      * @return mixed
@@ -38,6 +39,11 @@ class tiendaClass
     {
         return $this->tipo;
     }
+    public function getImgBanner()
+    {
+        return $this->imgBanner;
+    }
+
 
 
   
@@ -65,6 +71,11 @@ class tiendaClass
     public function setTipo($tipo)
     {
         $this->tipo = $tipo;
+    }
+   
+    public function setImgBanner($imgBanner)
+    {
+        $this->imgBanner = $imgBanner;
     }
    
    
