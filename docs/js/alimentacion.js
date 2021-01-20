@@ -34,8 +34,7 @@ miApp.controller('miControlador', function ($scope, $http) {
         $(".cardTitulo").css("border-bottom", "1px solid #53d806")
         $("#direccion").css("display", "none")
         $("#direccion1").css("display", "block")
-        $(" .navbar a::before").css("background", "linear-gradient(to right,  #b35a08, #ebbc7f, #d39000)")
-        $(".login a::before").css("background", "linear-gradient(to right, #b11616, #ee1515, #ad0202)")
+        
        
         
     } else {
@@ -50,8 +49,8 @@ miApp.controller('miControlador', function ($scope, $http) {
         $(".cardTitulo").css("border-bottom", "1px solid #d84206")
         $("#direccion").css("display", "block")
         $("#direccion1").css("display", "none")
-        $(".navbar a::before").css("background", "linear-gradient(to right, #63b308, #b3eb7f, #78d300)") 
-        $(".login a::before").css("background", "linear-gradient(to right, #16b138, #52ee15, #8ead02)")
+         
+        
        
         
        
