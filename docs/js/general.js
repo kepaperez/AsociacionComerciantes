@@ -1,53 +1,31 @@
 document.addEventListener('click', function (evt) {
-    if (evt.target.className === 'añadirBtn') {
-        // angular.element(document.getElementById('miControlador')).scope().añadirCarrito(evt.target.value);
-        loadData(evt.target.id, evt.target.value)
-
+    //  event listener para el boton de añadir al carrito 
+    if (evt.target.className === 'añadirBtn') {              
+        añadirCarrito(evt.target.dataset);        
     }
 }, false);
 
 var listaTodo;
 var productos;
-function loadData(id, value) {
-    alert('OK ' + id);
-
-    var url = "controller/cAllProductos.php";
-    var data = { 'id': id };
-
-    fetch(url, {
-        method: 'POST', // or 'POST'
-        body: JSON.stringify(data), // data can be `string` or {object}!
-        headers: { 'Content-Type': 'application/json' } //input data
-    })
-        .then(res => res.json()).then(result => {
-            productos = result.list;
-
-            añadirCarrito(value);
-        })
-        .catch(error => console.error('Error status:', error));
-}
 
 var carritoCompra = [];
 
+// miramos si el carrito esta vacio o no para recoger sus datos 
 if (localStorage.getItem('0') != null) {
     carritoCompra = JSON.parse(localStorage.getItem('0'));
+    alert('hay algo guardado');
 }
 
+function añadirCarrito(data) {
 
-function añadirCarrito(value) {
+    var thisId_ProductoTienda = data.thisid_productotienda;
+    var thisIdProducto = data.thisidproducto;
+    var thisIdTienda = data.thisidtienda;
 
-    for (let x = 0; x < productos.length; x++) {
-        if (productos[x].id_productoTienda == value) {
-            var thisId_ProductoTienda = productos[x].id_productoTienda;
-            var thisIdProducto = productos[x].id_producto;
-            var thisIdTienda = productos[x].id_tienda;
-
-            var thisNombre = productos[x].producto.nombre;
-            var thisImg = productos[x].producto.imagen;
-            var thisMarca = productos[x].producto.marca;
-            var thissexo = productos[x].producto.sexo;
-        }
-    }
+    var thisNombre = data.thisnombre;
+    var thisImg = data.thisimg;
+    var thisMarca = data.thismarca;
+    var thissexo = data.thissexo;
 
     found = false;
     if (carritoCompra.length == 0) {
@@ -67,6 +45,11 @@ function añadirCarrito(value) {
             carritoCompra.push({ 'idProducto': thisIdProducto, 'idTienda': thisIdTienda, 'idProductoTienda': thisId_ProductoTienda, 'nombre': thisNombre, 'img': thisImg, 'marca': thisMarca, 'sex': thissexo, 'cantidad': 1 })
         }
     }
+
     localStorage.clear();
+    localStorage.removeItem(0);
+
+    console.log(angular.toJson(carritoCompra));
+    alert('stop');
     localStorage.setItem(0, JSON.stringify(carritoCompra));
 }
