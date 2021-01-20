@@ -28,46 +28,28 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="#about">About</a></li>
     </ul>
-
-
     <main role="main">
         <section class="container">
-            <!-- <div class="card">
-                <img src="img/imgInicio/dendariak.jpg" alt="Avatar">
-                <div class="container">
-                    <h4><b>John Doe</b></h4>
-                    <p>Architect & Engineer</p>
+
+            <section class="jumbotron text-center">
+                <div class="container banner ">
+    
                 </div>
-            </div> -->
+            </section>
+    
             <div class="cards">
-                <!-- <div class="card"  id="{{item.id}}" ng-repeat="item in productos ">
-                    <img class="card-img-top" data-src="{{item.droducto.imagen}}"src="{{item.droducto.imagen}}"
-                    data-holder-rendered="true">
-                    <div class="info">
-                        <div class="container">
-                            <h4><b>Nombre</b></h4> 
-                            <p>Precio</p> 
-                            <button class="comprarBoton" value="19">Comprar</button>
-                          </div>
-                    </div>
-                </div> -->
-
-
                 <div id="{{item.producto.id}}" class="grid__item" ng-repeat="item in productos  ">
                     <div class="card"><img class="card__img" src="{{item.producto.imagen}}">
-
                         <div class="card_content2">
                             <b>
                                 <h3 class="card_header">{{item.producto.nombre}}</h3>
                             </b>
-                            <b>
+                            <div class="precio">
                                 <p class="card_text">{{item.precio}}€</p>
-                            </b>
+                            </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
     </main>
 
