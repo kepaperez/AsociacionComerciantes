@@ -1,0 +1,55 @@
+document.addEventListener('click', function (evt) {
+    //  event listener para el boton de añadir al carrito 
+    if (evt.target.className === 'añadirBtn') {              
+        añadirCarrito(evt.target.dataset);        
+    }
+}, false);
+
+var listaTodo;
+var productos;
+
+var carritoCompra = [];
+
+// miramos si el carrito esta vacio o no para recoger sus datos 
+if (localStorage.getItem('0') != null) {
+    carritoCompra = JSON.parse(localStorage.getItem('0'));
+    alert('hay algo guardado');
+}
+
+function añadirCarrito(data) {
+
+    var thisId_ProductoTienda = data.thisid_productotienda;
+    var thisIdProducto = data.thisidproducto;
+    var thisIdTienda = data.thisidtienda;
+
+    var thisNombre = data.thisnombre;
+    var thisImg = data.thisimg;
+    var thisMarca = data.thismarca;
+    var thissexo = data.thissexo;
+
+    found = false;
+    if (carritoCompra.length == 0) {
+        carritoCompra.push({ 'idProducto': thisIdProducto, 'idTienda': thisIdTienda, 'idProductoTienda': thisId_ProductoTienda, 'nombre': thisNombre, 'img': thisImg, 'marca': thisMarca, 'sex': thissexo, 'cantidad': 1 })
+    }
+    else {
+        for (let i = 0; i < carritoCompra.length; i++) {
+            //no esta vacio
+            if (carritoCompra[i].idProductoTienda == thisId_ProductoTienda) {
+                //el produto esta y se suma +1
+                carritoCompra[i].cantidad++;
+                found = true;
+            }
+        }
+        if (!found) {
+            //el producto no esta y se sube
+            carritoCompra.push({ 'idProducto': thisIdProducto, 'idTienda': thisIdTienda, 'idProductoTienda': thisId_ProductoTienda, 'nombre': thisNombre, 'img': thisImg, 'marca': thisMarca, 'sex': thissexo, 'cantidad': 1 })
+        }
+    }
+
+    localStorage.clear();
+    localStorage.removeItem(0);
+
+    console.log(angular.toJson(carritoCompra));
+    alert('stop');
+    localStorage.setItem(0, JSON.stringify(carritoCompra));
+}
