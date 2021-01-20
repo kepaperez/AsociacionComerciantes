@@ -51,9 +51,21 @@
                           </div>
                     </div>
                 </div> -->
-                
-                <div class="card" id="{{item.id_Producto}}" ng-repeat="item in productos">
-                   
+
+
+                <div id="{{item.producto.id}}" class="grid__item" ng-repeat="item in productos  ">
+                    <div class="card"><img class="card__img" src="{{item.producto.imagen}}">
+
+                        <div class="card_content2">
+                            <b>
+                                <h3 class="card_header">{{item.producto.nombre}}</h3>
+                            </b>
+                            <b>
+                                <p class="card_text">{{item.precio}}€</p>
+                            </b>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
