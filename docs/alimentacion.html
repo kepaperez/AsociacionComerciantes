@@ -40,14 +40,14 @@
             <img src="img/panaderia/panaderia5.jpg" alt="">
         </div>
     </div>
-    <div class="w3-container panaderia" ng-repeat="item in productos">
-        <div class="w3-border w3-hover-shadow pan" style="width:20%">
-            <img src="img/panaderia/pan.jpg" style="width:100%">
+    <div class="w3-container panaderia" >
+        <div class="w3-border w3-hover-shadow pan" ng-repeat="item in productos" style="width:20%">
+            <img src="{{item.producto.imagen}}" style="width:100%">
             <div class="w3-container w3-center">
-                <p>{{item.nombre}} | {{item.tipo}}</p>
+                <p>{{item.producto.nombre}} | {{item.precio}} €</p>
             </div>
         </div>   
-          
+         
     </div>
 
     <div class="info">

@@ -97,6 +97,13 @@ ul li img{
   
   }
   /*Navbar fin*/
+  /*Panes*/
+  .panaderia img{
+    width: auto;
+    height: 250px;
+    object-fit: cover;
+  }
+  /*Panes fin*/
   /*Carousel*/
   .owl-carousel{
     /* margin-top: 20px; */
@@ -179,14 +186,20 @@ margin-right: 5vh;
 /*Footer fin*/
 /* Screen larger than 600px? 2 column */
 @media (min-width: 600px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
+  .cards {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+  
 }
 
 /* Screen larger than 900px? 3 columns */
 @media (min-width: 900px) {
-  .cards { grid-template-columns: repeat(3, 1fr); }
+  .cards { 
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
 }
-  /*Quienes fin*/
+  /*Panes fin*/
 .panaderia{
     text-align: center;
     

@@ -31,7 +31,7 @@ class productoModel extends productoClass
         $this->OpenConnect(); // konexio zabaldu - abrir conexión
 
         $id=$this->id;
-
+        
         $sql = "CALL spProductId('$id')"; // SQL sententzia - sentencia SQL
 
         $result = $this->link->query($sql);
