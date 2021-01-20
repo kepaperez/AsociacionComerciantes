@@ -22,7 +22,7 @@
 
 <body ng-controller="miControlador">
     <ul class="navbar">
-        <li><img src="img/imgInicio/dendariak.jpg"></li>
+        <li ng-repeat="item in tiendaInfo"><img src="{{item.imagen}}"></li>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="asociaciones.html">Asociaciones</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -30,10 +30,8 @@
     </ul>
     <main role="main">
         <section class="container">
-            <section class="jumbotron text-center"   ng-repeat="item in tiendaInfo " >
-                <div class="container banner ">
-                    <img class="card__img" src="{{item.producto.imagen}}">
-                </div>
+            <section class="jumbotron text-center" ng-repeat="item in tiendaInfo" style="background-image: url('{{item.imgBanner}}');">
+
             </section>
             <div class="cards">
                 <div id="{{item.producto.id}}" class="grid__item" ng-repeat="item in productos  ">
