@@ -71,11 +71,6 @@ miApp.controller('miControlador', function ($scope, $http) {
     }
 
     $scope.loadProduct = function (id) {
-<<<<<<< HEAD
-        console.log($scope.listaTodo);
-=======
-
->>>>>>> bd391190d9f00827164c8ff504d09418877e8983
         // Buscamos el producto que hemos elegido por el id 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 

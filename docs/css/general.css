@@ -2,4 +2,5 @@
     height: 22px;
     background-color: gainsboro;
     width: 100%;
+    z-index: 1000;
 }
