@@ -16,7 +16,7 @@
     <div class="grid-container menu">
         <div class="grid-item">
             <ul class="navbar">
-                <li><img src="img/panaderia/logo.jpg"></li>
+                <li ng-repeat="item in tiendaInfo"><img src="{{item.imagen}}"></li>
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href="asociaciones.html">ASOCIACIONES</a></li>
                 <li><a href="#contact">CONTACT</a></li>
@@ -96,9 +96,9 @@
                 aria-hidden="true"></i></a>
             <a href="https://www.pinterest.es/dendariak/"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
           </div>
-          <div class="grid-item direccion">
-            <p id="direccion">Dirección: Panadería Geraleku, Calle San Pedro, Amorebieta-Echano</p>
-            <p id="direccion1">Gudari Kalea, 48340 Amorebieta-Etxano, Bizkaia</p>
+          <div class="grid-item">
+            <p ng-repeat="item in tiendaInfo">Dirección: {{item.direccion}}</p>
+            
           </div>
           <div class="grid-item comentarios">
             <label>
