@@ -57,14 +57,15 @@ miApp.controller('miControlador', function ($scope, $http) {
     }
 
     $scope.loadProduct = function (id) {
-
-
         let index = 0;
         for (index; index < $scope.listaTodo.length; index++) {
 
+            
+
             if ($scope.listaTodo[index].producto.id == id) {
                 // cuando lo encontramos rellenamos 
-
+                console.log($scope.listaTodo[index]);
+                
                 $('.boxImg').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[index].producto.imagen + '.jpg)');
                 $('.nombre').html($scope.listaTodo[index].producto.nombre)
                 $('.genero').html($scope.listaTodo[index].producto.sexo)
@@ -79,6 +80,8 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.añadirBtn').attr('data-thisMarca',$scope.listaTodo[index].producto.marca)
                 $('.añadirBtn').attr('data-thissexo',$scope.listaTodo[index].producto.sexo)
                 $('.añadirBtn').attr('data-thisPrecio',$scope.listaTodo[index].precio)
+                
+                $('.añadirBtn').attr('data-thisTienda','Footlocker');
             }
 
         }

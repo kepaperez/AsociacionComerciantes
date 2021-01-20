@@ -1,11 +1,11 @@
 document.addEventListener('click', function (evt) {
     //  event listener para el boton de añadir al carrito 
-    if (evt.target.className === 'añadirBtn') {              
-        añadirCarrito(evt.target.dataset);        
+    if (evt.target.className === 'añadirBtn') {
+        añadirCarrito(evt.target.dataset);
     }
-    if (evt.target.className === 'verCarrito') {              
-        alert('ey');    
-        window.location.href = "carritoCompra.html";    
+    if (evt.target.className === 'verCarrito') {
+        alert('ey');
+        window.location.href = "carritoCompra.html";
     }
 }, false);
 
@@ -17,6 +17,7 @@ var carritoCompra = [];
 // miramos si el carrito esta vacio o no para recoger sus datos 
 if (localStorage.getItem('0') != null) {
     carritoCompra = JSON.parse(localStorage.getItem('0'));
+
     alert('Tienes algo guardado en el carrito de la compra');
 }
 
@@ -31,10 +32,24 @@ function añadirCarrito(data) {
     var thisMarca = data.thismarca;
     var thissexo = data.thissexo;
     var thisPrecio = data.thisprecio;
+    var thisTienda = data.thistienda;
+
+    
 
     found = false;
     if (carritoCompra.length == 0) {
-        carritoCompra.push({ 'idProducto': thisIdProducto, 'idTienda': thisIdTienda, 'idProductoTienda': thisId_ProductoTienda, 'nombre': thisNombre, 'img': thisImg, 'marca': thisMarca, 'sex': thissexo,'precio':thisPrecio, 'cantidad': 1 })
+        carritoCompra.push({
+            "idProducto": thisIdProducto,
+            "idTienda": thisIdTienda,
+            "idProductoTienda": thisId_ProductoTienda,
+            "nombre": thisNombre,
+            "img": thisImg,
+            "marca": thisMarca,
+            "sex": thissexo,
+            "precio":thisPrecio,
+            'tienda':thisTienda,
+            "cantidad": 1
+        })
     }
     else {
         for (let i = 0; i < carritoCompra.length; i++) {
@@ -47,13 +62,24 @@ function añadirCarrito(data) {
         }
         if (!found) {
             //el producto no esta y se sube
-            carritoCompra.push({ 'idProducto': thisIdProducto, 'idTienda': thisIdTienda, 'idProductoTienda': thisId_ProductoTienda, 'nombre': thisNombre, 'img': thisImg, 'marca': thisMarca, 'sex': thissexo, 'cantidad': 1 })
+            carritoCompra.push({
+                "idProducto": thisIdProducto,
+                "idTienda": thisIdTienda,
+                "idProductoTienda": thisId_ProductoTienda,
+                "nombre": thisNombre,
+                "img": thisImg,
+                "marca": thisMarca,
+                "sex": thissexo,
+                "precio":thisPrecio,
+                'tienda':thisTienda,
+                "cantidad": 1
+            })
         }
     }
 
     localStorage.clear();
     localStorage.removeItem(0);
 
-    console.log(angular.toJson(carritoCompra));
-    localStorage.setItem(0, JSON.stringify(carritoCompra));
+    localStorage.setItem(0,angular.toJson(carritoCompra));
+    console.log(JSON.stringify(carritoCompra));
 }
