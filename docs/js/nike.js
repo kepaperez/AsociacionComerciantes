@@ -71,7 +71,7 @@ miApp.controller('miControlador', function ($scope, $http) {
     }
 
     $scope.loadProduct = function (id) {
-       
+        console.log($scope.listaTodo);
         // Buscamos el producto que hemos elegido por el id 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
@@ -92,6 +92,7 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.añadirBtn').attr('data-thisImg',$scope.listaTodo[index].producto.imagen)
                 $('.añadirBtn').attr('data-thisMarca',$scope.listaTodo[index].producto.marca)
                 $('.añadirBtn').attr('data-thissexo',$scope.listaTodo[index].producto.sexo)
+                $('.añadirBtn').attr('data-thisPrecio',$scope.listaTodo[index].precio)
 
             }
 

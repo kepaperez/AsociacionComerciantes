@@ -1,0 +1,64 @@
+  /* ========================================================= */
+
+/* CARRITO DE LA COMPRA */
+
+.grande{
+    width: 500px;   
+}
+.pequeno{
+    width: 200px;
+}
+
+.rowCarrito{
+    content: ''; 
+    display: table; 
+    clear: both;
+
+}
+.columnCarrito1{
+    float: left; 
+    width: 20%; 
+}
+.columnCarrito2{
+    float: left;
+     width: 80%;
+}
+
+.columnCarritoButtons{
+
+    float: left;
+     width: 33.33%;
+}
+  .demo {
+   
+    padding: 5px;
+}
+
+.demo th {
+   
+    padding: 5px;
+    background: #F0F0F0;
+}
+
+.demo td {
+    
+    padding: 5px;
+}
+
+.columnCarrito {
+    float: left;
+    width: 33.33%;
+    font-size: 150%;
+  }
+  
+  .rowCarrito:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #listaCarrito td{
+
+    margin-top: 15px;
+    margin-bottom:15px ;
+  }

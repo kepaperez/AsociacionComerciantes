@@ -1,0 +1,102 @@
+<html lang="en" ng-app="miApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/carritoCompra.js"></script>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/carritoCompra.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+<body ng-controller="miControlador">
+
+    <div class="carrito" ng-show="carritoDiv">
+        <center>
+            <div class="miniContainerCarrito">
+                <br>
+                <p><b>TU CARRITO</b></p>
+
+                <table class="demo">
+
+                    <thead>
+                        <tr>
+                            <th class="grande">Producto</th>
+                            <th class="pequeno">Precio</th>
+                            <th class="pequeno">Cantidad</th>
+                            <th class="pequeno">Total</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaCarrito">
+
+                        <tr ng-repeat="itom in carritoCompra">
+
+                            <td class="grande rowCarrito">
+
+                                <div class="columnCarrito1">
+                                    <img style=" height: 80px;" ng-src="../angular_bombonesv2/img/{{itom.foto}}.png"
+                                        alt="">
+                                </div>
+
+                                <div class="columnCarrito2">
+                                    {{itom.nombre}}
+                                    <br><br>
+                                    <button type="button" ng-click="vaciarBombon($index)" class="btn btn-dark">Quitar
+                                        del carrito</button>
+                                </div>
+                            </td>
+
+                            <td class="pequeno">{{itom.precio}} €</td>
+                            <td class="pequeno"><input type="number" min="1" max="{{itom.stock}}"
+                                    ng-change="calcularTotal()" ng-model="itom.seleccionado">
+                            </td>
+
+                            <td class="pequeno" ng-model="precioLinea">{{itom.precio*itom.seleccionado}}€</td>
+
+                        </tr>
+
+                    </tbody>
+
+                    <thead>
+                        <tr>
+                            <th class="grande"></th>
+                            <th class="pequeno"></th>
+                            <th class="pequeno">Total a Pagar: </th>
+                            <th class="pequeno">{{precioFinal}} €</th>
+                        </tr>
+                </table>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="pequeno"></th>
+                            <th class="pequeno"></th>
+                            <th class="pequeno"></th>
+                            <th class="grande" class="rowCarrito">
+
+                                <div class="columnCarritoButtons">
+                                    <button class="btn btn-dark" ng-click="list()">Seguir
+                                        Comprando</button>
+                                </div>
+                                <div class="columnCarrito">
+                                    <button class="btn btn-dark" ng-click="vaciarCarrito()">Vaciar Carrito</button>
+                                </div>
+                                <div class="columnCarrito">
+                                    <button class="btn btn-dark" ng-click="comprarCarrito()">COMPRAR</button>
+                                </div>
+
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+                <hr>
+
+            </div>
+        </center>
+
+    </div>
+</body>
+
+</html>
