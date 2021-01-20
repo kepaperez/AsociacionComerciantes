@@ -13,10 +13,10 @@
 </head>
 <body ng-controller="miControlador">
 
-    <div class="grid-container menu">
+    <!-- <div class="grid-container menu"> -->
         <div class="grid-item">
-            <ul class="navbar">
-                <li><img src="img/panaderia/logo.jpg"></li>
+            <ul class="navbar" ng-repeat="item in tienda">
+                <li><img src="{{item.imgBanner}}"></li>
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href="asociaciones.html">ASOCIACIONES</a></li>
                 <li><a href="#contact">CONTACT</a></li>
