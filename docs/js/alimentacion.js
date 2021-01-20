@@ -26,8 +26,8 @@ miApp.controller('miControlador', function ($scope, $http) {
         //Fruteria
         $("#texto1").css("display", "none")
         $("#texto").css("display", "block")
-        $("body").css("background-color", "rgb(162, 243, 129)")
-        $(".menu").css("background-color", " rgb(204, 250, 162)")
+        $("body").css("background-color", " rgb(204, 250, 162)")
+        $(".menu").css("background-color", "rgb(162, 243, 129)")
         $(".info").css("background-color", "#8d9733")
         $(".card").css("background-color", "rgb(209, 241, 136)")
         $(".cardTitulo").css("color", "#8fd806")
