@@ -27,6 +27,10 @@ miApp.controller('miControlador', function ($scope, $http) {
         $("#texto1").css("display", "none")
         $("#texto").css("display", "block")
         $("body").css("background-color", "rgb(162, 243, 129)")
+        $(".menu").css("background-color", "rgb(241, 250, 162)")
+        $(".info").css("background-color", "#8d9733")
+        
+        
        
         
     } else {
@@ -34,6 +38,9 @@ miApp.controller('miControlador', function ($scope, $http) {
         $("#texto1").css("display", "block")
         $("#texto").css("display", "none")
         $("body").css("background-color", "rgb(223, 174, 100)")
+        $(".menu").css("background-color", "rgb(250, 219, 162)")
+        $(".info").css("background-color", "#976d33")
+       
        
     }
 });

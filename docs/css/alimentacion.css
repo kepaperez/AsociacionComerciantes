@@ -1,5 +1,4 @@
 body{
-    
     margin: 0;
 }
 /*Navbar*/
@@ -10,7 +9,7 @@ body{
     
 }
 .menu{
-    background-color: rgb(250, 219, 162);
+    
     padding: 1px;
 }
 
@@ -124,7 +123,6 @@ ul li img{
     text-align: center;
     width: 60%;
     margin: 80px auto;
-    background-color: #976d33;
     padding: 30px;
 }
 .card{
