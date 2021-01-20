@@ -1,7 +1,7 @@
 // ====================================ANGULAR=======================
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
-    
+
     $scope.data = ({ id: 2 });
 
     $http.post("controller/cAllProductos.php", $scope.data).then(function (response) {
@@ -58,7 +58,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
     $scope.loadProduct = function (id) {
 
-        
+
         let index = 0;
         for (index; index < $scope.listaTodo.length; index++) {
 
@@ -70,7 +70,7 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.genero').html($scope.listaTodo[index].producto.sexo)
                 $('.descripcion').html($scope.listaTodo[index].producto.descripcion)
                 $('.precio').html($scope.listaTodo[index].precio + '€')
-                
+
                 $('.añadirBtn').attr('data-thisId_ProductoTienda',$scope.listaTodo[index].id_productoTienda)
                 $('.añadirBtn').attr('data-thisIdProducto',$scope.listaTodo[index].id_producto)
                 $('.añadirBtn').attr('data-thisIdTienda',$scope.listaTodo[index].id_tienda)

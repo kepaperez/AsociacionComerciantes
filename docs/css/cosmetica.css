@@ -72,7 +72,13 @@ a:hover {
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+.jumbotron{  
+  background-image: url("https://fichas-gr.s3.amazonaws.com/media/thumbnails/filer_public/a6/b6/a6b692b5-c724-45f6-920a-cf02419f4c40/etxano1_w_1906x600_q75_middle.jpg");
+  height: 30vh;
+  border-radius: 0;
+  width: 100%;
 
+}
 img {
   border-radius: 5px 5px 0 0;
 }
@@ -84,10 +90,10 @@ img {
 .card {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
-  /*padding: 1rem;*/
-  height: 26rem;
+  padding: 1rem;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
+  height:28rem;
 
 }
 
@@ -106,13 +112,22 @@ img {
   width: 20vh;
   position: absolute;
 }
+.card_header , .card_text {
+  padding-left: 3vh;
+}
+.card_text {
+padding-bottom: 3vh;
+}
+.precio{
+  display: flex;
 
+}
 
 .cards {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 }
 
 /* Screen larger than 600px? 2 column */

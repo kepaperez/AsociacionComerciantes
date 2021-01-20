@@ -15,11 +15,11 @@ miApp.controller('miControlador', function ($scope, $http) {
 
     let id = localStorage.getItem('idTienda');
     $scope.data = ({id: id});
-       
+
     $http.post("controller/cAllProductos.php", $scope.data).then(function (response) {
 
         $scope.productos = response.data.list;
-       
+
         console.log($scope.productos);
 })
 });

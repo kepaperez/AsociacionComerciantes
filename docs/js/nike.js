@@ -1,9 +1,9 @@
 // ====================================ANGULAR=======================
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
-    
+
     $scope.data = ({id: 1 });
-       
+
     $http.post("controller/cAllProductos.php", $scope.data).then(function (response) {
 
         $scope.listaTodo = response.data.list;
@@ -71,14 +71,18 @@ miApp.controller('miControlador', function ($scope, $http) {
     }
 
     $scope.loadProduct = function (id) {
+<<<<<<< HEAD
         console.log($scope.listaTodo);
+=======
+
+>>>>>>> bd391190d9f00827164c8ff504d09418877e8983
         // Buscamos el producto que hemos elegido por el id 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
-           
+
             if ($scope.listaTodo[index].producto.id == id) {
                 // cuando lo encontramos rellenamos 
-               
+
                 $('.boxImg').css('background-image', 'url(img/nike/' + $scope.listaTodo[index].producto.imagen + '.jpg)');
                 $('.nombre').html($scope.listaTodo[index].producto.nombre)
                 $('.genero').html($scope.listaTodo[index].producto.sexo)
@@ -199,12 +203,3 @@ function move(donde, action) {
     }
 
 }
-
-
-
-
-
-
-
-
-
