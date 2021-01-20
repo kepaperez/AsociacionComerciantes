@@ -87,7 +87,7 @@
     <footer>
         <div class="grid-container footer">
           <div class="grid-item">
-            <img src="img/panaderia/logo.jpg" />
+            <img ng-repeat="item in tiendaInfo" src="{{item.imagen}}"/>
             <p>Teléfono: 946 08 84 92</p>
             <p>Provincia: Vizcaya</p>
             <a href="https://www.facebook.com/dendariak"><i class="fa fa-facebook" aria-hidden="true"></i></a>
