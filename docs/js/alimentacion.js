@@ -32,8 +32,8 @@ miApp.controller('miControlador', function ($scope, $http) {
         $(".card").css("background-color", "rgb(209, 241, 136)")
         $(".cardTitulo").css("color", "#65d806")
         $(".cardTitulo").css("border-bottom", "1px solid #53d806")
-        $("#direccion1").css("display", "none")
-        $("#direccion").css("display", "block")
+        $("#direccion").css("display", "none")
+        $("#direccion1").css("display", "block")
         
        
         
@@ -47,8 +47,8 @@ miApp.controller('miControlador', function ($scope, $http) {
         $(".card").css("background-color", "rgb(241, 199, 136)")
         $(".cardTitulo").css("color", "#d84206")
         $(".cardTitulo").css("border-bottom", "1px solid #d84206")
-        $("#direccion1").css("display", "block")
-        $("#direccion").css("display", "none")
+        $("#direccion").css("display", "block")
+        $("#direccion1").css("display", "none")
         
        
     }
