@@ -13,6 +13,7 @@ miApp.controller('miControlador', function ($scope, $http) {
       
 
     })
+    $scope.data = ({id: id});
     $http.post("controller/cTiendaInfo.php", $scope.data).then(function (response) {
 
         $scope.tiendaInfo = response.data.list;

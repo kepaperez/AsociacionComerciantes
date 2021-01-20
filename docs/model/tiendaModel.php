@@ -61,10 +61,9 @@ class tiendaModel extends tiendaClass
     {
         $this->OpenConnect(); // konexio zabaldu - abrir conexión
 
-        $id=$this->id_tienda;
-        
-
-        $sql = "CALL spAllProductoTienda($id)"; // SQL sententzia - sentencia SQL
+        $id=$this->id;
+ 
+        $sql = "CALL spTiendaById($id)"; // SQL sententzia - sentencia SQL
 
         $result = $this->link->query($sql);
       
@@ -74,20 +73,28 @@ class tiendaModel extends tiendaClass
         if ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
 
             $tienda = new tiendaModel();
-            $tienda->id = $row['id']; 
-            $productotienda->id_productoTienda = $row['id_productoTienda']; 
-         
-                  
-            $product = new productoModel();
 
+            $tienda->id = $row['id'];
+            $tienda->nombre = $row['nombre'];
+            $tienda->direccion = $row['direccion'];
+            $tienda->horario = $row['horario'];
+            $tienda->imagen = $row['imagen'];
+            $tienda->tipo = $row['tipo'];
+            $tienda->imgBanner = $row['imgBanner'];
             
-            array_push($list, get_object_vars($tienda));
 
+           
+            array_push($list, get_object_vars($tienda));
         }
      
         mysqli_free_result($result);
         $this->CloseConnect();
         return $list;
     }
+    function ObjVars()
+    {
+        return get_object_vars($this);
+    }
+    
 }
 ?>

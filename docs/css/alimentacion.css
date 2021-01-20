@@ -1,5 +1,4 @@
 body{
-    background-color: rgb(223, 174, 100);
     margin: 0;
 }
 /*Navbar*/
@@ -10,7 +9,7 @@ body{
     
 }
 .menu{
-    background-color: rgb(250, 219, 162);
+  
     padding: 1px;
 }
 
@@ -41,7 +40,7 @@ ul li img{
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, #b35a08, #ebbc7f, #d39000);
+    background: linear-gradient(to right, #63b308, #b3eb7f, #78d300);
     z-index: 1;
     transform: scaleX(0);
     transform-origin: left;
@@ -81,7 +80,7 @@ ul li img{
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, #16b138, #52ee15, #8ead02);
+    background: linear-gradient(to right, #b11616, #ee1515, #ad0202);
     z-index: 1;
     transform: scaleX(0);
     transform-origin: left;
@@ -124,11 +123,10 @@ ul li img{
     text-align: center;
     width: 60%;
     margin: 80px auto;
-    background-color: #976d33;
     padding: 30px;
 }
 .card{
-  background-color: rgb(241, 199, 136);
+ 
   color: rgb(0, 0, 0);
   padding: 1rem;
 }
@@ -139,8 +137,6 @@ ul li img{
     line-height: 1.4em;
     margin-bottom: 10px;
     text-decoration: none;
-    color: #d84206;
-    border-bottom: 1px solid #d84206;
     padding-bottom: 10px;
     text-align: left;
 }
@@ -161,7 +157,6 @@ ul li img{
 /*Footer*/
 .footer{
   margin-top: 10px;
-  background-color:#976d33;
   text-align: center;
   
 }
@@ -169,9 +164,7 @@ ul li img{
 background-color: #afaeab;
 color: black;
 }
-.footer .titulo{
-  color: #8afc2e;
-}
+
 .footer img{
 width: auto;
 height: 50px;

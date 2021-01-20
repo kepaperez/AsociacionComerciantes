@@ -30,13 +30,11 @@
     </ul>
     <main role="main">
         <section class="container">
-
-            <section class="jumbotron text-center">
+            <section class="jumbotron text-center"   ng-repeat="item in tiendaInfo " >
                 <div class="container banner ">
-    
+                    <img class="card__img" src="{{item.producto.imagen}}">
                 </div>
             </section>
-    
             <div class="cards">
                 <div id="{{item.producto.id}}" class="grid__item" ng-repeat="item in productos  ">
                     <div class="card"><img class="card__img" src="{{item.producto.imagen}}">
