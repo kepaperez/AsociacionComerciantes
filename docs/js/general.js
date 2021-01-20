@@ -33,8 +33,9 @@ function añadirCarrito(data) {
     var thissexo = data.thissexo;
     var thisPrecio = data.thisprecio;
     var thisTienda = data.thistienda;
+    var thisStock = data.thisstock;
 
-    
+
 
     found = false;
     if (carritoCompra.length == 0) {
@@ -48,6 +49,7 @@ function añadirCarrito(data) {
             "sex": thissexo,
             "precio":thisPrecio,
             'tienda':thisTienda,
+            "stock":thisStock,
             "cantidad": 1
         })
     }
@@ -72,6 +74,7 @@ function añadirCarrito(data) {
                 "sex": thissexo,
                 "precio":thisPrecio,
                 'tienda':thisTienda,
+                "stock":thisStock,
                 "cantidad": 1
             })
         }

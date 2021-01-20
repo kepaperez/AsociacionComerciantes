@@ -54,7 +54,7 @@
                             </td>
                             <td class="pequeno">{{itom.tienda}}</td>
                             <td class="pequeno">{{itom.precio}} €</td>
-                            <td class="pequeno"><input type="number" min="1" ng-change="calcularTotal()"
+                            <td class="pequeno"><input type="number" min="1" max="{{itom.stock}}" ng-change="calcularTotal()"
                                     ng-model="itom.cantidad">
                             </td>
 

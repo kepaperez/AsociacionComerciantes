@@ -92,7 +92,8 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.añadirBtn').attr('data-thisMarca',$scope.listaTodo[index].producto.marca)
                 $('.añadirBtn').attr('data-thissexo',$scope.listaTodo[index].producto.sexo)
                 $('.añadirBtn').attr('data-thisPrecio',$scope.listaTodo[index].precio)
-                
+                $('.añadirBtn').attr('data-thisStock',$scope.listaTodo[index].stock)
+
                 $('.añadirBtn').attr('data-thisTienda','Nike');
 
             }
