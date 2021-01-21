@@ -39,8 +39,13 @@
     width: 100px;
 }
 
-input[type=text]{
+input[type=text], input[type=password]{
 
     border: 2px solid black;
     margin-right: 20px;
+}
+
+.registrar{
+
+    display: none;
 }
