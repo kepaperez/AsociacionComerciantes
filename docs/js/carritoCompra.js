@@ -23,12 +23,14 @@ miApp.controller('miControlador', function ($scope) {
 
         console.log($scope.precioFinal);
     }
-    
+
     $scope.vaciarCarrito = function () {
         // VACIA EL CARRITO AL COMPLETO
         alert("El carrito se va ha vaciar");
 
         $scope.carritoCompra = "";
+
+        $scope.UpdateCarritoLocal();
 
         location.reload();
     }
@@ -38,5 +40,15 @@ miApp.controller('miControlador', function ($scope) {
         $scope.carritoCompra.splice(index, 1);
 
         $scope.calcularTotal();
+        $scope.UpdateCarritoLocal();
+    }
+
+    $scope.UpdateCarritoLocal = function () {
+
+        localStorage.clear();
+        localStorage.removeItem(0);
+
+        localStorage.setItem(0, angular.toJson($scope.carritoCompra));
+        console.log(JSON.stringify( $scope.carritoCompra));
     }
 })
