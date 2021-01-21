@@ -115,6 +115,20 @@ ul li img{
     
 }
   /*Panes fin*/
+  /*Boton comprar*/
+  .compraBoton{
+    font-size: 2vh;
+    bottom: 5%;
+    left: 50%;
+    border-radius: 15vh;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 1.5vh;
+    width: 20vh;
+   
+  }
+  /*Boton comprar fin*/
   /*Carousel*/
  
   .owl-carousel img{
@@ -163,6 +177,7 @@ ul li img{
   grid-gap: 1rem;
   text-align: center;
 }
+
 /*Footer*/
 .footer{
   margin-top: 10px;

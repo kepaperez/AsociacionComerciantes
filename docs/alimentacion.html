@@ -60,7 +60,15 @@
         <div class="card w3-hover-shadow pan" id="{{item.producto.id}}" ng-repeat="item in productos" style="width:100%">
             <img src="img/todo/{{item.producto.imagen}}.jpg" style="width:100%">
             <p class="cardTitulo">{{item.producto.nombre}} | {{item.precio}} €</p>
-
+            <button id="{{item.id_tienda}}" class="añadirBtn compraBoton"
+            data-thisid_productotienda="{{item.id_productoTienda}}"
+            data-thisidproducto="{{item.id_producto}" data-thisidtienda="{{item.id_tienda}}"
+            data-thisnombre="{{item.producto.nombre}}" data-thisimg="{{item.producto.imagen}}"
+            data-thismarca="{{item.producto.marca}}" data-thissexo=" "
+            data-thisprecio="{{item.precio}}" data-thisstock="{{item.stock}}"
+            data-thistienda="{{item.shop.id_tienda}}">
+            Comprar
+        </button>
         </div>
 
     </div>
@@ -105,7 +113,7 @@
     <footer>
         <div class="grid-container footer">
             <div class="grid-item">
-                <img ng-repeat="item in tiendaInfo" src="{{item.imagen}}" />
+                <img src="{{productos[0].shop.imagen}}" />
                 <p>Teléfono: 946 08 84 92</p>
                 <p>Provincia: Vizcaya</p>
                 <a href="https://www.facebook.com/dendariak"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -115,7 +123,8 @@
                 <a href="https://www.pinterest.es/dendariak/"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
             </div>
             <div class="grid-item">
-                <p ng-repeat="item in tiendaInfo">Dirección: {{item.direccion}}</p>
+                <p>Dirección: {{productos[0].shop.direccion}}</p>
+                <p>Horario: {{productos[0].shop.horario}}</p>
 
             </div>
             <div class="grid-item comentarios">
