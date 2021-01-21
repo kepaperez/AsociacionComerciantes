@@ -6,11 +6,15 @@ if($_SERVER["SERVER_NAME"]=="grupo3.zerbitzaria.net"){
 }
 
 require_once ("productoModel.php");
+
+require_once ("tiendaModel.php");
+
 include_once ("productoTiendaClass.php");
 
 class productoTiendaModel extends productoTiendaClass
 {
     private $producto;
+    private $shop;
     public function OpenConnect()
     {
         $konDat = new connect_data();
@@ -53,12 +57,22 @@ class productoTiendaModel extends productoTiendaClass
             $productotienda->precio = $row['precio'];
             $productotienda->id_tienda = $row['id_tienda'];
                   
+
             $product = new productoModel();
 
             $product->setId($row['id_producto']);
             $product->setList();
 
             $productotienda->producto = $product->ObjVars();
+
+
+            $tienda = new tiendaModel();
+
+            $tienda->setId($row['id_tienda']);
+            $tienda-> setTiendaInfo();
+
+           
+            $productotienda->shop = $tienda->ObjVars();
             
             array_push($list, get_object_vars($productotienda));
 

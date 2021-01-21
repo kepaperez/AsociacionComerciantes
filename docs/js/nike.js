@@ -8,7 +8,11 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         $scope.listaTodo = response.data.list;
 
+        console.log(response.data);
+
         $scope.calculate();
+
+        
 
     })
 

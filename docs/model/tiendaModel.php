@@ -34,9 +34,6 @@ class tiendaModel extends tiendaClass
 
         $result = $this->link->query($sql);
       
-
-    
-
         $list = array();
         
         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
@@ -67,8 +64,7 @@ class tiendaModel extends tiendaClass
 
         $result = $this->link->query($sql);
       
-        $list = array();
-     
+        $list = array();     
         
         if ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
 
