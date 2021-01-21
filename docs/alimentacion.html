@@ -89,7 +89,7 @@
         <div class="card w3-hover-shadow pan" id="{{item.producto.id}}" ng-repeat="item in productos" style="width:100%">
             <img src="img/todo/{{item.producto.imagen}}.jpg" style="width:100%">
             <p class="cardTitulo">{{item.producto.nombre}} | {{item.precio}} €</p>
-            <button id="{{item.id_tienda}}" class="añadirBtn compraBoton"
+            <button id="{{item.id_tienda}}" class="añadirBtn"
             data-thisid_productotienda="{{item.id_productoTienda}}"
             data-thisidproducto="{{item.id_producto}" data-thisidtienda="{{item.id_tienda}}"
             data-thisnombre="{{item.producto.nombre}}" data-thisimg="{{item.producto.imagen}}"
@@ -105,6 +105,7 @@
 
 
     <div class="info">
+        <p>Horario: {{productos[0].shop.horario}}</p>
         <p id="texto">Frutas Borja S.L. es una empresa dedicada a la producción y comercialización de fresas, arándanos,
             moras y frambuesas desde 1975.
             Nuestro objetivo es garantizar la calidad y el servicio a nuestros clientes de toda Europa.</p>
@@ -114,6 +115,7 @@
             poniendo cariño en la elaboración y con materias primas de primera categoria, para poder seguir
             ofreciéndote
             la máxima garantía de calidad en todos nuestros productos.</p>
+            
     </div>
 
 
@@ -153,8 +155,6 @@
             </div>
             <div class="grid-item">
                 <p>Dirección: {{productos[0].shop.direccion}}</p>
-                <p>Horario: {{productos[0].shop.horario}}</p>
-
             </div>
             <div class="grid-item comentarios">
                 <label>
