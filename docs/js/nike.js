@@ -78,7 +78,6 @@ miApp.controller('miControlador', function ($scope, $http) {
         // Buscamos el producto que hemos elegido por el id 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
-
             if ($scope.listaTodo[index].producto.id == id) {
                 // cuando lo encontramos rellenamos 
 
@@ -103,7 +102,13 @@ miApp.controller('miControlador', function ($scope, $http) {
             }
 
         }
+        for (let i = 1; i < 4; i++) {
+            var x = Math.floor((Math.random() * index) + 1);
+            $('#TextMas' + i).html($scope.listaTodo[x].producto.nombre);
+            $('#btnMas' + i).attr('value', $scope.listaTodo[x].producto.id);
+            $('#columnMas' + i).css('background-image', 'url("img/nike/' + $scope.listaTodo[x].producto.imagen + '.jpg")');
 
+        }
     }
 })
 

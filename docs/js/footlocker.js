@@ -60,8 +60,6 @@ miApp.controller('miControlador', function ($scope, $http) {
         let index = 0;
         for (index; index < $scope.listaTodo.length; index++) {
 
-
-
             if ($scope.listaTodo[index].producto.id == id) {
                 // cuando lo encontramos rellenamos 
                 console.log($scope.listaTodo[index]);
