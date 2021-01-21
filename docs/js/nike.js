@@ -2,7 +2,7 @@
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
-    $scope.data = ({id: 1 });
+    $scope.data = ({ id: 1 });
 
     $http.post("controller/cAllProductos.php", $scope.data).then(function (response) {
 
@@ -12,7 +12,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         $scope.calculate();
 
-        
+
 
     })
 
@@ -78,7 +78,6 @@ miApp.controller('miControlador', function ($scope, $http) {
         // Buscamos el producto que hemos elegido por el id 
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
-
             if ($scope.listaTodo[index].producto.id == id) {
                 // cuando lo encontramos rellenamos 
 
@@ -88,22 +87,28 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.descripcion').html($scope.listaTodo[index].producto.descripcion)
                 $('.precio').html($scope.listaTodo[index].precio + '€')
 
-                $('.añadirBtn').attr('data-thisId_ProductoTienda',$scope.listaTodo[index].id_productoTienda)
-                $('.añadirBtn').attr('data-thisIdProducto',$scope.listaTodo[index].id_producto)
-                $('.añadirBtn').attr('data-thisIdTienda',$scope.listaTodo[index].id_tienda)
-                $('.añadirBtn').attr('data-thisNombre',$scope.listaTodo[index].producto.nombre)
-                $('.añadirBtn').attr('data-thisImg',$scope.listaTodo[index].producto.imagen)
-                $('.añadirBtn').attr('data-thisMarca',$scope.listaTodo[index].producto.marca)
-                $('.añadirBtn').attr('data-thissexo',$scope.listaTodo[index].producto.sexo)
-                $('.añadirBtn').attr('data-thisPrecio',$scope.listaTodo[index].precio)
-                $('.añadirBtn').attr('data-thisStock',$scope.listaTodo[index].stock)
+                $('.añadirBtn').attr('data-thisId_ProductoTienda', $scope.listaTodo[index].id_productoTienda)
+                $('.añadirBtn').attr('data-thisIdProducto', $scope.listaTodo[index].id_producto)
+                $('.añadirBtn').attr('data-thisIdTienda', $scope.listaTodo[index].id_tienda)
+                $('.añadirBtn').attr('data-thisNombre', $scope.listaTodo[index].producto.nombre)
+                $('.añadirBtn').attr('data-thisImg', $scope.listaTodo[index].producto.imagen)
+                $('.añadirBtn').attr('data-thisMarca', $scope.listaTodo[index].producto.marca)
+                $('.añadirBtn').attr('data-thissexo', $scope.listaTodo[index].producto.sexo)
+                $('.añadirBtn').attr('data-thisPrecio', $scope.listaTodo[index].precio)
+                $('.añadirBtn').attr('data-thisStock', $scope.listaTodo[index].stock)
 
-                $('.añadirBtn').attr('data-thisTienda','Nike');
+                $('.añadirBtn').attr('data-thisTienda', 'Nike');
 
             }
 
         }
+        for (let i = 1; i < 4; i++) {
+            var x = Math.floor((Math.random() * index) + 1);
+            $('#TextMas' + i).html($scope.listaTodo[x].producto.nombre);
+            $('#btnMas' + i).attr('value', $scope.listaTodo[x].producto.id);
+            $('#columnMas' + i).css('background-image', 'url("img/nike/' + $scope.listaTodo[x].producto.imagen + '.jpg")');
 
+        }
     }
 })
 
