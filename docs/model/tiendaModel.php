@@ -67,28 +67,14 @@ class tiendaModel extends tiendaClass
       
         if($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e1dae5d1f0aeb79d9b049749b5f59df59d1de6d9
             $this->id = $row['id'];
             $this->nombre = $row['nombre'];
             $this->direccion = $row['direccion'];
             $this->horario = $row['horario'];
             $this->imagen = $row['imagen'];
             $this->tipo = $row['tipo'];
-<<<<<<< HEAD
             $this->imgBanner = $row['imgBanner'];
-=======
-<<<<<<< HEAD
-            $this->imgBanner = $row['imgBanner'];
-=======
->>>>>>> 6a43bdbb6197d5c98bd67d229787afb78d6ffca6
-          
->>>>>>> e1dae5d1f0aeb79d9b049749b5f59df59d1de6d9
         }
-     
-        
         mysqli_free_result($result);
         $this->CloseConnect();
 

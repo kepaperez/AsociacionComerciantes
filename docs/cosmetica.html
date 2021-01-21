@@ -41,7 +41,15 @@
     <main role="main">
         <section class="container">
             <section class="jumbotron text-center" style="background-image: url('{{productos[0].shop.imgBanner}}');">
+            </section>
 
+            <div class="titulo">
+                <h1 class="" style="margin: auto;">{{productos[0].shop.nombre}}</h1>
+            </div>
+
+            <section class="info">
+                <h5 class="" style="margin: auto;">{{productos[0].shop.horario}}</h5>
+                <a class="">{{productos[0].shop.direccion}}</a>
             </section>
             <div class="cards">
                 <div id="{{item.producto.id}}" class="grid__item" ng-repeat="item in productos  ">

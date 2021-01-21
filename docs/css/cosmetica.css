@@ -111,6 +111,16 @@ a:hover {
   height: 20rem;
  
 }
+.titulo{
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  padding: 5vh;
+}
+.info{
+  padding-bottom: 5vh;
+}
+
 .comprarBoton{
   font-size: 2vh;
   bottom: 5%;
@@ -125,6 +135,7 @@ a:hover {
 }
 .card_header , .card_text {
   padding-left: 3vh;
+
 
 }
 .card_text {
