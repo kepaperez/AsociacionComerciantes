@@ -94,9 +94,6 @@ miApp.controller('miControlador', function ($scope, $http) {
         }
 
 
-        $('')
-
-
         // Buscamos el producto que hemos elegido por el id 
 
 

@@ -6,7 +6,8 @@ miApp.controller('miControlador', function ($scope) {
     console.log($scope.carritoCompra);
 
     $scope.precioFinal;
-
+    $scope.verCarrito= true;
+    $scope.verCheck= false;
 
 
     $scope.list= function(){
@@ -50,6 +51,13 @@ miApp.controller('miControlador', function ($scope) {
         localStorage.removeItem(0);
         localStorage.setItem(0, angular.toJson($scope.carritoCompra));
         
+    }
+
+    $scope.CheckOut= function(){
+       $scope.verCarrito= false;
+       $scope.verCheck= true;
+
+
     }
 
 })
