@@ -79,6 +79,17 @@ a:hover {
   width: 100%;
 
 }
+.comprarBoton{
+  bottom: 20%;
+  left: 8%;
+  border-radius: 100px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 13px;
+  width: 150px;
+  position: absolute;
+}
 
 
 .container {
@@ -114,6 +125,7 @@ a:hover {
 }
 .card_header , .card_text {
   padding-left: 3vh;
+
 }
 .card_text {
 padding-bottom: 3vh;
