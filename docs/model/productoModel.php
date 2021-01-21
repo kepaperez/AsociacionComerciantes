@@ -37,7 +37,6 @@ class productoModel extends productoClass
         $result = $this->link->query($sql);
         
         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
-
             
             $this->id = $row['id'];
             $this->nombre = $row['nombre'];
@@ -46,12 +45,12 @@ class productoModel extends productoClass
             $this->marca = $row['marca'];
             $this->sexo = $row['Sexo'];
             $this->tipo = $row['tipo'];
-        
-     
+             
             }
         mysqli_free_result($result);
         $this->CloseConnect();
     }
+    
     function ObjVars()
     {
         return get_object_vars($this);

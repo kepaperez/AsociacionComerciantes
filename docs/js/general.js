@@ -4,9 +4,15 @@ document.addEventListener('click', function (evt) {
         añadirCarrito(evt.target.dataset);
     }
     if (evt.target.className === 'verCarrito') {
-        alert('ey');
+        
         window.location.href = "carritoCompra.html";
     }
+    if (evt.target.className === 'inicio') {
+        
+        window.location.href = "asociaciones.html";
+    }
+
+
 }, false);
 
 var listaTodo;
