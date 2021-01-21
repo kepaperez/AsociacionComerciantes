@@ -1,5 +1,7 @@
+loggedVerify();
 document.addEventListener('click', function (evt) {
-    //  event listener para el boton de añadir al carrito 
+    //  event listener para el boton de añadir al carrito    
+
     if (evt.target.className === 'añadirBtn') {
         añadirCarrito(evt.target.dataset);
     }
@@ -11,11 +13,22 @@ document.addEventListener('click', function (evt) {
 
         window.location.href = "asociaciones.html";
     }
-    
-    if (evt.target.className === 'userLoged') {
 
+    if (evt.target.className === 'userLoged') {
         desplegable()
-        
+    }
+
+    if (evt.target.id === 'iniciar') {
+        $(".iniciar").css("display", "block");
+        $(".registrar").css("display", "none");
+    }
+
+    if (evt.target.id === 'registrar') {
+        $(".iniciar").css("display", "none");
+        $(".registrar").css("display", "block");
+    }
+    if (evt.target.id === 'logout') {
+      logout();
     }
 
 }, false);
@@ -99,8 +112,8 @@ function añadirCarrito(data) {
 }
 
 var accion = 0;
-function desplegable(){
-  
+function desplegable() {
+
 
     if (accion == 1) {
         accion = 0;
@@ -111,6 +124,80 @@ function desplegable(){
         $("#desplegable").css("display", "block");
 
     }
-    
 
+
+}
+
+function login() {
+
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+
+    var url = "controller/cLogin.php";
+
+    var data = {
+        'username': username, 'password': password
+    };
+
+
+    console.log(data);
+
+    fetch(url, {
+        method: 'POST', // or 'POST'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: { 'Content-Type': 'application/json' }  //input data
+
+    })
+        .then(res => res.json()).then(result => {
+
+            console.log(result.message);
+
+            if (result.message === "no error") {
+                alert('todo bien');
+                location.reload(); 
+            }
+            else {
+                alert(result.message);
+            }
+
+        })
+        .catch(error => console.error('Error status:', error));
+
+}
+
+function loggedVerify() {
+	var url = "controller/cLoggedVerify.php";
+
+	fetch(url, {
+		method: 'GET',
+	})
+		.then(res => res.json()).then(result => {
+
+			alert(result.message);
+
+			if (result.message === "logged") {
+				alert("You are logged " + result.username);
+
+                $(".userLoged").html(result.username);
+
+			}
+		})
+		.catch(error => console.error('Error status:', error));
+
+
+}
+
+function logout() {
+	var url = "controller/cLogout.php";
+
+	fetch(url, {
+		method: 'GET',
+	})
+		.then(res => res.text()).then(result => {
+
+            alert('logout');
+            location.reload(); 
+		})
+		.catch(error => console.error('Error status:', error));
 }
