@@ -150,11 +150,11 @@ ul li img{
     padding-bottom: 10px;
     text-align: center;
 }
-/* .card img{
+.card img{
     width: auto;
     height: 150px;
     object-fit: cover;
-} */
+}
 
 .cards {
   max-width: 1200px;
