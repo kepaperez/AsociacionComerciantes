@@ -73,10 +73,8 @@ class tiendaModel extends tiendaClass
             $this->horario = $row['horario'];
             $this->imagen = $row['imagen'];
             $this->tipo = $row['tipo'];
-          
+            $this->imgBanner = $row['imgBanner'];
         }
-     
-        
         mysqli_free_result($result);
         $this->CloseConnect();
 
