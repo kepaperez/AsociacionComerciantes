@@ -62,6 +62,8 @@ class tiendaModel extends tiendaClass
  
         $sql = "CALL spTiendaById($id)"; // SQL sententzia - sentencia SQL
 
+        var_dump($sql);
+
         $result = $this->link->query($sql);
       
         $list = array();     
@@ -76,13 +78,12 @@ class tiendaModel extends tiendaClass
             $tienda->horario = $row['horario'];
             $tienda->imagen = $row['imagen'];
             $tienda->tipo = $row['tipo'];
-            $tienda->imgBanner = $row['imgBanner'];
             
-
-           
+                       
             array_push($list, get_object_vars($tienda));
         }
      
+        
         mysqli_free_result($result);
         $this->CloseConnect();
         return $list;

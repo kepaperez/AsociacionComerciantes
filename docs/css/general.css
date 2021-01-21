@@ -1,6 +1,19 @@
 .miniNav{
-    height: 22px;
     background-color: gainsboro;
     width: 100%;
     z-index: 1000;
+    height: 24px;
+}
+
+.miniNav2{
+  
+    background-color: gainsboro;    
+   
+    position: absolute; /*or fixed*/
+    right: 0px;
+}
+.miniNav p{
+    margin-right: 30px;
+    display: inline;
+   
 }
