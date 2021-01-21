@@ -95,9 +95,7 @@ ul li img{
   }
   /*Navbar fin*/
 /*Video principal*/
-video {
-    width: 100%;
-}
+
 
 .video {
     position: relative;
@@ -114,6 +112,13 @@ video {
     line-height: 1.1em;
     transform: translate(-50%, -50%);
     font-weight: 700;
+}
+#videoDiv{
+    overflow: hidden;
+    height: 85vh;
+}
+#video{
+    width: 100%;
 }
 /*Mapa*/
 .informacion .column{
