@@ -12,13 +12,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/cosmetica.css">
+    <link rel="stylesheet" href="css/general.css ">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="js/cosmetica.js"></script>
-
+    <script src="js/general.js"></script>
 
     <title>Asociacion comercio de Amorebieta</title>
 
 </head>
+<div class="miniNav">
+    <p class="verCarrito">Ver Carrito</p>
+    </div>
 
 <body ng-controller="miControlador">
     <ul class="navbar">
@@ -30,12 +34,13 @@
     </ul>
     <main role="main">
         <section class="container">
-            <section class="jumbotron text-center" ng-repeat="item in tiendaInfo" style="background-image: url('{{item.imgBanner}}');">
+            <section class="jumbotron text-center" ng-repeat="item in tiendaInfo"
+                style="background-image: url('{{item.imgBanner}}');">
 
             </section>
             <div class="cards">
                 <div id="{{item.producto.id}}" class="grid__item" ng-repeat="item in productos  ">
-                    <div class="card"><img class="card__img" src="{{item.producto.imagen}}">
+                    <div class="card"><img class="card__img" src="img/todo/{{item.producto.imagen}}.jpg">
                         <div class="card_content2">
                             <b>
                                 <h3 class="card_header">{{item.producto.nombre}}</h3>
@@ -43,6 +48,13 @@
                             <div class="precio">
                                 <p class="card_text">{{item.precio}}€</p>
                             </div>
+                            <button id="{{item.id_tienda}}" class="añadirBtn" data-thisid_productotienda="{{item.id_productoTienda}}"
+                                data-thisidproducto="{{item.id_producto}" data-thisidtienda="{{item.id_tienda}}"
+                                data-thisnombre="{{item.producto.nombre}}" data-thisimg="{{item.producto.imagen}}"
+                                data-thismarca="{{item.producto.marca}}" data-thissexo=" " data-thisprecio="{{item.precio}}" data-thisstock="{{item.stock}}"
+                                data-thistienda="Nike">
+                                Comprar
+                            </button>
                         </div>
                     </div>
                 </div>
