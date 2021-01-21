@@ -23,16 +23,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         console.log($scope.productos);
     })
-    $scope.data = ({id: id});
-    $http.post("controller/cTiendaInfo.php", $scope.data).then(function (response) {
 
-        $scope.tiendaInfo = response.data.tienda;
-       
-        console.log($scope.tiendaInfo);
-
-      
-
-    })
     if (id == 3) {
         //Fruteria
         $("#texto1").css("display", "none")
