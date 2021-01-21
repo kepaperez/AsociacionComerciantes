@@ -8,8 +8,6 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         $scope.listaTodo = response.data.list;
 
-        console.log(response.data);
-
         $scope.calculate();
 
 
@@ -56,7 +54,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
         }
 
-
+        $scope.$apply();
         for (let index = 0; index < $scope.listaTodo.length; index++) {
 
             if (tipo == 1) {
@@ -100,15 +98,9 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.añadirBtn').attr('data-thisTienda', 'Nike');
 
             }
-
+           
         }
-        for (let i = 1; i < 4; i++) {
-            var x = Math.floor((Math.random() * index) + 1);
-            $('#TextMas' + i).html($scope.listaTodo[x].producto.nombre);
-            $('#btnMas' + i).attr('value', $scope.listaTodo[x].producto.id);
-            $('#columnMas' + i).css('background-image', 'url("img/nike/' + $scope.listaTodo[x].producto.imagen + '.jpg")');
-
-        }
+       
     }
 })
 
@@ -126,7 +118,7 @@ document.addEventListener('click', function (evt) {
 var sex = '';
 
 function ver(where, titulo, id) {
-
+    
     $("#btn1").removeClass("borde");
     $("#btn2").removeClass("borde");
     $("#btn3").removeClass("borde");

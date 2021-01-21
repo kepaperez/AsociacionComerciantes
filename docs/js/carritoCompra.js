@@ -7,9 +7,16 @@ miApp.controller('miControlador', function ($scope) {
 
     $scope.precioFinal;
 
+
+
+    $scope.list= function(){
+
+        window.location.href = "asociaciones.html";
+    }
+
     $scope.calcularTotal = function () {
         // CALCULA EL TOTAL QUE HAY QUE PAGAR
-        alert('calculando');
+      
 
         $scope.precioFinal = 0;
 

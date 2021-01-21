@@ -24,7 +24,7 @@
         <p class="saldo"> 0,00€</p>
     </div>
 </div>
-<body ng-controller="miControlador">
+<body ng-controller="miControlador" data-ng-init="calcularTotal()">
 
     <div class="carrito">
         <center>
@@ -77,6 +77,7 @@
                         <tr>
                             <th class="grande"></th>
                             <th class="pequeno"></th>
+                            <th class="pequeno"></th>
                             <th class="pequeno">Total a Pagar: </th>
                             <th class="pequeno">{{precioFinal}} €</th>
                         </tr>
@@ -87,6 +88,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th class="pequeno"></th>
                             <th class="pequeno"></th>
                             <th class="pequeno"></th>
                             <th class="pequeno"></th>

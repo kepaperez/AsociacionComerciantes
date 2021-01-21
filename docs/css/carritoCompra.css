@@ -23,12 +23,17 @@
     float: left;
      width: 80%;
 }
-
+.columnCarrito2 button{
+  font-size: 70%;
+}
 .columnCarritoButtons{
 
     float: left;
      width: 33.33%;
+    
 }
+
+.c
   .demo {
    
     padding: 5px;
