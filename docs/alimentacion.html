@@ -17,7 +17,14 @@
     <link rel="stylesheet" href="css/general.css">
     <title>Alimentacion</title>
 </head>
-
+<div class="miniNav">
+    <div class="miniNav2">
+        <p class="inicio">Inicio</p>
+        <p class="verCarrito">Ver Carrito</p>
+        <p class="userLoged">Usuario</p>
+        <p class="saldo"> 0,00€</p>
+    </div>
+</div>
 
 <body ng-controller="miControlador">
 
@@ -48,6 +55,32 @@
             <img src="img/panaderia/panaderia5.jpg" alt="">
         </div>
     </div>
+<<<<<<< HEAD
+    <div class="w3-container panaderia">
+        <div class="w3-border w3-hover-shadow pan" ng-repeat="item in productos" style="width:20%">
+            <img src="{{item.producto.imagen}}" style="width:100%">
+            <div class="w3-container w3-center">
+                <p>{{item.producto.nombre}} | {{item.precio}} €</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="info">
+        <p id="texto">Frutas Borja S.L. es una empresa dedicada a la producción y comercialización de fresas, arándanos,
+            moras y frambuesas desde 1975.
+            Nuestro objetivo es garantizar la calidad y el servicio a nuestros clientes de toda Europa.</p>
+        <p id="texto1">Bienvenidos a Panaderia Geralekua tu panaderia cercana, del barrio, de siempre..., donde sabes
+            que
+            trabajamos
+            poniendo cariño en la elaboración y con materias primas de primera categoria, para poder seguir
+            ofreciéndote
+            la máxima garantía de calidad en todos nuestros productos.</p>
+    </div>
+
+
+=======
     <!-- <div class="w3-container panaderia">
         <div class="w3-border w3-hover-shadow pan" ng-repeat="item in productos" style="width:20%">
             <img src="{{item.producto.imagen}}" style="width:100%">
@@ -79,6 +112,7 @@
     </div>
 
 
+>>>>>>> a3f76ed56dfcd87b3cfb5ee2f9b0b0388d028eed
 
 
     <div class="cards">
