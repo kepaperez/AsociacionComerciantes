@@ -102,6 +102,18 @@ ul li img{
     height: 250px;
     object-fit: cover;
   }
+  .panaderia{
+    text-align: center;
+    
+}
+.pan{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    width: 100%;
+    background-color: white;
+    
+}
   /*Panes fin*/
   /*Carousel*/
  
@@ -126,23 +138,23 @@ ul li img{
 .card{
  
   color: rgb(0, 0, 0);
-  padding: 1rem;
+  
 }
 .cardTitulo{
-  display: block;
+    display: block;
     font-family: 'Ubuntu', arial, serif;
     font-size: 20px;
     line-height: 1.4em;
     margin-bottom: 10px;
     text-decoration: none;
     padding-bottom: 10px;
-    text-align: left;
+    text-align: center;
 }
-.card img{
+/* .card img{
     width: auto;
     height: 150px;
     object-fit: cover;
-}
+} */
 
 .cards {
   max-width: 1200px;
@@ -150,7 +162,6 @@ ul li img{
   display: grid;
   grid-gap: 1rem;
   text-align: center;
-  
 }
 /*Footer*/
 .footer{
@@ -180,6 +191,9 @@ margin-right: 5vh;
   .cards {
     grid-template-columns: repeat(2, 1fr); 
   }
+  .panaderia{
+    grid-template-columns: repeat(2, 1fr); 
+  }
   
 }
 
@@ -188,19 +202,28 @@ margin-right: 5vh;
   .cards { 
     grid-template-columns: repeat(3, 1fr);
   }
+  .panaderia{
+    grid-template-columns: repeat(4, 1fr); 
+  }
   
 }
-  /*Panes fin*/
-.panaderia{
-    text-align: center;
+
+@media (max-width: 768px) {
     
+  .menu{
+      height: auto;
+      border-bottom: 0px;
+      display: block;
+  }
+  .login{
+    height: auto;
+    border-bottom: 0px;
+    display: block;
+  }
+  .comentarios{
+    display: none;
 }
-.pan{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    display: inline-block;
-    width: 100%;
-    background-color: white;
-    
+
 }
+  
+
