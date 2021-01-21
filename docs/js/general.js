@@ -4,14 +4,19 @@ document.addEventListener('click', function (evt) {
         añadirCarrito(evt.target.dataset);
     }
     if (evt.target.className === 'verCarrito') {
-        
+
         window.location.href = "carritoCompra.html";
     }
     if (evt.target.className === 'inicio') {
-        
+
         window.location.href = "asociaciones.html";
     }
+    
+    if (evt.target.className === 'userLoged') {
 
+        desplegable()
+        
+    }
 
 }, false);
 
@@ -53,9 +58,9 @@ function añadirCarrito(data) {
             "img": thisImg,
             "marca": thisMarca,
             "sex": thissexo,
-            "precio":thisPrecio,
-            'tienda':thisTienda,
-            "stock":thisStock,
+            "precio": thisPrecio,
+            'tienda': thisTienda,
+            "stock": thisStock,
             "cantidad": 1
         })
     }
@@ -78,9 +83,9 @@ function añadirCarrito(data) {
                 "img": thisImg,
                 "marca": thisMarca,
                 "sex": thissexo,
-                "precio":thisPrecio,
-                'tienda':thisTienda,
-                "stock":thisStock,
+                "precio": thisPrecio,
+                'tienda': thisTienda,
+                "stock": thisStock,
                 "cantidad": 1
             })
         }
@@ -89,6 +94,23 @@ function añadirCarrito(data) {
     localStorage.clear();
     localStorage.removeItem(0);
 
-    localStorage.setItem(0,angular.toJson(carritoCompra));
+    localStorage.setItem(0, angular.toJson(carritoCompra));
     console.log(JSON.stringify(carritoCompra));
+}
+
+var accion = 0;
+function desplegable(){
+  
+
+    if (accion == 1) {
+        accion = 0;
+        $("#desplegable").css("display", "none");
+
+    } else {
+        accion = 1;
+        $("#desplegable").css("display", "block");
+
+    }
+    
+
 }

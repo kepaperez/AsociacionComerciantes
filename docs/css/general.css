@@ -7,13 +7,40 @@
 
 .miniNav2{
   
-    background-color: gainsboro;    
-   
+    background-color: gainsboro;       
     position: absolute; /*or fixed*/
     right: 0px;
+    z-index: 1000;
 }
 .miniNav p{
     margin-right: 30px;
     display: inline;
    
+}
+
+.desplegable{
+    position: absolute; /*or fixed*/
+    right: 0px;
+    width: 360px;
+    height: auto;
+    z-index: 999;
+    background-color: gainsboro;
+    display: none;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+
+.desplegable input{
+
+    border-radius: 50px;
+ 
+}
+.desplegable label{
+    width: 100px;
+}
+
+input[type=text]{
+
+    border: 2px solid black;
+    margin-right: 20px;
 }

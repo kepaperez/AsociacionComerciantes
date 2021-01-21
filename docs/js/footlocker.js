@@ -60,29 +60,27 @@ miApp.controller('miControlador', function ($scope, $http) {
         let index = 0;
         for (index; index < $scope.listaTodo.length; index++) {
 
-            
-
             if ($scope.listaTodo[index].producto.id == id) {
                 // cuando lo encontramos rellenamos 
                 console.log($scope.listaTodo[index]);
-                
+
                 $('.boxImg').css('background-image', 'url(img/footlocker/' + $scope.listaTodo[index].producto.imagen + '.jpg)');
                 $('.nombre').html($scope.listaTodo[index].producto.nombre)
                 $('.genero').html($scope.listaTodo[index].producto.sexo)
                 $('.descripcion').html($scope.listaTodo[index].producto.descripcion)
                 $('.precio').html($scope.listaTodo[index].precio + '€')
 
-                $('.añadirBtn').attr('data-thisId_ProductoTienda',$scope.listaTodo[index].id_productoTienda)
-                $('.añadirBtn').attr('data-thisIdProducto',$scope.listaTodo[index].id_producto)
-                $('.añadirBtn').attr('data-thisIdTienda',$scope.listaTodo[index].id_tienda)
-                $('.añadirBtn').attr('data-thisNombre',$scope.listaTodo[index].producto.nombre)
-                $('.añadirBtn').attr('data-thisImg',$scope.listaTodo[index].producto.imagen)
-                $('.añadirBtn').attr('data-thisMarca',$scope.listaTodo[index].producto.marca)
-                $('.añadirBtn').attr('data-thissexo',$scope.listaTodo[index].producto.sexo)
-                $('.añadirBtn').attr('data-thisPrecio',$scope.listaTodo[index].precio)
-                $('.añadirBtn').attr('data-thisStock',$scope.listaTodo[index].stock)
+                $('.añadirBtn').attr('data-thisId_ProductoTienda', $scope.listaTodo[index].id_productoTienda)
+                $('.añadirBtn').attr('data-thisIdProducto', $scope.listaTodo[index].id_producto)
+                $('.añadirBtn').attr('data-thisIdTienda', $scope.listaTodo[index].id_tienda)
+                $('.añadirBtn').attr('data-thisNombre', $scope.listaTodo[index].producto.nombre)
+                $('.añadirBtn').attr('data-thisImg', $scope.listaTodo[index].producto.imagen)
+                $('.añadirBtn').attr('data-thisMarca', $scope.listaTodo[index].producto.marca)
+                $('.añadirBtn').attr('data-thissexo', $scope.listaTodo[index].producto.sexo)
+                $('.añadirBtn').attr('data-thisPrecio', $scope.listaTodo[index].precio)
+                $('.añadirBtn').attr('data-thisStock', $scope.listaTodo[index].stock)
 
-                $('.añadirBtn').attr('data-thisTienda','Footlocker');
+                $('.añadirBtn').attr('data-thisTienda', 'Footlocker');
             }
 
         }
@@ -94,9 +92,6 @@ miApp.controller('miControlador', function ($scope, $http) {
             $('#columnMas' + i).css('background-image', 'url("img/footlocker/' + $scope.listaTodo[x].producto.imagen + '.jpg")');
 
         }
-
-
-        $('')
 
 
         // Buscamos el producto que hemos elegido por el id 

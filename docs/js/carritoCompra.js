@@ -6,10 +6,18 @@ miApp.controller('miControlador', function ($scope) {
     console.log($scope.carritoCompra);
 
     $scope.precioFinal;
+    $scope.verCarrito= true;
+    $scope.verCheck= false;
+
+
+    $scope.list= function(){
+
+        window.location.href = "asociaciones.html";
+    }
 
     $scope.calcularTotal = function () {
         // CALCULA EL TOTAL QUE HAY QUE PAGAR
-        alert('calculando');
+      
 
         $scope.precioFinal = 0;
 
@@ -43,6 +51,13 @@ miApp.controller('miControlador', function ($scope) {
         localStorage.removeItem(0);
         localStorage.setItem(0, angular.toJson($scope.carritoCompra));
         
+    }
+
+    $scope.CheckOut= function(){
+       $scope.verCarrito= false;
+       $scope.verCheck= true;
+
+
     }
 
 })
