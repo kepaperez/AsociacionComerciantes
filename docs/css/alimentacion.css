@@ -220,6 +220,9 @@ margin-right: 5vh;
     border-bottom: 0px;
     display: block;
   }
+  .comentarios{
+    display: none;
+}
 
 }
   
