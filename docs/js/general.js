@@ -27,7 +27,7 @@ document.addEventListener('click', function (evt) {
         $(".iniciar").css("display", "none");
         $(".registrar").css("display", "block");
     }
-    if (evt.target.id === 'logout') {
+    if (evt.target.id === 'logout'|| evt.target.id === 'logoutt') {
         logout();
     }
 
@@ -155,7 +155,6 @@ function login() {
 
             if (result.message === "no error") {
                 console.log(result.list);
-                alert('todo bien');
                 location.reload();
 
             }
@@ -176,13 +175,15 @@ function loggedVerify() {
     })
         .then(res => res.json()).then(result => {
 
-            alert(result.message);
-
             if (result.message === "logged") {
                 alert("You are logged " + result.username);
 
                 $(".userLoged").html(result.username);
                 $(".saldo").html(result.user.saldo+"€");
+                $("#logout").css("display","inline");
+                $(".iniciar").css("display","none");
+                $(".registrar").css("display","none");
+                $(".botones").css("display","inline");
                 
 
             }

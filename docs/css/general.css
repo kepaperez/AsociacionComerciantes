@@ -49,3 +49,14 @@ input[type=text], input[type=password]{
 
     display: none;
 }
+
+#logout{
+    display: none;
+    
+}
+
+.botones{
+    display: none;
+    height: 50px;
+    width: 100%;
+}
