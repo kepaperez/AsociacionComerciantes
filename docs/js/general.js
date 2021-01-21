@@ -4,6 +4,7 @@ document.addEventListener('click', function (evt) {
 
     if (evt.target.className === 'añadirBtn') {
         añadirCarrito(evt.target.dataset);
+      
     }
     if (evt.target.className === 'verCarrito') {
 
