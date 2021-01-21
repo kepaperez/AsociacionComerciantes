@@ -28,7 +28,7 @@ document.addEventListener('click', function (evt) {
         $(".registrar").css("display", "block");
     }
     if (evt.target.id === 'logout') {
-      logout();
+        logout();
     }
 
 }, false);
@@ -154,8 +154,10 @@ function login() {
             console.log(result.message);
 
             if (result.message === "no error") {
+                console.log(result.list);
                 alert('todo bien');
-                location.reload(); 
+                location.reload();
+
             }
             else {
                 alert(result.message);
@@ -167,37 +169,40 @@ function login() {
 }
 
 function loggedVerify() {
-	var url = "controller/cLoggedVerify.php";
+    var url = "controller/cLoggedVerify.php";
 
-	fetch(url, {
-		method: 'GET',
-	})
-		.then(res => res.json()).then(result => {
+    fetch(url, {
+        method: 'GET',
+    })
+        .then(res => res.json()).then(result => {
 
-			alert(result.message);
+            alert(result.message);
 
-			if (result.message === "logged") {
-				alert("You are logged " + result.username);
+            if (result.message === "logged") {
+                alert("You are logged " + result.username);
 
                 $(".userLoged").html(result.username);
+                $(".saldo").html(result.user.saldo+"€");
+                
 
-			}
-		})
-		.catch(error => console.error('Error status:', error));
+            }
+        })
+        .catch(error => console.error('Error status:', error));
 
 
 }
 
 function logout() {
-	var url = "controller/cLogout.php";
+    localStorage.clear();
+    var url = "controller/cLogout.php";
 
-	fetch(url, {
-		method: 'GET',
-	})
-		.then(res => res.text()).then(result => {
+    fetch(url, {
+        method: 'GET',
+    })
+        .then(res => res.text()).then(result => {
 
             alert('logout');
-            location.reload(); 
-		})
-		.catch(error => console.error('Error status:', error));
+            location.reload();
+        })
+        .catch(error => console.error('Error status:', error));
 }

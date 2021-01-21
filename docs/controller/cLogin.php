@@ -23,14 +23,17 @@ if ($error !="no error" ) {
     
     $response["message"] = $error; //not error
   
+
+    
    if (!isset($_SESSION))
    {
      session_start();
    }
-   $response["message"]="no error";  
+   $response["message"]="no error";
    $_SESSION['username']=$username;
 
-}
+   $_SESSION['user']=$user->ObjVars();
+  }
 
 echo json_encode($response);
 unset($response);

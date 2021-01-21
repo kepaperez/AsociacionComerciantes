@@ -9,6 +9,7 @@ class usuarioClass{
     public $nombreUsuario;
     public $contrasenaUsuario;
     public $direccion;
+    public $saldo;
     /**
      * @return mixed
      */
@@ -81,6 +82,14 @@ class usuarioClass{
         return $this->direccion;
     }
 
+     /**
+     * @return mixed
+     */
+    public function getSaldo()
+    {
+        return $this->saldo;
+    }
+
     /**
      * @param mixed $id
      */
@@ -151,6 +160,14 @@ class usuarioClass{
     public function setDireccion($direccion)
     {
         $this->direccion = $direccion;
+    }
+
+    /**
+     * @param mixed $direccion
+     */
+    public function setSaldo($saldo)
+    {
+        $this->saldo = $saldo;
     }
 
     

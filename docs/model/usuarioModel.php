@@ -54,6 +54,7 @@ class usuarioModel extends usuarioClass{
             $this->admin= $row['admin'];
             $this->telefono= $row['telefono'];
             $this->direccion= $row['direccion'];
+            $this->saldo= $row['saldo'];
                       
 
             if($this->password == $pass){
@@ -75,7 +76,7 @@ class usuarioModel extends usuarioClass{
 
     }
     
-    function ObjVars()
+    public function ObjVars()
     {
         return get_object_vars($this);
     }
