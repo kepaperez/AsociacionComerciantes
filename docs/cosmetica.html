@@ -22,11 +22,11 @@
 </head>
 <div class="miniNav">
     <p class="verCarrito">Ver Carrito</p>
-    </div>
+</div>
 
 <body ng-controller="miControlador">
     <ul class="navbar">
-        <li ng-repeat="item in tiendaInfo"><img src="{{item.imagen}}"></li>
+        <li><img src="{{productos[1].shop.imagen}}"></li>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="asociaciones.html">Asociaciones</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -34,8 +34,7 @@
     </ul>
     <main role="main">
         <section class="container">
-            <section class="jumbotron text-center" ng-repeat="item in tiendaInfo"
-                style="background-image: url('{{item.imgBanner}}');">
+            <section class="jumbotron text-center" style="background-image: url('{{productos[1].shop.imgBanner}}');">
 
             </section>
             <div class="cards">
@@ -48,11 +47,13 @@
                             <div class="precio">
                                 <p class="card_text">{{item.precio}}€</p>
                             </div>
-                            <button id="{{item.id_tienda}}" class="añadirBtn" data-thisid_productotienda="{{item.id_productoTienda}}"
+                            <button id="{{item.id_tienda}}" class="añadirBtn"
+                                data-thisid_productotienda="{{item.id_productoTienda}}"
                                 data-thisidproducto="{{item.id_producto}" data-thisidtienda="{{item.id_tienda}}"
                                 data-thisnombre="{{item.producto.nombre}}" data-thisimg="{{item.producto.imagen}}"
-                                data-thismarca="{{item.producto.marca}}" data-thissexo=" " data-thisprecio="{{item.precio}}" data-thisstock="{{item.stock}}"
-                                data-thistienda="Nike">
+                                data-thismarca="{{item.producto.marca}}" data-thissexo=" "
+                                data-thisprecio="{{item.precio}}" data-thisstock="{{item.stock}}"
+                                data-thistienda="{{item.shop.imagen}}">
                                 Comprar
                             </button>
                         </div>

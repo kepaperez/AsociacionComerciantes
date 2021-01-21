@@ -11,11 +11,11 @@ miApp.controller('miControlador', function ($scope, $http) {
         console.log($scope.productos);
     })
 
-    $scope.data = ({ id: id });
-    $http.post("controller/cTiendaInfo.php", $scope.data).then(function (response) {
+    // $scope.data = ({ id: id });
+    // $http.post("controller/cTiendaInfo.php", $scope.data).then(function (response) {
 
-        $scope.tiendaInfo = response.data.tienda;
+    //     $scope.tiendaInfo = response.data.tienda;
 
-        console.log(response.data.tienda);
-    })
+    //     console.log(response.data.tienda);
+    // })
 });
