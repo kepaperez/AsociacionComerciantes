@@ -167,7 +167,7 @@ function login() {
         .catch(error => console.error('Error status:', error));
 
 }
-
+var user;
 function loggedVerify() {
     var url = "controller/cLoggedVerify.php";
 
@@ -179,15 +179,19 @@ function loggedVerify() {
             if (result.message === "logged") {
                 alert("You are logged " + result.username);
 
+                user=result.user;
                 $(".userLoged").html(result.username);
                 $(".saldo").html(result.user.saldo+"€");
                 $("#logout").css("display","inline");
                 $(".iniciar").css("display","none");
                 $(".registrar").css("display","none");
                 $(".botones").css("display","inline");
-                
 
-            }
+                // ==========================================
+                // checkOut
+                
+                loadCheckoutData()
+                }
         })
         .catch(error => console.error('Error status:', error));
 
@@ -207,4 +211,16 @@ function logout() {
             location.reload();
         })
         .catch(error => console.error('Error status:', error));
+}
+
+function loadCheckoutData(){
+    console.log(user);
+    $("#nombreCheckout").val(user.nombre);
+    $("#apellidoCheckout").val(user.apellido);
+    $("#usuarioCheckout").val(user.nombreUsuario);
+    $("#dniCheckout").val(user.dni);
+    $("#tlfCheckout").val(user.telefono);
+    $("#direccionCheckout").val(user.direccion);
+    $(".SaldoCheckout").html(user.saldo+"€");
+    $(".SaldoCheckout").val(user.saldo);        
 }

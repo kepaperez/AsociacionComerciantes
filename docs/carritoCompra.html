@@ -32,13 +32,13 @@
                 <input type="text" id="username" name="fname"><br><br>
                 <label for="lname">Contraseña:</label>
                 <input type="password" id="password" name="lname"><br><br>
-    
+
                 <button class="btn btn-dark" onclick="login()">OK</button>
                 <button class="btn btn-dark" id="registrar">Registrar</button>
                 <button class="btn btn-danger" id="logout">Log Out</button>
             </form>
         </div>
-        
+
         <div class="registrar">
             <form>
                 <label for="fname">Usuario:</label>
@@ -49,7 +49,7 @@
                 <input type="text" id="lname" name="lname"><br><br>
                 <label for="lname">Contraseña</label>
                 <input type="text" id="lname" name="lname"><br><br>
-    
+
                 <button class="btn btn-dark">OK</button>
                 <button class="btn btn-dark" id="iniciar">Iniciar</button>
             </form>
@@ -116,7 +116,7 @@
                             <th class="pequeno"></th>
                             <th class="pequeno"></th>
                             <th class="pequeno">Total a Pagar: </th>
-                            <th class="pequeno">{{precioFinal}} €</th>
+                            <th class="pequeno" value="{{precioFinal}}" id="totalPagaar">{{precioFinal}} €</th>
                         </tr>
                     </thead>
 
@@ -164,21 +164,45 @@
                 <div class="row">
                     <div class="column" style="background-color:#aaa;">
                         <h2>Datos Personales</h2>
-                        <p>Some text..</p>
+                        <div class="dataBox row">
+                            <div class="column">
+                                <label for="fname">nombre</label>
+                                <input type="text" id="nombreCheckout" name="fname"><br><br>
+                                <label for="lname">apellido</label>
+                                <input type="text" id="apellidoCheckout" name="lname"><br><br>
+                                <label for="lname">Usuario</label>
+                                <input type="text" id="usuarioCheckout" name="lname"><br><br>
+                            </div>
+                            <div class="column">
+                                <label for="lname">Dni</label>
+                                <input type="text" id="dniCheckout" name="lname"><br><br>
+                                <label for="lname">Tlf</label>
+                                <input type="text" id="tlfCheckout" name="lname"><br><br>
+                            </div>
+                        </div>
                     </div>
                     <div class="column" style="background-color:#bbb;">
                         <h2>Datos Facturacion</h2>
-                        <p>Some text..</p>
+                        <div class="dataBox">
+                            <label for="fname">Direccion</label>
+                            <input type="text" id="direccionCheckout" name="fname"><br><br>
+
+
+                        </div>
                     </div>
                 </div>
                 <hr>
 
                 <div class="ResumenTotal">
-                    <h2>Total a pagar:</h2>
-                    <h3>Saldo en la cuenta:</h3>
+                    <h2 style="display:inline">Total a pagar:</h2>
+                    <div style="display:inline" class="pagarCheckout">{{precioFinal}}€</div>
+                    <hr>
+                    <h3 style="display:inline">Saldo en la cuenta:</h3>
+                    <div style="display:inline" class="SaldoCheckout" ng-model="saldo"></div>
                 </div>
+                <hr>
 
-                <button class="btn btn-dark">COMPRAR</button>
+                <button ng-click="comprar()" class="btn btn-dark">COMPRAR</button>
             </div>
         </center>
     </div>
