@@ -34,6 +34,10 @@ miApp.controller('miControlador', function ($scope, $http) {
         $(".card").css("background-color", "rgb(209, 241, 136)")
         $(".cardTitulo").css("color", "#65d806")
         $(".cardTitulo").css("border-bottom", "1px solid #53d806")
+        $("#img1").attr("src","img/panaderia/fruteria.jpg");
+        $("#img2").attr("src","img/panaderia/fruteria2.jpg");
+        $("#img3").attr("src","img/panaderia/fruteria3.jpg");
+        
         
        
         
@@ -49,6 +53,7 @@ miApp.controller('miControlador', function ($scope, $http) {
         $(".card").css("background-color", "rgb(241, 199, 136)")
         $(".cardTitulo").css("color", "#d84206")
         $(".cardTitulo").css("border-bottom", "1px solid #d84206")
+        
         
        
         
