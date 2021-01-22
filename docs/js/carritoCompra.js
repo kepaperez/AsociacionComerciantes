@@ -89,6 +89,10 @@ miApp.controller('miControlador', function ($scope) {
             var url = "controller/cUpdateSaldo.php";
             var data = { 'saldo': $scope.saldoFinal };
 
+            console.log(str);
+            console.log($scope.precioFinal)
+            
+            confirm('sadfas');
             fetch(url, {
                 method: 'POST', // or 'POST'
                 body: JSON.stringify(data), // data can be `string` or {object}!
@@ -96,8 +100,8 @@ miApp.controller('miControlador', function ($scope) {
             })
                 .then(res => res.json()).then(result => {
 
-                    a
                     location.reload();
+                    localStorage.clear();
                 })
                 .catch(error => console.error('Error status:', error));
 
