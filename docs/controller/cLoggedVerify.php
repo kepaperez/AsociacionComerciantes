@@ -4,7 +4,7 @@ session_start();
 $response=array();
 $response["message"]="no logged";
 
-if ( isset($_SESSION['username']))
+if (isset($_SESSION['username']))
 {
      $response["message"]="logged";
 
