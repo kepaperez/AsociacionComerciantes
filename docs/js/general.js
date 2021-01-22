@@ -142,8 +142,6 @@ function login() {
     };
 
 
-    console.log(data);
-
     fetch(url, {
         method: 'POST', // or 'POST'
         body: JSON.stringify(data), // data can be `string` or {object}!
@@ -152,7 +150,7 @@ function login() {
     })
         .then(res => res.json()).then(result => {
 
-            console.log(result.message);
+           
 
             if (result.message === "no error") {
                 console.log(result.list);
@@ -177,8 +175,8 @@ function loggedVerify() {
         .then(res => res.json()).then(result => {
 
             if (result.message === "logged") {
-                alert("You are logged " + result.username);
-
+                
+                console.log(result.user);
                 user=result.user;
                 $(".userLoged").html(result.username);
                 $(".saldo").html(result.user.saldo+"€");

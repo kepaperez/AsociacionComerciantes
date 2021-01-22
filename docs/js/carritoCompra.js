@@ -8,7 +8,7 @@ miApp.controller('miControlador', function ($scope) {
     $scope.precioFinal;
     $scope.verCarrito = true;
     $scope.verCheck = false;
-    
+
     $scope.list = function () {
 
         window.location.href = "asociaciones.html";
@@ -18,14 +18,14 @@ miApp.controller('miControlador', function ($scope) {
         // CALCULA EL TOTAL QUE HAY QUE PAGAR
 
         if ($scope.carritoCompra != null) {
-        $scope.precioFinal = 0;
-        
+            $scope.precioFinal = 0;
+
             for (let i = 0; i < $scope.carritoCompra.length; i++) {
 
                 $scope.precioFinal = $scope.precioFinal + ($scope.carritoCompra[i].precio * $scope.carritoCompra[i].cantidad);
             }
             $scope.UpdateCarritoLocal();
-           
+
         }
     }
 
@@ -54,21 +54,53 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.CheckOut = function () {
-        $scope.verCarrito = false;
-        $scope.verCheck = true;
+        var url = "controller/cLoggedVerify.php";
 
+        fetch(url, {
+            method: 'POST', // or 'POST'
+            headers: { 'Content-Type': 'application/json' }  //input data
+        })
+            .then(res => res.json()).then(result => {
 
+                if (result.message === "logged") {
+
+                    $scope.verCarrito = false;
+                    $scope.verCheck = true;
+                }
+                else {
+                    alert('Inicia sesion para poder finalizar la compra');
+                }
+            })
+            .catch(error => console.error('Error status:', error));
     }
 
-    $scope.comprar = function(){
-        str= document.getElementById("saldo").innerHTML
-        str = str.slice(0,str.length-1)
-        
+    $scope.comprar = function () {
+        str = document.getElementById("saldo").innerHTML
+        str = str.slice(0, str.length - 1)
 
-        if( $scope.precioFinal> str){
+
+        if ($scope.precioFinal > str) {
             alert('No hay saldo suficiente en la cuenta')
-        }else{
+        } else {
             alert('Compra acceptada')
+
+            $scope.saldoFinal = str - $scope.precioFinal;
+
+            var url = "controller/cUpdateSaldo.php";
+            var data = { 'saldo': $scope.saldoFinal };
+
+            fetch(url, {
+                method: 'POST', // or 'POST'
+                body: JSON.stringify(data), // data can be `string` or {object}!
+                headers: { 'Content-Type': 'application/json' }  //input data
+            })
+                .then(res => res.json()).then(result => {
+
+                    a
+                    location.reload();
+                })
+                .catch(error => console.error('Error status:', error));
+
         }
 
     }
