@@ -8,9 +8,7 @@ miApp.controller('miControlador', function ($scope) {
     $scope.precioFinal;
     $scope.verCarrito = true;
     $scope.verCheck = false;
-    $scope.saldo = $(".SaldoCheckout").val();
     
-
     $scope.list = function () {
 
         window.location.href = "asociaciones.html";
@@ -63,8 +61,15 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.comprar = function(){
+        str= document.getElementById("saldo").innerHTML
+        str = str.slice(0,str.length-1)
+        
 
-        alert($scope.saldo+","+$scope.precioFinal);
+        if( $scope.precioFinal> str){
+            alert('No hay saldo suficiente en la cuenta')
+        }else{
+            alert('Compra acceptada')
+        }
 
     }
 })

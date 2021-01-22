@@ -222,5 +222,5 @@ function loadCheckoutData(){
     $("#tlfCheckout").val(user.telefono);
     $("#direccionCheckout").val(user.direccion);
     $(".SaldoCheckout").html(user.saldo+"€");
-    $(".SaldoCheckout").val(user.saldo);        
+          
 }
