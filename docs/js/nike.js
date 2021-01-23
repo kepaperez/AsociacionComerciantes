@@ -30,7 +30,7 @@ miApp.controller('miControlador', function ($scope, $http) {
         $('.Random .comprarBoton').attr('value', $scope.listaTodo[x].producto.id);
 
         // ----Trending----
-        $('#columnTrending1').css('background-image', 'url(img/nike/' + $scope.listaTodo[7].producto.imagen + '.jpg)');
+        $('#columnTrending1').css('background-image', 'url(img/nike/' + $scope.listaTodo[12].producto.imagen + '.jpg)');
         $('#columnTrending2').css('background-image', 'url(img/nike/' + $scope.listaTodo[28].producto.imagen + '.jpg)');
         $('#columnTrending2').css('background-image', 'url(img/nike/' + $scope.listaTodo[28].producto.imagen + '.jpg)');
 
@@ -98,9 +98,9 @@ miApp.controller('miControlador', function ($scope, $http) {
                 $('.añadirBtn').attr('data-thisTienda', 'Nike');
 
             }
-           
+
         }
-       
+
     }
 })
 
@@ -118,7 +118,7 @@ document.addEventListener('click', function (evt) {
 var sex = '';
 
 function ver(where, titulo, id) {
-    
+
     $("#btn1").removeClass("borde");
     $("#btn2").removeClass("borde");
     $("#btn3").removeClass("borde");
@@ -186,8 +186,11 @@ function move(donde, action) {
 
     if (action == 'izquierda') {
         if (newMargen != 0 || newMargen != -0) {
+            if(window.innerWidth>760){
             $('.' + donde).animate({ 'marginLeft': "+=32vw" });
-
+        }else{
+            $('.' + donde).animate({ 'marginLeft': "+=96vw" });
+        }
         }
 
     } else if (action = 'derecha') {
@@ -195,10 +198,26 @@ function move(donde, action) {
 
 
         } else {
-            $('.' + donde).animate({ 'marginLeft': "-=32vw" });
+            if(window.innerWidth>760){
+                $('.' + donde).animate({ 'marginLeft': "-=32vw" });
+            }else{$('.' + donde).animate({ 'marginLeft': "-=96vw" });}
         }
 
 
     }
 
+}
+
+var showNavar = false;
+function showNav() {
+
+    if (showNavar) {       
+        $('.navOculto').hide();
+        $('.navOculto').animate({bottom:'50px'})
+        showNavar=false;
+    }
+    else{        
+        $('.navOculto').show();
+        showNavar=true;
+    }
 }

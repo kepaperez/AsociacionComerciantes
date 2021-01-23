@@ -64,10 +64,17 @@ nav ul i{
     outline-style: none;
 }
 
-
 #divSecundario{
     display: none;
+
 }
+.navbar button{
+  display: none;
+}
+.navOculto{
+  display: none; 
+}
+
 /* =================TODO=================================== */
  .Todo{  
   height: auto;
@@ -235,7 +242,7 @@ nav ul i{
     height: 500px;
     background-position: 100% 63%;
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 700px;
     padding-top: 20px;
 }
 .divPrincipal h2{
@@ -342,7 +349,9 @@ nav ul i{
     width: 48%;
     margin: 1%;
     padding: 10px;
-    height: 700px;
+    padding-bottom: 60%;
+    padding-top: 10%;
+    height: auto;
   }
   
   
@@ -354,7 +363,7 @@ nav ul i{
 
 /* Mas====================================================== */
 .Mas{
-
+    display: block;
     margin-bottom: 150px;
 }
 .columnMas {
@@ -375,6 +384,24 @@ nav ul i{
     display: table;
     clear: both;
   }
+  .masBtn{
+    height: auto;
+    display:none;
+  }
+  .masBtn .comprarMasBoton{
+    
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 13px;
+    width: 150px;
+    
+   }
+   .masBtn li{
+     list-style: none;
+     margin-bottom: 30px;
+   }
 /* ========================================================== */
 
   .box{
@@ -426,9 +453,9 @@ nav ul i{
 
 
   .Botones{
-    position: absolute;
-    
-    display: flex; justify-content: space-between;
+    position: absolute;    
+    display: flex !important;
+     justify-content: space-between;
     width: 93.5%;
     
 
@@ -472,6 +499,7 @@ nav ul i{
   padding-top: 60px;
   padding-left: 90px;
   padding-right: 90px;
+  padding-bottom: 100px;
   display: none;
 }
 .boxBuy{
@@ -493,13 +521,14 @@ nav ul i{
 .boxImg{
   width: 70%; 
   background-color:#f6f6f6;
-  background-position: center center;
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .boxData{
   width: 30%;
   padding-left: 30px;
+  background-color: white;
 }
 
 .añadirBtn{
@@ -784,4 +813,82 @@ nav ul i{
   #body #part1 {
       height: 250px
   }
+ }
+ 
+/* RESPONSIVE=============================================== */
+@media (max-width: 760px) {
+  .ul-nav{  
+    display: block;  
+  } 
+  .navOculto li{
+
+    display: inline-block;
+    
+  }
+  .navbar button{
+    display: block;
+  }
+  
+  .ul-nav{
+    display: none;
+  }
+
+  @media (min-width: 760px) {
+
+    .navOculto{
+      display: none !important; 
+    }
+  }
+  /* -------------------------------- */
+  
+  .divPrincipal{    
+    width: 100% !important;
+    background-position: 50% 50% !important;
+    background-size:  400px !important;
+    
+  }
+
+  .Random .comprarBoton{
+
+  left: 33%;
+  bottom: 15%;
+ }
+
+ .Random .divPrincipal h2{
+  margin-right: auto;
+  }
+ /* -------------------------------- */
+  .rowNew .columnNew2{
+    display: none;
+  }
+  .rowNew .columnNew1{
+    width: 100%;
+    background-position: 50%;
+  }
+
+  .move{
+    width: 96vw;
+  }
+
+
+  .masBtn{
+    display: block;
+  }
+  .Mas{
+    display: none;
+  }
 }
+  /* -------------------------------- */
+  @media (max-width: 750px) {
+
+  .comprar .boxImg{
+    width: 100%;
+    background-size:  100%;
+    margin-bottom: -200px;
+  }
+
+  .boxData{
+    width: 100%;
+    height: auto;
+  }
+  }
