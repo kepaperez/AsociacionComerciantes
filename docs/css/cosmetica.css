@@ -162,3 +162,8 @@ padding-bottom: 3vh;
 @media (min-width: 900px) {
   .cards { grid-template-columns: repeat(3, 1fr); }
 }
+.precio img{
+  height: 510px;
+  padding: 4vh;
+  margin: auto;
+}

@@ -96,7 +96,7 @@ miApp.controller('miControlador', function ($scope) {
             })
                 .then(res => res.json()).then(result => {
 
-                    a
+                    
                     location.reload();
                 })
                 .catch(error => console.error('Error status:', error));
