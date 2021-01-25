@@ -43,6 +43,7 @@ miApp.controller('miControlador', function ($scope, $http) {
             case 'Cosmetica':
                 console.log('cosmetica');
                 var idTienda= item.id;
+           
                 // var idTienda = $(this).attr("idTienda");
                 localStorage.setItem('idTienda', idTienda);
 
