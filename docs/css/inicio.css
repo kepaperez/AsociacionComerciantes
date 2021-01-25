@@ -2,37 +2,18 @@ body{
     margin: 0;
 }
 /*Navbar*/
-.navbar{
-    overflow: hidden;
-    display: block;
-}
-.sticky{
-    position: fixed;
-    z-index: 9999999;
-    top: 0;
-    left: 0;
-}
-li{
-    display: inline;
-}
-ul li img{
+
+.topnav img{
     width: auto;
     height: 50px;
     margin-right: 5vh;
     float: left;
     object-fit: cover;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
-.navbar a{
-    
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: "Times New Roman", Times, serif;
-}
-.navbar a::before {
+
+.topnav a::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -45,7 +26,7 @@ ul li img{
     transform-origin: left;
   }
   
-  .navbar a:hover::before {
+  .topnav a:hover::before {
     transform: scaleX(1);
   }
   a:hover {
@@ -53,47 +34,31 @@ ul li img{
     transform: scaleX(1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
   }
-  .login{
+  
+  
+
+  .topnav {
     overflow: hidden;
-    display: block;
-    margin-left: 700px;
-  }
-  .login li{
-      display: inline;
-      float: right;
-  }
-  .login a{
     
+  }
+  
+  .topnav a {
     float: left;
+    display: block;
     color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    font-family: "Times New Roman", Times, serif;
-}
-.login a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #16b138, #52ee15, #8ead02);
-    z-index: 1;
-    transform: scaleX(0);
-    transform-origin: left;
+  }
+
+  .topnav .icon {
+    display: none;
   }
   
-  .login a:hover::before {
-    transform: scaleX(1);
-  }
-  a:hover {
-    transform-origin: center;
-    transform: scaleX(1);
-    transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
-  }
+ 
   /*Navbar fin*/
+
 /*Video principal*/
 
 
@@ -337,5 +302,28 @@ ul li img{
       
     }
 }
-
+@media screen and (max-width: 600px) {
+    .topnav a:not(:first-child) {display: none;}
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+    .dendariakLogo{
+        display: none;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
   

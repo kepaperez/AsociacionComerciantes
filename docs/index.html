@@ -20,11 +20,11 @@
 </head>
 
 <body>
-  
-    <a href="#up" class="simplescrollup__button simplescrollup__button--hide"><i class="fas fa-arrow-up"></i></a>
-    <script src="js/simplescrollup.js"></script>
-    
-  <div class="grid-container">
+
+  <a href="#up" class="simplescrollup__button simplescrollup__button--hide"><i class="fas fa-arrow-up"></i></a>
+  <script src="js/simplescrollup.js"></script>
+
+  <!-- <div class="grid-container">
     <div class="grid-item">
       <ul class="navbar">
         <li><img src="img/imgInicio/dendariak.jpg"></li>
@@ -35,6 +35,17 @@
         <li><a class="login" href="">LOGIN</a></li>
       </ul>
     </div>
+  </div> -->
+  <div class="topnav" id="myTopnav">
+    <img class="dendariakLogo" src="img/imgInicio/dendariak.jpg">
+    <a href="index.html">INICIO</a>
+    <a href="asociaciones.html">ASOCIACIONES</a>
+    <a href="#contact">CONTACT</a>
+    <a href="#about">ABOUT</a>
+    <a href="#about" class="login">LOGIN</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
 
   <center>
@@ -130,6 +141,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
 </body>
 
 <footer>
