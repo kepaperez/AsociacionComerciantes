@@ -182,7 +182,7 @@ function loggedVerify() {
                 $("#logout").css("display","inline");
                 $(".iniciar").css("display","none");
                 $(".registrar").css("display","none");
-                $(".botones").css("display","inline");
+                $(".botonLog").css("display","inline");
 
                 // ==========================================
                 // checkOut
