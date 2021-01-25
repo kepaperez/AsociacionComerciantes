@@ -39,13 +39,13 @@
                 <input type="text" id="username" name="fname"><br><br>
                 <label for="lname">Contraseña:</label>
                 <input type="password" id="password" name="lname"><br><br>
-    
+
                 <button class="btn btn-dark" onclick="login()">OK</button>
                 <button class="btn btn-dark" id="registrar">Registrar</button>
                 <button class="btn btn-danger" id="logout">Log Out</button>
             </form>
         </div>
-        
+
         <div class="registrar">
             <form>
                 <label for="fname">Usuario:</label>
@@ -56,7 +56,7 @@
                 <input type="text" id="lname" name="lname"><br><br>
                 <label for="lname">Contraseña</label>
                 <input type="text" id="lname" name="lname"><br><br>
-    
+
                 <button class="btn btn-dark">OK</button>
                 <button class="btn btn-dark" id="iniciar">Iniciar</button>
             </form>
@@ -71,12 +71,17 @@
 <body id="miControlador" ng-controller="miControlador">
     <section class="secc">
         <header>
+
             <nav class="navbar">
                 <div class="">
                     <h1 onclick="ver('divPrincipal')"><img style="height: 60px;" src="img/logo/nikelogo2.png" alt=""
                             srcset=""></h1>
                 </div>
+                <button class="btn btn-dark izquierda" onclick="showNav()">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
                 <ul class="ul-nav izquierda">
+
                     <li id='btn1' class="izquierdaBtn" onclick="ver('divTodo','Ver todo',id)"><a>Todo</a></li>
                     <li id='btn2' class="izquierdaBtn" onclick="ver('divSecundario','Mujer',id)"><a>Mujer</a></li>
                     <li id='btn3' class="izquierdaBtn" onclick="ver('divSecundario','Hombre',id)"><a>Hombre</a></li>
@@ -84,9 +89,27 @@
 
                     <input onkeypress="ver('divTodo','Ver todo',id)" placeholder="Buscar...." ng-model='gsearch'
                         type="search" id="gsearch" name="gsearch">
+
                 </ul>
 
+                
+                <div class="navOculto" style="width: 100%;">
+                    <center>
+                        <ul style="margin: 0 auto ; text-align: center;">
+                            <li id='btn1' class="izquierdaBtn" onclick="ver('divTodo','Ver todo',id)"><a>Todo</a></li>
+                            <li id='btn2' class="izquierdaBtn" onclick="ver('divSecundario','Mujer',id)"><a>Mujer</a>
+                            </li>
+                            <li id='btn3' class="izquierdaBtn" onclick="ver('divSecundario','Hombre',id)"><a>Hombre</a>
+                            </li>
+                            <li id='btn4' class="izquierdaBtn" onclick="ver('divSecundario','Niño',id)"><a>Niño</a></li>
+
+                            <input onkeypress="ver('divTodo','Ver todo',id)" placeholder="Buscar...." ng-model='gsearch'
+                                type="search" id="gsearch" name="gsearch">
+                        </ul>
+                    </center>
+                </div>
             </nav>
+
         </header>
 
         <div class="principal" id="divPrincipal">
@@ -120,13 +143,13 @@
                     <div class="rowTrending">
                         <div id="columnTrending1" class="columnTrending" style="background-color:#f6f6f6;">
                             <b>
-                                <p>{{listaTodo[34].producto.nombre}}</p>
+                                <p>{{listaTodo[12].producto.nombre}}</p>
                             </b>
-                            <button value="{{listaTodo[7].producto.id}}" class="comprarBoton">Comprar</button>
+                            <button value="{{listaTodo[12].producto.id}}" class="comprarBoton">Comprar</button>
                         </div>
                         <div id="columnTrending2" class="columnTrending" style="background-color:#f6f6f6;">
                             <b>
-                                <p>{{listaTodo[26].producto.nombre}}</p>
+                                <p>{{listaTodo[28].producto.nombre}}</p>
                             </b>
                             <button value="{{listaTodo[28].producto.id}}" class="comprarBoton">Comprar</button>
                         </div>
@@ -153,6 +176,14 @@
                     </div>
                 </div>
 
+            </section>
+
+            <section class=masBtn>
+                <center>
+                    <li><button onclick="ver('divSecundario','Hombre')" class="comprarMasBoton">Hombre</button></li>
+                    <li><button onclick="ver('divSecundario','Mujer')" class="comprarMasBoton">Mujer</button></li>
+                    <li><button onclick="ver('divSecundario','Nino')" class="comprarMasBoton">Niñ@s</button></li>
+                </center>
             </section>
         </div>
 
@@ -250,6 +281,7 @@
         </div>
 
         <div class="comprar" id="divComprar">
+
             <div class="boxBuy">
                 <div class="boxImg"></div>
                 <div class="boxData">

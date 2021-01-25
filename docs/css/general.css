@@ -55,7 +55,7 @@ input[type=text], input[type=password]{
     
 }
 
-.botones{
+.desplegable .botones{
     display: none;
     height: 50px;
     width: 100%;
