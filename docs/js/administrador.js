@@ -74,33 +74,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
             .catch(error => console.error('Error status:', error));
     }
-    // $("#enviar").click(function () {
-
-    //     alert("El producto se va a actualizar");
-    //     updateProducto(id);
-    // })
-    function updateProducto(id) {
-        var id = id;
-        var nombre = $("#nombre"  + id).val()
-        var imagen = $("#imagen"  + id).val()
-        var descripcion = $("#descripcion"  + id).val()
-        var marca = $("#marca"  + id).val()
-        var sexo = $("#sexo"  + id).val()
-        var tipo = $("#tipo"  + id).val()
-        
-
-
-        var url = "controller/cUpdateProducto.php";
-        var data = { 'id':id,'nombre': nombre, 'imagen': imagen, 'descripcion': descripcion, 'marca': marca, 'sexo': sexo, 'tipo': tipo};
-
-        fetch(url, {
-            method: 'POST', // or 'POST'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers: { 'Content-Type': 'application/json' } //input data
-        })
-
-            .catch(error => console.error('Error status:', error));
-    }
+   
     
     function productosDeTienda(id) {
 
@@ -157,3 +131,26 @@ miApp.controller('miControlador', function ($scope, $http) {
             })
             .catch(error => console.error('Error status:', error));
     };
+    function updateProducto(id) {
+        var id = id;
+        var nombre = $("#nombre"  + id).val()
+        var imagen = $("#imagen"  + id).val()
+        var descripcion = $("#descripcion"  + id).val()
+        var marca = $("#marca"  + id).val()
+        var sexo = $("#sexo"  + id).val()
+        var tipo = $("#tipo"  + id).val()
+        
+
+
+        var url = "controller/cUpdateProducto.php";
+        var data = { 'id':id,'nombre': nombre, 'imagen': imagen, 'descripcion': descripcion, 'marca': marca, 'sexo': sexo, 'tipo': tipo};
+
+        fetch(url, {
+            method: 'POST', // or 'POST'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: { 'Content-Type': 'application/json' } //input data
+        })
+
+            .catch(error => console.error('Error status:', error));
+    }
+    
