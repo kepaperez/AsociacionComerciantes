@@ -47,8 +47,9 @@ class tiendaModel extends tiendaClass
             $tienda->imagen = $row['imagen'];
             $tienda->tipo = $row['tipo'];
         
-     
-            array_push($list, $tienda);
+            
+            array_push($list, get_object_vars($tienda));
+    
         }
         mysqli_free_result($result);
         $this->CloseConnect();
@@ -77,6 +78,9 @@ class tiendaModel extends tiendaClass
         }
         mysqli_free_result($result);
         $this->CloseConnect();
+      
+            
+     
 
     }
     function ObjVars()

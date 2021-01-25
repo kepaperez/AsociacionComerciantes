@@ -1,13 +1,13 @@
 <?php
 class tiendaClass
 {
-    public $id;
-    public $nombre;
-    public $direccion;
-    public $horario;
-    public $imagen;
-    public $tipo;
-    public $imgBanner;
+    protected $id;
+    protected $nombre;
+    protected $direccion;
+    protected $horario;
+    protected $imagen;
+    protected $tipo;
+    protected $imgBanner;
 
     /**
      * @return mixed

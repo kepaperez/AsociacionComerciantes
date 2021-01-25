@@ -1,15 +1,15 @@
 <?php
 class usuarioClass{
-    public $id;
-    public $nombre;
-    public $apellido;
-    public $dni;
-    public $admin;
-    public $telefono;
-    public $nombreUsuario;
-    public $contrasenaUsuario;
-    public $direccion;
-    public $saldo;
+    protected $id;
+    protected $nombre;
+    protected $apellido;
+    protected $dni;
+    protected $admin;
+    protected $telefono;
+    protected $nombreUsuario;
+    protected $contrasenaUsuario;
+    protected $direccion;
+    protected $saldo;
     /**
      * @return mixed
      */

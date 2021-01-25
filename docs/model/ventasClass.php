@@ -1,11 +1,11 @@
 <?php
 class ventasClass{
-    public $id;
-    public $id_producto;
-    public $id_tienda;
-    public $id_usuario;
-    public $fecha;
-    public $precio;
+    protected $id;
+    protected $id_producto;
+    protected $id_tienda;
+    protected $id_usuario;
+    protected $fecha;
+    protected $precio;
     /**
      * @return mixed
      */
