@@ -63,6 +63,7 @@ miApp.controller('miControlador', function ($scope, $http) {
     function updateTienda(id) {
         var id = id;
         var nombre = $("#nombre").val()
+        alert(nombre);
         var direccion = $("#direccion").val()
         var horario = $("#horario").val()
         var imagen = $("#imagen").val()

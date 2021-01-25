@@ -93,14 +93,16 @@ class tiendaModel extends tiendaClass
         $Imagen=$this->imagen;
         $Tipo=$this->tipo;
         $ImgBanner=$this->imgBanner;
-        
+
+  
                   
         $sql="CALL 	spUpdateTienda('$Id','$Nombre','$Direccion',' $Horario','$Imagen','$Tipo','$ImgBanner')"; 
         
         $this->link->query($sql);
        
         $this->CloseConnect();
-    
+
+     
     
     }
     function ObjVars()
