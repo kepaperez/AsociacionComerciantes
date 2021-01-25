@@ -81,4 +81,38 @@ miApp.controller('miControlador', function ($scope, $http) {
 
             .catch(error => console.error('Error status:', error));
     }
+<<<<<<< HEAD
 
+=======
+     //El boton
+    // $("#enviar").click(function () {
+
+    //     alert("El usuario se va a actualizar");
+
+    //     updateUsuario();
+    // });
+    function updateUsuario(){
+        var nombre = $("#nombre").val()
+        var apellido = $("#apellido").val()
+        var dni = $("#dni").val()
+        var admin = $("#admin").val()
+        var telefono = $("#telefono").val()
+        var nombreUsuario = $("#nombreUsuario").val()
+        var contrasenaUsuario = $("#contrasenaUsuario").val()
+        var direccion = $("#direccion").val()
+        var saldo = $("#saldo").val()
+
+
+        var url = "../controller/cUpdateUser.php";
+        var data = { 'nombre': nombre, 'apellido':apellido,'dni': dni, 'admin':admin,  'telefono': telefono, 'nombreUsuario': nombreUsuario, 'contrasenaUsuario': contrasenaUsuario, 'direccion': direccion, 'saldo': saldo};
+
+        fetch(url, {
+            method: 'POST', // or 'POST'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: { 'Content-Type': 'application/json' } //input data
+        })
+    
+            .catch(error => console.error('Error status:', error));
+    }
+});
+>>>>>>> ec966804bd718931474618bd4e297a011117156e
