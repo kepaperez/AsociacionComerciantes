@@ -21,7 +21,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
                 var newRow = "<h2>Usuarios</h2>";
                 newRow += "<table>";
-                newRow += "<tr><th>Nombre</th><th>Direccion</th><th>Horario</th><th>Tipo</th><th>Update</th><th>Productos</th></tr>";
+                newRow += "<tr><th>Nombre</th><th>Direccion</th><th>Horario</th><th>Tipo</th><th>Img</th><th>ImgBanner</th></tr>";
 
                 for (let i = 0; i < tiendas.length; i++) {
 

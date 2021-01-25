@@ -31,8 +31,6 @@ $tienda->setImgBanner($imgBanner);
 
 
 
-var_dump($tienda);
-
 $tienda->updateTienda();
 
 unset ($tienda);

@@ -95,6 +95,8 @@ class tiendaModel extends tiendaClass
         $ImgBanner=$this->imgBanner;
 
   
+
+  
                   
         $sql="CALL 	spUpdateTienda('$Id','$Nombre','$Direccion',' $Horario','$Imagen','$Tipo','$ImgBanner')"; 
         
