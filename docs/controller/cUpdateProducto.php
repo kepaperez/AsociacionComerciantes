@@ -1,7 +1,7 @@
 <?php
 
 /*En que modelo buscamos la funcion*/ 
-include_once ("../model/ptoductoModel.php");
+include_once ("../model/productoModel.php");
 
 $data=json_decode(file_get_contents("php://input"),true);
 
