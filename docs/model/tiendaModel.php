@@ -83,6 +83,26 @@ class tiendaModel extends tiendaClass
      
 
     }
+    public function updateTienda(){
+        
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $Nombre=$this->nombre;
+        $Direccion=$this->direccion;
+        $Horario=$this->horario;
+        $Imagen=$this->imagen;
+        $Tipo=$this->tipo;
+        $ImgBanner=$this->imgBanner;
+        
+                  
+        $sql="CALL 	spUpdateTienda('$Nombre','$Direccion',' $Horario','$Imagen','$Tipo','$ImgBanner')"; 
+        
+        $this->link->query($sql);
+       
+        $this->CloseConnect();
+    
+    
+    }
     function ObjVars()
     {
         return get_object_vars($this);

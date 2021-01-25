@@ -4,7 +4,7 @@ document.addEventListener('click', function (evt) {
 
     if (evt.target.className === 'añadirBtn') {
         añadirCarrito(evt.target.dataset);
-      
+
     }
     if (evt.target.className === 'verCarrito') {
 
@@ -28,12 +28,12 @@ document.addEventListener('click', function (evt) {
         $(".iniciar").css("display", "none");
         $(".registrar").css("display", "block");
     }
-    if (evt.target.id === 'logout'|| evt.target.id === 'logoutt') {
+    if (evt.target.id === 'logout' || evt.target.id === 'logoutt') {
         logout();
     }
     if (evt.target.id === 'administrador') {
         window.location.href = "administrador.html";
-        
+
     }
 
 }, false);
@@ -153,8 +153,6 @@ function login() {
     })
         .then(res => res.json()).then(result => {
 
-           
-
             if (result.message === "no error") {
                 console.log(result.list);
                 location.reload();
@@ -178,27 +176,87 @@ function loggedVerify() {
         .then(res => res.json()).then(result => {
 
             if (result.message === "logged") {
-                
+
                 console.log(result.user);
-                user=result.user;
+                user = result.user;
                 $(".userLoged").html(result.username);
-                $(".saldo").html(result.user.saldo+"€");
-                $("#logout").css("display","inline");
-                $(".iniciar").css("display","none");
-                $(".registrar").css("display","none");
-                $(".botonLog").css("display","inline");
+                $(".saldo").html(result.user.saldo + "€");
+                $("#logout").css("display", "inline");
+                $(".iniciar").css("display", "none");
+                $(".registrar").css("display", "none");
+                $(".botonLog").css("display", "inline");
 
                 // ==========================================
                 // checkOut
-                
+
                 loadCheckoutData()
-                }
+            }
         })
         .catch(error => console.error('Error status:', error));
 
 
 }
 
+function registrar() {
+
+    var usuario = document.getElementById("usuarioReg").value;
+    var nombre = document.getElementById("nombreReg").value;
+    var apellido = document.getElementById("apellidoReg").value;
+    var pass = document.getElementById("passReg").value;
+
+    var url = "controller/cRegistrar.php";
+
+    var data = {
+        'usuario': usuario,
+        'nombre': nombre,
+        'apellido': apellido,
+        'pass': pass
+    };
+
+
+    fetch(url, {
+        method: 'POST', // or 'POST'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: { 'Content-Type': 'application/json' }  //input data
+
+    })
+        .then(res => res.json()).then(result => {
+
+            alert(result.msg);
+
+            var url = "controller/cLogin.php";
+
+            var data = {
+                'username': usuario, 'password': pass
+            };
+
+
+            fetch(url, {
+                method: 'POST', // or 'POST'
+                body: JSON.stringify(data), // data can be `string` or {object}!
+                headers: { 'Content-Type': 'application/json' }  //input data
+
+            })
+                .then(res => res.json()).then(result => {
+
+                    if (result.message === "no error") {
+                        console.log(result.list);
+                        location.reload();
+
+                    }
+                    else {
+                        alert(result.message);
+                    }
+
+                })
+                .catch(error => console.error('Error status:', error));
+
+
+        })
+        .catch(error => console.error('Error status:', error));
+
+
+}
 function logout() {
     localStorage.clear();
     var url = "controller/cLogout.php";
@@ -214,7 +272,7 @@ function logout() {
         .catch(error => console.error('Error status:', error));
 }
 
-function loadCheckoutData(){
+function loadCheckoutData() {
     console.log(user);
     $("#nombreCheckout").val(user.nombre);
     $("#apellidoCheckout").val(user.apellido);
@@ -222,6 +280,6 @@ function loadCheckoutData(){
     $("#dniCheckout").val(user.dni);
     $("#tlfCheckout").val(user.telefono);
     $("#direccionCheckout").val(user.direccion);
-    $(".SaldoCheckout").html(user.saldo+"€");
-          
+    $(".SaldoCheckout").html(user.saldo + "€");
+
 }
