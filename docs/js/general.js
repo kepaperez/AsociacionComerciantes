@@ -31,6 +31,10 @@ document.addEventListener('click', function (evt) {
     if (evt.target.id === 'logout'|| evt.target.id === 'logoutt') {
         logout();
     }
+    if (evt.target.id === 'administrador') {
+        window.location.href = "administrador.html";
+        
+    }
 
 }, false);
 
