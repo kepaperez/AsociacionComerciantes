@@ -101,6 +101,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
             .catch(error => console.error('Error status:', error));
     }
+    
     function productosDeTienda(id) {
 
         
