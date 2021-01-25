@@ -59,13 +59,15 @@ class productoModel extends productoClass
         $Imagen=$this->imagen;
         $Descripcion=$this->descripcion;
         $Marca=$this->marca;
+        $Sexo=$this->sexo;
+        $Tipo=$this->tipo;
 
 
   
 
   
                   
-        $sql="CALL 	spUpdateProducto('$Id','$Nombre','$Imagen','$Descripcion','$Marca')"; 
+        $sql="CALL 	spUpdateProducto('$Id','$Nombre','$Imagen','$Descripcion','$Marca', '$Sexo','$Tipo')"; 
         
         $this->link->query($sql);
        
