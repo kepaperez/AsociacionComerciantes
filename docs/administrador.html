@@ -61,28 +61,28 @@
     </div>
 </div>
 
-<body ng-controller="miControlador" data-ng-init="calcularTotal()">
+<body ng-controller="miControlador">
+    <div class="container">
+        <table class="default">
 
-    <div class="carrito" ng-show="verCarrito">
-        <center>
-            <div class="miniContainerCarrito">
-                <br>
-                <p><b>TU CARRITO</b></p>
+            <tr  id="{{item.id}}" ng-repeat="item in tiendas | filter:TEXTObusqueda">
 
-                <table class="demo">
+                <td >{{ item.nombre}}</td>
 
-                    <thead>
-                        <tr>
-                            <th class="grande">Producto</th>
-                            <th class="pequeno">Tienda</th>
-                            <th class="pequeno">Precio</th>
-                            <th class="pequeno">Cantidad</th>
-                            <th class="pequeno">Total</th>
-                        </tr>
-                    </thead>
+                <td >{{ item.tipo}}</td>
 
-      
+                <td > <button class="btn btn-danger" id="{{item.id}}" >Editar Info</button></td>
+                <td >  <button class="btn btn-danger" id="{{item.id}}" >Editar Productos</button></td>
+
+            </tr>
+
+        </table>
     </div>
+    <div class="container coniner2">
+        
+    </div>
+
+
 </body>
 
 </html>
