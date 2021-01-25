@@ -87,8 +87,6 @@ class usuarioModel extends usuarioClass{
 
         $sql="call spNewUser('$usuario','$pass','$nombre','$apellido')";
 
-        var_dump($sql);
-        
         $this->link->query($sql);
        
         $this->CloseConnect();

@@ -33,7 +33,7 @@ document.addEventListener('click', function (evt) {
     }
     if (evt.target.id === 'administrador') {
         window.location.href = "administrador.html";
-        
+
     }
 
 }, false);
@@ -153,8 +153,6 @@ function login() {
     })
         .then(res => res.json()).then(result => {
 
-
-
             if (result.message === "no error") {
                 console.log(result.list);
                 location.reload();
@@ -215,7 +213,7 @@ function registrar() {
         'pass': pass
     };
 
-    console.log(data);
+
     fetch(url, {
         method: 'POST', // or 'POST'
         body: JSON.stringify(data), // data can be `string` or {object}!
@@ -224,12 +222,40 @@ function registrar() {
     })
         .then(res => res.json()).then(result => {
 
-        alert(result.user.usuario);
+            alert(result.msg);
+
+            var url = "controller/cLogin.php";
+
+            var data = {
+                'username': usuario, 'password': pass
+            };
+
+
+            fetch(url, {
+                method: 'POST', // or 'POST'
+                body: JSON.stringify(data), // data can be `string` or {object}!
+                headers: { 'Content-Type': 'application/json' }  //input data
+
+            })
+                .then(res => res.json()).then(result => {
+
+                    if (result.message === "no error") {
+                        console.log(result.list);
+                        location.reload();
+
+                    }
+                    else {
+                        alert(result.message);
+                    }
+
+                })
+                .catch(error => console.error('Error status:', error));
+
 
         })
         .catch(error => console.error('Error status:', error));
 
-        
+
 }
 function logout() {
     localStorage.clear();

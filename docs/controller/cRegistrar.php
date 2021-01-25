@@ -20,7 +20,7 @@ $user->setContrasenaUsuario($pass);
 
 $user->newUser();
 
-$response["user"] = $user;
+$response["msg"] = "usuario creado";
 
 echo json_encode($response);
 unset($response);
