@@ -19,7 +19,7 @@ miApp.controller('miControlador', function ($scope, $http) {
                 tiendas = result.list;
 
 
-                var newRow = "<h2>Usuarios</h2>";
+                var newRow = "<h2>TIENDAS</h2>";
                 newRow += "<table>";
                 newRow += "<tr><th>Nombre</th><th>Direccion</th><th>Horario</th><th>Tipo</th><th>Img</th><th>ImgBanner</th></tr>";
 
