@@ -80,7 +80,6 @@ miApp.controller('miControlador', function ($scope, $http) {
 
             .catch(error => console.error('Error status:', error));
     }
-<<<<<<< HEAD
      //El boton
     // $("#enviar").click(function () {
 
@@ -111,7 +110,4 @@ miApp.controller('miControlador', function ($scope, $http) {
     
             .catch(error => console.error('Error status:', error));
     }
-=======
-
->>>>>>> 3153baa535e695255ef2e8bfa378289f220dd325
 });
