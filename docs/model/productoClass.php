@@ -6,6 +6,9 @@ class productoClass
     protected $imagen;
     protected $descripcion;
     protected $marca;
+    protected $sexo;
+    protected $tipo;
+
     /**
      * @return mixed
      */
@@ -32,6 +35,14 @@ class productoClass
     {
         return $this->marca;
     }
+    public function getSexo()
+    {
+        return $this->sexo;
+    }
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
    
 
   
@@ -55,6 +66,14 @@ class productoClass
     public function setMarca($marca)
     {
         $this->marca = $marca;
+    }
+    public function setSexo($sexo)
+    {
+        $this->sexo = $sexo;
+    }
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
     }
 
 

@@ -12,6 +12,8 @@ $nombre=$data['nombre'];
 $imagen=$data['imagen'];
 $descripcion=$data['descripcion'];
 $marca=$data['marca'];
+$sexo=$data['sexo'];
+$tipo=$data['tipo'];
 
 
 $producto->setId($id);
@@ -23,6 +25,10 @@ $producto->setImagen($imagen);
 $producto->setDescripcion($descripcion);
 
 $producto->setMarca($marca);
+
+$producto->setSexo($sexo);
+
+$producto->setTipo($tipo);
 
 
 

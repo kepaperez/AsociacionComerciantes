@@ -87,10 +87,13 @@ miApp.controller('miControlador', function ($scope, $http) {
         var imagen = $("#imagen"  + id).val()
         var descripcion = $("#descripcion"  + id).val()
         var marca = $("#marca"  + id).val()
+        var sexo = $("#sexo"  + id).val()
+        var tipo = $("#tipo"  + id).val()
+        
 
 
         var url = "controller/cUpdateProducto.php";
-        var data = { 'id':id,'nombre': nombre, 'imagen': imagen, 'descripcion': descripcion, 'marca': marca};
+        var data = { 'id':id,'nombre': nombre, 'imagen': imagen, 'descripcion': descripcion, 'marca': marca, 'sexo': sexo, 'tipo': tipo};
 
         fetch(url, {
             method: 'POST', // or 'POST'
