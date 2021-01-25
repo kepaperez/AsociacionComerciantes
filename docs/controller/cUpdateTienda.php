@@ -7,6 +7,7 @@ $data=json_decode(file_get_contents("php://input"),true);
 
 $tienda= new tiendaModel();
  
+$id=$data['id'];
 $nombre=$data['nombre'];
 $direccion=$data['direccion'];
 $horario=$data['horario'];
@@ -14,6 +15,7 @@ $imagen=$data['imagen'];
 $tipo=$data['tipo'];
 $imgBanner=$data['imgBanner'];
 
+$tienda->setId($id);
 
 $tienda->setNombre($nombre);
 

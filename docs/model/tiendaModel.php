@@ -86,7 +86,7 @@ class tiendaModel extends tiendaClass
     public function updateTienda(){
         
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
-        
+        $Id=$this->id;
         $Nombre=$this->nombre;
         $Direccion=$this->direccion;
         $Horario=$this->horario;
@@ -95,7 +95,7 @@ class tiendaModel extends tiendaClass
         $ImgBanner=$this->imgBanner;
         
                   
-        $sql="CALL 	spUpdateTienda('$Nombre','$Direccion',' $Horario','$Imagen','$Tipo','$ImgBanner')"; 
+        $sql="CALL 	spUpdateTienda('$Id','$Nombre','$Direccion',' $Horario','$Imagen','$Tipo','$ImgBanner')"; 
         
         $this->link->query($sql);
        
