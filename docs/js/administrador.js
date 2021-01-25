@@ -69,7 +69,7 @@ miApp.controller('miControlador', function ($scope, $http) {
         var imgBanner = $("#imgBanner").val()
 
 
-        var url = "../controller/cUpdateUser.php";
+        var url = "../controller/cUpdateTienda.php";
         var data = { 'id':id,'nombre': nombre, 'direccion': direccion, 'horario': horario, 'imagen': imagen, 'tipo': tipo, 'imgBanner': imgBanner };
 
         fetch(url, {
