@@ -28,6 +28,7 @@
     display: none;
     padding-top: 50px;
     padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 .desplegable input{
@@ -55,8 +56,8 @@ input[type=text], input[type=password]{
     
 }
 
-.desplegable .botones{
+.desplegable .botonLog{
     display: none;
     height: 50px;
-    width: 100%;
+    width: 100%;   
 }
