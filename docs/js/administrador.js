@@ -29,6 +29,8 @@ miApp.controller('miControlador', function ($scope, $http) {
                         "<td><input id ='direccion" + tiendas[i].id + "' value ='" + tiendas[i].direccion + "'></td>" +
                         "<td><input id ='horario" + tiendas[i].id + "' value ='" + tiendas[i].horario + "'></td>" +
                         "<td><input id ='tipo" + tiendas[i].id + "' value ='" + tiendas[i].tipo + "'></td>" +
+                        "<td><input id ='imagen" + tiendas[i].id + "' value ='" + tiendas[i].imagen + "'></td>" +
+                        "<td><input id ='imgBanner" + tiendas[i].id + "' value ='" + tiendas[i].imgBanner + "'></td>" +
 
                         /* "<td><button type='button' class='btn btn-dark' onclick=deleteUser(" + usuarios[i].id + ")>X</button></td>" +*/
 
@@ -62,13 +64,13 @@ miApp.controller('miControlador', function ($scope, $http) {
     })
     function updateTienda(id) {
         var id = id;
-        var nombre = $("#nombre").val()
+        var nombre = $("#nombre"  + id).val()
         alert(nombre);
-        var direccion = $("#direccion").val()
-        var horario = $("#horario").val()
-        var imagen = $("#imagen").val()
-        var tipo = $("#tipo").val()
-        var imgBanner = $("#imgBanner").val()
+        var direccion = $("#direccion"  + id).val()
+        var horario = $("#horario"  + id).val()
+        var imagen = $("#imagen"  + id).val()
+        var tipo = $("#tipo"  + id).val()
+        var imgBanner = $("#imgBanner"  + id).val()
 
 
         var url = "controller/cUpdateTienda.php";
