@@ -50,6 +50,30 @@ class productoModel extends productoClass
         mysqli_free_result($result);
         $this->CloseConnect();
     }
+
+    public function updateProducto(){
+        
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        $Id=$this->id;
+        $Nombre=$this->nombre;
+        $Imagen=$this->imagen;
+        $Descripcion=$this->descripcion;
+        $Marca=$this->marca;
+
+
+  
+
+  
+                  
+        $sql="CALL 	spUpdateProducto('$Id','$Nombre','$Imagen','$Descripcion','$Marca')"; 
+        
+        $this->link->query($sql);
+       
+        $this->CloseConnect();
+
+     
+    
+    }
     
     function ObjVars()
     {
