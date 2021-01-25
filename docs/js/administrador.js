@@ -104,11 +104,11 @@ miApp.controller('miControlador', function ($scope, $http) {
 
                     newRow += "<tr>" + "<td> <input id ='nombre" + productos[i].id_producto + "' value ='" + productos[i].producto.nombre + "'></td>" +
                     "<td><input id ='stock" + productos[i].id_producto + "' value ='" + productos[i].stock + "'></td>" +
-                    "<td><input id ='stock" + productos[i].id_producto + "' value ='" + productos[i].producto.imagen + "'></td>" +
-                    "<td><input id ='stock" + productos[i].id_producto + "' value ='" + productos[i].producto.descripcion + "'></td>" +
-                    "<td><input id ='stock" + productos[i].id_producto + "' value ='" + productos[i].producto.marca + "'></td>" +
-                    "<td><input id ='stock" + productos[i].id_producto + "' value ='" + productos[i].producto.sexo + "'></td>" +
-                    "<td><input id ='stock" + productos[i].id_producto + "' value ='" + productos[i].producto.tipo + "'></td>" +
+                    "<td><input id ='imagen" + productos[i].id_producto + "' value ='" + productos[i].producto.imagen + "'></td>" +
+                    "<td><input id ='descripcion" + productos[i].id_producto + "' value ='" + productos[i].producto.descripcion + "'></td>" +
+                    "<td><input id ='marca" + productos[i].id_producto + "' value ='" + productos[i].producto.marca + "'></td>" +
+                    "<td><input id ='sexo" + productos[i].id_producto + "' value ='" + productos[i].producto.sexo + "'></td>" +
+                    "<td><input id ='tipo" + productos[i].id_producto + "' value ='" + productos[i].producto.tipo + "'></td>" +
                        
 
                         /* "<td><button type='button' class='btn btn-dark' onclick=deleteUser(" + usuarios[i].id + ")>X</button></td>" +*/
