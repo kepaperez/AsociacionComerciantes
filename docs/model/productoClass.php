@@ -1,11 +1,11 @@
 <?php
 class productoClass
 {
-    public $id;
-    public $nombre;
-    public $imagen;
-    public $descripcion;
-    public $marca;
+    protected $id;
+    protected $nombre;
+    protected $imagen;
+    protected $descripcion;
+    protected $marca;
     /**
      * @return mixed
      */
