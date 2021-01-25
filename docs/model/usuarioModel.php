@@ -76,6 +76,24 @@ class usuarioModel extends usuarioClass{
 
     }
     
+    public function newUser(){
+
+        $this->OpenConnect();  
+        
+        $usuario=$this->nombreUsuario;
+        $pass=$this->contrasenaUsuario;
+        $nombre=$this->nombre;
+        $apellido=$this->apellido;
+
+        $sql="call spNewUser('$usuario','$pass','$nombre','$apellido')";
+
+        var_dump($sql);
+        
+        $this->link->query($sql);
+       
+        $this->CloseConnect();
+
+    }
     public function ObjVars()
     {
         return get_object_vars($this);
