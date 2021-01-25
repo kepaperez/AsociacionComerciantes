@@ -74,27 +74,28 @@ miApp.controller('miControlador', function ($scope, $http) {
 
             .catch(error => console.error('Error status:', error));
     }
-    function updateUsuario(){
-        var nombre = $("#nombre").val()
-        var apellido = $("#apellido").val()
-        var dni = $("#dni").val()
-        var admin = $("#admin").val()
-        var telefono = $("#telefono").val()
-        var nombreUsuario = $("#nombreUsuario").val()
-        var contrasenaUsuario = $("#contrasenaUsuario").val()
-        var direccion = $("#direccion").val()
-        var saldo = $("#saldo").val()
+    // $("#enviar").click(function () {
+
+    //     alert("El producto se va a actualizar");
+    //     updateProducto(id);
+    // })
+    function updateProducto(id) {
+        var id = id;
+        var nombre = $("#nombre"  + id).val()
+        var imagen = $("#imagen"  + id).val()
+        var descripcion = $("#descripcion"  + id).val()
+        var marca = $("#marca"  + id).val()
 
 
-        var url = "../controller/cUpdateUser.php";
-        var data = { 'nombre': nombre, 'apellido':apellido,'dni': dni, 'admin':admin,  'telefono': telefono, 'nombreUsuario': nombreUsuario, 'contrasenaUsuario': contrasenaUsuario, 'direccion': direccion, 'saldo': saldo};
+        var url = "controller/cUpdateProducto.php";
+        var data = { 'id':id,'nombre': nombre, 'imagen': imagen, 'descripcion': descripcion, 'marca': marca};
 
         fetch(url, {
             method: 'POST', // or 'POST'
             body: JSON.stringify(data), // data can be `string` or {object}!
             headers: { 'Content-Type': 'application/json' } //input data
         })
-    
+
             .catch(error => console.error('Error status:', error));
     }
     function productosDeTienda(id) {
