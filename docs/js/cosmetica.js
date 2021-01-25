@@ -19,12 +19,12 @@ miApp.controller('miControlador', function ($scope, $http) {
 
     //     console.log(response.data.tienda);
     // })
-    if (id == 5) {
+    if (id == 6) {
         //Fruteria
-        $("#texto1").css("display", "none")
+        $(".mapaPrecio").css("display", "none")
  
     } else {
         //Panaderia
-        $("#texto1").css("display", "block")
+        //$(".mapaPrecio").css("display", "block")
     }
 });
