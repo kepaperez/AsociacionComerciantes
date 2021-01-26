@@ -24,7 +24,7 @@ for($i=0; $i<$data[$i]; $i++){
 }
 
 echo json_encode($response); 
-// var_dump($response);
+
 unset ($productoTienda);
 
 unset ($productoTienda);
