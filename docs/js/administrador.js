@@ -141,7 +141,6 @@ miApp.controller('miControlador', function ($scope, $http) {
         var tipo = $("#tipo"  + id).val()
         
 
-
         var url = "controller/cUpdateProducto.php";
         var data = { 'id':id,'nombre': nombre, 'imagen': imagen, 'descripcion': descripcion, 'marca': marca, 'sexo': sexo, 'tipo': tipo};
 
@@ -153,4 +152,5 @@ miApp.controller('miControlador', function ($scope, $http) {
 
             .catch(error => console.error('Error status:', error));
     }
+    
     
