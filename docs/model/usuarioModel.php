@@ -116,6 +116,7 @@ class usuarioModel extends usuarioClass{
      
     
     }
+    
     public function ObjVars()
     {
         return get_object_vars($this);

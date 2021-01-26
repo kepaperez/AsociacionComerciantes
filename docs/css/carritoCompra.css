@@ -71,7 +71,8 @@
   /* ======================================================================== */
   /* Check Out  */
   .checkOut{
-    padding:50px;
+    padding-left:280px;
+    padding-right: 280px;
   }
 .miniContainerCarrito .column {
   float: left;

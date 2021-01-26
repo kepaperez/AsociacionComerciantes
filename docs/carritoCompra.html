@@ -103,7 +103,7 @@
                             </td>
                             <td class="pequeno">{{itom.tienda}}</td>
                             <td class="pequeno">{{itom.precio}} €</td>
-                            <td class="pequeno"><input type="number" min="1" max="{{itom.stock}}"
+                            <td class="pequeno"><input class="cantidadCarrito" type="number" min="1" max="{{itom.stock}}"
                                     ng-change="calcularTotal()" ng-model="itom.cantidad">
                             </td>
 
@@ -135,14 +135,15 @@
                             <th class="grande" class="rowCarrito">
 
                                 <div class="columnCarritoButtons">
-                                    <button class="btn btn-dark" ng-click="list()">Seguir
+                                    <button class="btn btn-dark quitarBtn" ng-click="list()">Seguir
                                         Comprando</button>
                                 </div>
                                 <div class="columnCarrito">
-                                    <button class="btn btn-dark" ng-click="vaciarCarrito()">Vaciar Carrito</button>
+                                    <button class="btn btn-dark quitarBtn" ng-click="vaciarCarrito()">Vaciar Carrito</button>
                                 </div>
                                 <div class="columnCarrito">
-                                    <button class="btn btn-dark" ng-click="CheckOut()">Check Out</button>
+                                    <button class="btn btn-dark" ng-click="CheckOut()" ng-show="btnCheck">Check Out</button>
+                                    <button class="btn btn-dark" ng-click="editarCarrito()" ng-show="btnEdit">Editar</button>
                                 </div>
 
                             </th>

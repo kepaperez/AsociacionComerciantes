@@ -8,6 +8,8 @@ miApp.controller('miControlador', function ($scope) {
     $scope.precioFinal;
     $scope.verCarrito = true;
     $scope.verCheck = false;
+    $scope.btnCheck = true;
+    $scope.btnEdit = false;
 
     $scope.list = function () {
 
@@ -65,14 +67,27 @@ miApp.controller('miControlador', function ($scope) {
 
                 if (result.message === "logged") {
 
-                    $scope.verCarrito = false;
                     $scope.verCheck = true;
+                    $scope.btnCheck = false;
+                    $scope.btnEdit = true;
+                    $(".cantidadCarrito").prop( "disabled", true );
+                    $(".quitarBtn").prop( "disabled", true );
+                    
                 }
                 else {
                     alert('Inicia sesion para poder finalizar la compra');
                 }
             })
             .catch(error => console.error('Error status:', error));
+    }
+
+    $scope.editarCarrito=function(){
+        $scope.verCheck = false;
+        $scope.btnCheck = true;
+        $scope.btnEdit = false;
+        $(".cantidadCarrito").prop( "disabled", false );
+                    $(".quitarBtn").prop( "disabled", false );
+
     }
 
     $scope.actualizarUser = function () {
