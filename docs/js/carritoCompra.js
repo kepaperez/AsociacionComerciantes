@@ -46,6 +46,7 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.UpdateCarritoLocal = function () {
+        
         console.log($scope.carritoCompra);
         localStorage.clear();
         localStorage.removeItem(0);

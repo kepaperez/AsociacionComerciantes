@@ -6,10 +6,12 @@ document.addEventListener('click', function (evt) {
         añadirCarrito(evt.target.dataset);
 
     }
+
     if (evt.target.className === 'verCarrito') {
 
         window.location.href = "carritoCompra.html";
     }
+
     if (evt.target.className === 'inicio') {
 
         window.location.href = "asociaciones.html";
@@ -28,9 +30,11 @@ document.addEventListener('click', function (evt) {
         $(".iniciar").css("display", "none");
         $(".registrar").css("display", "block");
     }
+
     if (evt.target.id === 'logout' || evt.target.id === 'logoutt') {
         logout();
     }
+
     if (evt.target.id === 'administrador') {
         window.location.href = "administrador.html";
 
@@ -114,6 +118,7 @@ function añadirCarrito(data) {
 
     localStorage.setItem(0, angular.toJson(carritoCompra));
     console.log(JSON.stringify(carritoCompra));
+    
 }
 
 var accion = 0;
@@ -257,6 +262,7 @@ function registrar() {
 
 
 }
+
 function logout() {
     localStorage.clear();
     var url = "controller/cLogout.php";
