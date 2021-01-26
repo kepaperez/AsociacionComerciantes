@@ -213,6 +213,17 @@ function productosDeTienda(id) {
         })
         .catch(error => console.error('Error status:', error));
 };
+function loadProductosTienda(){
+    var url = "controller/cAllProductosTienda.php";
+    
+
+    fetch(url, {
+        method: 'POST', // or 'POST'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: { 'Content-Type': 'application/json' }  //input data
+
+    })
+}
 function updateProducto(id) {
     var id = id;
     var nombre = $("#nombre" + id).val()
@@ -249,19 +260,46 @@ function eliminarProducto(id) {
 
         .catch(error => console.error('Error status:', error));
 }
-function añadirProductoTienda(){
 
-    var url = "controller/cAnadirProductoTienda.php";
-    var data = {'id_producto': id_producto, 'stock': stock, 'precio': precio, 'id_tienda': id_tienda};
+function añadirProductoTienda() {
 
-    fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: { 'Content-Type': 'application/json' }
+    var url = "controller/cAllProductoTienda.php";
+    $http({
+        method: "POST",
+        url = "controller/cAllProductoTienda.php"
     })
+        .success(function (result) {
 
-    .catch(error => console.error('Error status:', error));
+            console.log(result.list);
 
-    alert("Producto añadido correctamente a la tienda");
+                productosTienda = result.list;
+
+
+                var newRow = "<h2>PRODUCTOS DE TIENDA</h2>";
+                newRow += "<table>";
+                newRow += "<tr><th>Producto</th><th>Stock</th><th>Precio</th><th>Tienda</th></tr>";
+
+                for (let i = 0; i < productosTienda.length; i++) {
+
+                    newRow += "<tr>" + "<td> <input id ='id_producto" + productosTienda[i].id_productoTienda + "' value ='" + productosTienda[i].id_producto + "'></td>" +
+                        "<td><input id ='stock" + productosTienda[i].id_productoTienda + "' value ='" + productosTienda[i].stock + "'></td>" +
+                        "<td><input id ='precio" + productosTienda[i].id_productoTienda + "' value ='" + productosTienda[i].precio + "'></td>" +
+                        "<td><input id ='tienda" + productosTienda[i].id_productoTienda + "' value ='" + productosTienda[i].id_tienda + "'></td>" +
+                        
+
+                        /* "<td><button type='button' class='btn btn-dark' onclick=deleteUser(" + usuarios[i].id + ")>X</button></td>" +*/
+
+              
+
+
+                        /*"<td><button type='button' class='btn btn-success' onclick=UpdateUserAdmin(" + usuarios[i].id + ")>+</button></td>" +*/
+                        "</tr>";
+                }
+                newRow += "</table>";
+
+                $('.container3').html(newRow);
+           
+            
+        });
 }
 
