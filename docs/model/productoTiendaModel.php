@@ -81,6 +81,24 @@ class productoTiendaModel extends productoTiendaClass
         $this->CloseConnect();
         return $list;
     }
+    
+    public function añadirProductoTienda(){
+        
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        
+        $IdProductInsert=$this->id_product;
+        $StockInsert=$this->stock;
+        $PrecioInsert=$this->precio;
+        $Id_tiendaInsert=$this->id_tienda;
+                  
+        $sql="CALL 	spInsertProducto('$IdProductInsert','$StockInsert','$PrecioInsert','$Id_tiendaInsert')"; 
+        
+
+        $this->link->query($sql);
+       
+        $this->CloseConnect();
+    }
+
     function ObjVars()
     {
         return get_object_vars($this);
