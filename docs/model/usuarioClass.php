@@ -10,6 +10,7 @@ class usuarioClass{
     protected $contrasenaUsuario;
     protected $direccion;
     protected $saldo;
+    protected $idTienda;
     /**
      * @return mixed
      */
@@ -88,6 +89,10 @@ class usuarioClass{
     public function getSaldo()
     {
         return $this->saldo;
+    }
+    public function getIdTienda()
+    {
+        return $this->idTienda;
     }
 
     /**
@@ -168,6 +173,10 @@ class usuarioClass{
     public function setSaldo($saldo)
     {
         $this->saldo = $saldo;
+    }
+    public function setIdTienda($idTienda)
+    {
+        $this->idTienda = $idTienda;
     }
 
     

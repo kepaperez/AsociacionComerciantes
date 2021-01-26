@@ -1,6 +1,7 @@
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
+    loadTiendaDeUsuario();
     loadTiendas();
 
     function loadTiendas() {
@@ -125,36 +126,12 @@ function productosDeTienda(id) {
 
 
 
-<<<<<<< HEAD
                     /*"<td><button type='button' class='btn btn-success' onclick=UpdateUserAdmin(" + usuarios[i].id + ")>+</button></td>" +*/
                     "</tr>";
             }
             newRow += "</table>";
 
             $('.container2').html(newRow);
-=======
-                $('.container2').html(newRow);
-            })
-            .catch(error => console.error('Error status:', error));
-    };
-    function updateProducto(id) {
-        var id = id;
-        var nombre = $("#nombre"  + id).val()
-        var imagen = $("#imagen"  + id).val()
-        var descripcion = $("#descripcion"  + id).val()
-        var marca = $("#marca"  + id).val()
-        var sexo = $("#sexo"  + id).val()
-        var tipo = $("#tipo"  + id).val()
-        
-
-        var url = "controller/cUpdateProducto.php";
-        var data = { 'id':id,'nombre': nombre, 'imagen': imagen, 'descripcion': descripcion, 'marca': marca, 'sexo': sexo, 'tipo': tipo};
-
-        fetch(url, {
-            method: 'POST', // or 'POST'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers: { 'Content-Type': 'application/json' } //input data
->>>>>>> 4855e0e8760401cb2e120a8b3f92b97cf760828d
         })
         .catch(error => console.error('Error status:', error));
 };
@@ -194,11 +171,19 @@ function eliminarProducto(id) {
 
         .catch(error => console.error('Error status:', error));
 }
+function añadirProductoTienda(){
 
-<<<<<<< HEAD
-=======
-            .catch(error => console.error('Error status:', error));
-    }
-    
-    
->>>>>>> 4855e0e8760401cb2e120a8b3f92b97cf760828d
+    var url = "controller/canadirProductoTienda.php";
+    var data = {'id_producto': id_producto, 'stock': stock, 'precio': precio, 'id_tienda': id_tienda};
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+    })
+
+    .catch(error => console.error('Error status:', error));
+
+    alert("Producto añadido correctamente");
+}
+
