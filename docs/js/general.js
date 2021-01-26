@@ -183,6 +183,7 @@ function loggedVerify() {
             if (result.message === "logged") {
 
                 console.log(result.user);
+           
                 user = result.user;
                 $(".userLoged").html(result.username);
                 $(".saldo").html(result.user.saldo + "€");
@@ -190,7 +191,9 @@ function loggedVerify() {
                 $(".iniciar").css("display", "none");
                 $(".registrar").css("display", "none");
                 $(".botonLog").css("display", "inline");
-
+                if(result.user.admin == 0){
+                    $(".botonAdmin").css("display", "inline");
+                }
                 // ==========================================
                 // checkOut
 

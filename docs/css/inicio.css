@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    
 }
 /*Navbar*/
 
@@ -201,53 +202,66 @@ body{
 /*Quienes somos fin*/
 /*Noticias*/
 .noticias{
-    position: relative;
-    background: #f1f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.noticia{
-    display: none;
-    padding: 80px;
+#container {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+#container #card{
+    position: relative;
+    max-width: 300px;
+    height: 300px;
+    margin: 30px 10px;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0.5px 202px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+}
+#container #card img{
+    height: 276px;
+    width: 300px;
+}
+#container #card:hover{
+    height: 505px;
+}
+#container #card .imgBx{
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+#container #card .imgBx img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+#container #card .content{
+    position: relative;
+    padding: 30px 15px;
     text-align: center;
-    
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3 ease-in-out;
 }
-.noticia>div
-{
-    position: relative;
-    bottom:25px;
-    color:#fff;
-    background-color:#000;
-    max-width: 500;
-    opacity:0.5;
-    font-weight:bold;
-    padding: 0;
+#container #card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -25px;
+    transition-delay: 0.3s;
 }
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -30px;
-    padding: 16px;
-    color: #888;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  .next {
-    position: absolute;
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  .prev{
-    position: absolute;
-    left: 0;
-    border-radius: 3px 0 0 3px; 
-  }
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
-  }
+
   /*Noticias fin*/
   /*Footer*/
   .footer{
@@ -288,19 +302,20 @@ body{
     transform: translateX(100px);
 }
 /*Responsive*/
+
 @media screen and (max-width: 768px) {
-    .mapa{
-        display: none;
-    }
     .comentarios{
         display: none;
     }
+    .quienes {
+       
+        display: none;
+      }
     
 }
 @media only screen and (max-width:1200px) {
-    
-    .mapa, .quienes {
-      width:100%;
+     .quienes {
+      display: none;
     }
   }
 @media only screen and (max-width:992px ){
