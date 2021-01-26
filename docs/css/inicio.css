@@ -302,19 +302,20 @@ body{
     transform: translateX(100px);
 }
 /*Responsive*/
+
 @media screen and (max-width: 768px) {
-    .mapa{
-        display: none;
-    }
     .comentarios{
         display: none;
     }
+    .quienes {
+       
+        display: none;
+      }
     
 }
 @media only screen and (max-width:1200px) {
-    
-    .mapa, .quienes {
-      width:100%;
+     .quienes {
+      display: none;
     }
   }
 @media only screen and (max-width:992px ){
