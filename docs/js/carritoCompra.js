@@ -3,11 +3,11 @@ miApp.controller('miControlador', function ($scope) {
 
     $scope.carritoCompra = JSON.parse(localStorage.getItem(0));
 
-    console.log($scope.carritoCompra);
-
     $scope.precioFinal;
     $scope.verCarrito = true;
     $scope.verCheck = false;
+    $scope.btnCheck = true;
+    $scope.btnEdit = false;
 
     $scope.list = function () {
 
@@ -38,7 +38,7 @@ miApp.controller('miControlador', function ($scope) {
         location.reload();
     }
 
-    $scope.vaciarBombon = function (index) {
+    $scope.vaciarProducto = function (index) {
         // ELIMINO EL BOMBON DEL CARRITO 
         $scope.carritoCompra.splice(index, 1);
         $scope.calcularTotal();
@@ -47,7 +47,6 @@ miApp.controller('miControlador', function ($scope) {
 
     $scope.UpdateCarritoLocal = function () {
 
-        console.log($scope.carritoCompra);
         localStorage.clear();
         localStorage.removeItem(0);
         localStorage.setItem(0, angular.toJson($scope.carritoCompra));
@@ -65,14 +64,27 @@ miApp.controller('miControlador', function ($scope) {
 
                 if (result.message === "logged") {
 
-                    $scope.verCarrito = false;
                     $scope.verCheck = true;
+                    $scope.btnCheck = false;
+                    $scope.btnEdit = true;
+                    $(".cantidadCarrito").prop("disabled", true);
+                    $(".quitarBtn").prop("disabled", true);
+
                 }
                 else {
                     alert('Inicia sesion para poder finalizar la compra');
                 }
             })
             .catch(error => console.error('Error status:', error));
+    }
+
+    $scope.editarCarrito = function () {
+        $scope.verCheck = false;
+        $scope.btnCheck = true;
+        $scope.btnEdit = false;
+        $(".cantidadCarrito").prop("disabled", false);
+        $(".quitarBtn").prop("disabled", false);
+
     }
 
     $scope.actualizarUser = function () {
@@ -113,32 +125,61 @@ miApp.controller('miControlador', function ($scope) {
         str = document.getElementById("saldo").innerHTML
         str = str.slice(0, str.length - 1)
 
-
         if ($scope.precioFinal > str) {
             alert('No hay saldo suficiente en la cuenta')
         } else {
-            alert('Compra acceptada')
-
+           
             $scope.saldoFinal = str - $scope.precioFinal;
 
             var url = "controller/cUpdateSaldo.php";
             var data = { 'saldo': $scope.saldoFinal };
 
-            console.log(str);
-            console.log($scope.precioFinal)
+            var local = JSON.parse(localStorage.getItem(0));
 
-            confirm('sadfas');
-            fetch(url, {
-                method: 'POST', // or 'POST'
-                body: JSON.stringify(data), // data can be `string` or {object}!
-                headers: { 'Content-Type': 'application/json' }  //input data
-            })
-                .then(res => res.json()).then(result => {
+            var carritoFinal = ({});
 
-                    location.reload();
-                    localStorage.clear();
+            var respuesta = confirm('quiere continuar?');
+
+            if (respuesta == true) {
+                alert('Compra acceptada')
+                for (let i = 0; i < local.length; i++) {
+                    console.log(local[i])
+
+                    carritoFinal[i] = ({
+                        'stock': local[i].stock,
+                        'unidades': local[i].cantidad,
+                        'idProductoTienda': local[i].idProductoTienda
+                    })
+                }
+                console.log(carritoFinal);
+                
+                // fetch(url, {
+                //     method: 'POST', // or 'POST'
+                //     body: JSON.stringify(data), // data can be `string` or {object}!
+                //     headers: { 'Content-Type': 'application/json' }  //input data
+                // })
+                //     .then(res => res.json()).then(result => {
+
+                //         location.reload();
+                //         localStorage.clear();
+                //     })
+                //     .catch(error => console.error('Error status:', error));
+
+
+                // ======================================================================
+
+                fetch("controller/cUpdateStock.php", {
+                    method: 'POST', 
+                    body: JSON.stringify(carritoFinal), // data can be `string` or {object}!
+                    headers: { 'Content-Type': 'application/json' }  //input data
                 })
-                .catch(error => console.error('Error status:', error));
+                    .then(res => res.json()).then(result => {
+
+                        location.reload();
+                        localStorage.clear();
+                    })
+                    .catch(error => console.error('Error status:', error));
+            }
 
         }
 

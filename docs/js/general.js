@@ -117,7 +117,7 @@ function añadirCarrito(data) {
     localStorage.removeItem(0);
 
     localStorage.setItem(0, angular.toJson(carritoCompra));
-    console.log(JSON.stringify(carritoCompra));
+    
     
 }
 
@@ -159,7 +159,7 @@ function login() {
         .then(res => res.json()).then(result => {
 
             if (result.message === "no error") {
-                console.log(result.list);
+                
                 location.reload();
 
             }
@@ -182,7 +182,7 @@ function loggedVerify() {
 
             if (result.message === "logged") {
 
-                console.log(result.user);
+               
                 
                 user = result.user;
                 $(".userLoged").html(result.username);
@@ -194,9 +194,7 @@ function loggedVerify() {
                 if(result.user.admin == 0 | result.user.idTienda != null  ){
                     $(".botonAdmin").css("display", "inline");
                 }
-                if(result.user.admin != 0){
-                    $(".container1").css("display", "none");
-                }
+               
                 // ==========================================
                 // checkOut
 
@@ -251,7 +249,7 @@ function registrar() {
                 .then(res => res.json()).then(result => {
 
                     if (result.message === "no error") {
-                        console.log(result.list);
+                        
                         location.reload();
 
                     }
@@ -285,7 +283,7 @@ function logout() {
 }
 
 function loadCheckoutData() {
-    console.log(user);
+    
     $("#idUser").attr('data-id',user.id);
     $("#nombreCheckout").val(user.nombre);
     $("#apellidoCheckout").val(user.apellido);
