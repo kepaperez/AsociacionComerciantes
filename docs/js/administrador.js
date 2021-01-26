@@ -83,7 +83,7 @@ miApp.controller('miControlador', function ($scope, $http) {
             });
     }
    
-
+ 
 });
 
 function updateTienda(id) {
@@ -112,7 +112,7 @@ function updateTienda(id) {
 
 function productosDeTienda(id) {
 
-
+    
 
     /*console.log(idEquipo);*/
 
@@ -165,6 +165,7 @@ function productosDeTienda(id) {
             newRow += "</table>";
 
             $('.container2').html(newRow);
+            añadirProductoTienda();
         })
         .catch(error => console.error('Error status:', error));
 };
@@ -216,45 +217,48 @@ function eliminarProducto(id) {
         .catch(error => console.error('Error status:', error));
 }
 
-// function añadirProductoTienda() {
+function añadirProductoTienda() {
 
-//     var url = "controller/cAllProductoTienda.php";
-//     $http({
-//         method: "POST",
-//         url = "controller/cAllProductoTienda.php"
-//     })
-//         .success(function (result) {
+       
+    var url = "controller/cAllProductoTienda.php";
+    
 
-//             console.log(result.list);
+    fetch(url, {
+        method: 'POST', // or 'POST
+        headers: { 'Content-Type': 'application/json' }  //input data
 
-//                 productosTienda = result.list;
+    })
+        .then(res => res.json()).then(result => {
+    
+                console.log(result.list);
+    
+                    productosTienda = result.list;
+    
+    
+                    var newRow = "<h2>PRODUCTOS DE TIENDA</h2>";
+                    newRow += "<table>";
+                    newRow += "<tr><th>Producto</th><th>Stock</th><th>Precio</th><th>Tienda</th></tr>";
+    
+                    
+    
+                        newRow += "<td><form action=''>" +
+                                    "<select name='productoTienda' id='productoTienda'>";
+                                    for (let i = 0; i < productosTienda.length; i++) {
+                                     newRow += "<option value='" + productosTienda[i].id_producto + " - " + productosTienda[i].producto.nombre + " '> " + productosTienda[i].producto.nombre + "</option>";
+                                    }
+                                    "</select>" +
+                                    "<br><br>" +
+                                "</form></td>" +
+                                
+                            
 
-
-//                 var newRow = "<h2>PRODUCTOS DE TIENDA</h2>";
-//                 newRow += "<table>";
-//                 newRow += "<tr><th>Producto</th><th>Stock</th><th>Precio</th><th>Tienda</th></tr>";
-
-//                 for (let i = 0; i < productosTienda.length; i++) {
-
-//                     newRow += "<tr>" + "<td> <input id ='id_producto" + productosTienda[i].id_productoTienda + "' value ='" + productosTienda[i].id_producto + "'></td>" +
-//                         "<td><input id ='stock" + productosTienda[i].id_productoTienda + "' value ='" + productosTienda[i].stock + "'></td>" +
-//                         "<td><input id ='precio" + productosTienda[i].id_productoTienda + "' value ='" + productosTienda[i].precio + "'></td>" +
-//                         "<td><input id ='tienda" + productosTienda[i].id_productoTienda + "' value ='" + productosTienda[i].id_tienda + "'></td>" +
-                        
-
-//                         /* "<td><button type='button' class='btn btn-dark' onclick=deleteUser(" + usuarios[i].id + ")>X</button></td>" +*/
-
-              
-
-
-//                         /*"<td><button type='button' class='btn btn-success' onclick=UpdateUserAdmin(" + usuarios[i].id + ")>+</button></td>" +*/
-//                         "</tr>";
-//                 }
-//                 newRow += "</table>";
-
-//                 $('.container3').html(newRow);
-           
-            
-//         });
-// }
+                            "</tr>";
+                    
+                    newRow += "</table>";
+    
+                    $('.container3').html(newRow);
+               
+                
+            });
+    }
 

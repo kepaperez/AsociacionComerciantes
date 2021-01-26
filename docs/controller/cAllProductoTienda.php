@@ -7,7 +7,7 @@ $productotienda = new productoTiendaModel();
 
 $response=array();
 
-$response['list']=$productotienda->setList();
+$response['list']=$productotienda->ProductoTiendaList();
 
 echo json_encode($response); 
 

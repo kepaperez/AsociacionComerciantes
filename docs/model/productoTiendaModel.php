@@ -81,7 +81,44 @@ class productoTiendaModel extends productoTiendaClass
         $this->CloseConnect();
         return $list;
     }
-    
+    public function ProductoTiendaList(){
+        $this->OpenConnect(); // konexio zabaldu - abrir conexión
+        
+
+        $sql = "CALL spProductoTiendaAll()"; // SQL sententzia - sentencia SQL
+
+        $result = $this->link->query($sql);
+      
+        $list = array();
+     
+        
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
+
+            $productotienda = new productoTiendaModel();
+
+            $productotienda->id_productoTienda = $row['id_productoTienda']; 
+            $productotienda->id_producto = $row['id_producto'];
+            $productotienda->stock = $row['stock'];
+            $productotienda->precio = $row['precio'];
+            $productotienda->id_tienda = $row['id_tienda'];
+                  
+
+            $product = new productoModel();
+
+            $product->setId($row['id_producto']);
+            $product->setList();
+
+            $productotienda->producto = $product->ObjVars();
+
+            
+            array_push($list, get_object_vars($productotienda));
+
+        }
+     
+        mysqli_free_result($result);
+        $this->CloseConnect();
+        return $list;
+    }
     public function añadirProductoTienda(){
         
         $this->OpenConnect();  // konexio zabaldu  - abrir conexión
