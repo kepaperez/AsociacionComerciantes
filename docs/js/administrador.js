@@ -173,7 +173,7 @@ function eliminarProducto(id) {
 }
 function añadirProductoTienda(){
 
-    var url = "controller/canadirProductoTienda.php";
+    var url = "controller/cAnadirProductoTienda.php";
     var data = {'id_producto': id_producto, 'stock': stock, 'precio': precio, 'id_tienda': id_tienda};
 
     fetch(url, {
