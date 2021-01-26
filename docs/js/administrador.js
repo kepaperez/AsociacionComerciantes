@@ -170,4 +170,19 @@ function eliminarProducto(id) {
 
         .catch(error => console.error('Error status:', error));
 }
+function añadirProductoTienda(){
+
+    var url = "controller/canadirProductoTienda.php";
+    var data = {'id_producto': id_producto, 'stock': stock, 'precio': precio, 'id_tienda': id_tienda};
+
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+    })
+
+    .catch(error => console.error('Error status:', error));
+
+    alert("Producto añadido correctamente");
+}
 
