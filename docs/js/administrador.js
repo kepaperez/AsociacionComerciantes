@@ -184,6 +184,6 @@ function añadirProductoTienda(){
 
     .catch(error => console.error('Error status:', error));
 
-    alert("Producto añadido correctamente");
+    alert("Producto añadido correctamente a la tienda");
 }
 
