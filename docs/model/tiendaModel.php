@@ -109,6 +109,7 @@ class tiendaModel extends tiendaClass
      
     
     }
+   
     function ObjVars()
     {
         return get_object_vars($this);

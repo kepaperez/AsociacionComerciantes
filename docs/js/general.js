@@ -194,9 +194,7 @@ function loggedVerify() {
                 if(result.user.admin == 0 | result.user.idTienda != null  ){
                     $(".botonAdmin").css("display", "inline");
                 }
-                if(result.user.admin != 0){
-                    $(".container1").css("display", "none");
-                }
+               
                 // ==========================================
                 // checkOut
 
