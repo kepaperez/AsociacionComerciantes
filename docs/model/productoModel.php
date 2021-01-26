@@ -61,20 +61,26 @@ class productoModel extends productoClass
         $Marca=$this->marca;
         $Sexo=$this->sexo;
         $Tipo=$this->tipo;
-
-
   
-
-  
-                  
         $sql="CALL 	spUpdateProducto('$Id','$Nombre','$Imagen','$Descripcion','$Marca', '$Sexo','$Tipo')"; 
         
         $this->link->query($sql);
        
         $this->CloseConnect();
 
-     
-    
+    }
+    public function deleteProducto(){
+        
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        $Id=$this->id;
+        
+  
+        $sql="CALL 	spDeleteProducto('$Id')"; 
+        
+        $this->link->query($sql);
+       
+        $this->CloseConnect();
+
     }
     
     function ObjVars()
