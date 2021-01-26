@@ -1,6 +1,7 @@
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
+    loadTiendaDeUsuario();
     loadTiendas();
 
     function loadTiendas() {

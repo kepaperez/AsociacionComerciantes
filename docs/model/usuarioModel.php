@@ -55,6 +55,7 @@ class usuarioModel extends usuarioClass{
             $this->telefono= $row['telefono'];
             $this->direccion= $row['direccion'];
             $this->saldo= $row['saldo'];
+            $this->idTienda= $row['idTienda'];
                       
 
             if($this->password == $pass){
