@@ -283,6 +283,7 @@ function logout() {
 
 function loadCheckoutData() {
     console.log(user);
+    $("#idUser").attr('data-id',user.id);
     $("#nombreCheckout").val(user.nombre);
     $("#apellidoCheckout").val(user.apellido);
     $("#usuarioCheckout").val(user.nombreUsuario);

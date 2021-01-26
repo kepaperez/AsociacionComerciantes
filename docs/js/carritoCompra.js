@@ -46,7 +46,7 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.UpdateCarritoLocal = function () {
-        
+
         console.log($scope.carritoCompra);
         localStorage.clear();
         localStorage.removeItem(0);
@@ -75,6 +75,40 @@ miApp.controller('miControlador', function ($scope) {
             .catch(error => console.error('Error status:', error));
     }
 
+    $scope.actualizarUser = function () {
+
+        var thisnombre = document.getElementById('nombreCheckout').value;
+        var thisapellido = document.getElementById('apellidoCheckout').value;
+        var thisusuario = document.getElementById('usuarioCheckout').value;
+        var thistlf = document.getElementById('tlfCheckout').value;
+        var thisDirec = document.getElementById('direccionCheckout').value;
+        var thisId = document.getElementById('idUser').dataset.id;
+
+        var url = "controller/cUpdateUser.php";
+
+        var data = ({
+            'nombre': thisnombre,
+            'apellido': thisapellido,
+            'usuario': thisusuario,
+            'telefono': thistlf,
+            'direccion': thisDirec,
+            'id': thisId
+        })
+        alert('reinicia la sesion');
+
+        fetch(url, {
+            method: 'POST', // or 'POST'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: { 'Content-Type': 'application/json' }  //input data
+
+        })
+            .then(res => res.json()).then(result => {
+
+
+            })
+            .catch(error => console.error('Error status:', error));
+    }
+
     $scope.comprar = function () {
         str = document.getElementById("saldo").innerHTML
         str = str.slice(0, str.length - 1)
@@ -92,7 +126,7 @@ miApp.controller('miControlador', function ($scope) {
 
             console.log(str);
             console.log($scope.precioFinal)
-            
+
             confirm('sadfas');
             fetch(url, {
                 method: 'POST', // or 'POST'

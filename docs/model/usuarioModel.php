@@ -55,6 +55,8 @@ class usuarioModel extends usuarioClass{
             $this->telefono= $row['telefono'];
             $this->direccion= $row['direccion'];
             $this->saldo= $row['saldo'];
+            $this->id= $row['id'];
+            
                       
 
             if($this->password == $pass){
@@ -84,6 +86,7 @@ class usuarioModel extends usuarioClass{
         $pass=$this->contrasenaUsuario;
         $nombre=$this->nombre;
         $apellido=$this->apellido;
+        
 
         $sql="call spNewUser('$usuario','$pass','$nombre','$apellido')";
 
@@ -91,6 +94,27 @@ class usuarioModel extends usuarioClass{
        
         $this->CloseConnect();
 
+    }
+
+    public function updateUser(){
+        
+        $this->OpenConnect();  // konexio zabaldu  - abrir conexión
+        $nombre=$this->nombre;
+        $apellido=$this->apellido;
+        $usuario=$this->nombreUsuario;
+        $telefono=$this->telefono;
+        $direccion=$this->direccion;
+        $id=$this->id;
+
+        
+        $sql="CALL spUpdateUser('$nombre','$apellido','$usuario',' $telefono','$direccion','$id')"; 
+        
+        $this->link->query($sql);
+       
+        $this->CloseConnect();
+
+     
+    
     }
     public function ObjVars()
     {
