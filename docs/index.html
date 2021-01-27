@@ -23,50 +23,49 @@
 </head>
 <div class="miniNav">
   <div class="miniNav2">
-      <p class="inicio">Inicio</p>
-      <p class="verCarrito">Ver Carrito</p>
-      <p class="userLoged">Usuario</p>
-      <p class="saldo"> 0,00€</p>
-  </div>
-  <div id="desplegable" class="desplegable">
-      <div class="iniciar">
-          <form>
-              <label for="fname">Usuario:</label>
-              <input type="text" id="username" name="fname"><br><br>
-              <label for="lname">Contraseña:</label>
-              <input type="password" id="password" name="lname"><br><br>
+    <p class="inicio"><a href="asociaciones.html"><i class="fa fa-home" aria-hidden="true"></i></a></p>
+    <p class="verCarrito"><a href="carritoCompra.html "><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></p>
+    <p class="userLoged"><i onclick="desplegable()" class="fa fa-user userLoged" aria-hidden="true"></i></p>
+    <p class="saldo"> 0,00€</p>
+</div>
+    <div id="desplegable" class="desplegable">
+        <div class="iniciar">
+            <form>
+                <label for="fname">Usuario:</label>
+                <input type="text" id="username" name="fname"><br><br>
+                <label for="lname">Contraseña:</label>
+                <input type="password" id="password" name="lname"><br><br>
 
-              <button class="btn btn-dark" onclick="login()">OK</button>
-              <button class="btn btn-dark" id="registrar">Registrar</button>
-            
-          </form>
-      </div>
+                <button class="btn btn-dark" onclick="login()">OK</button>
+                <button class="btn btn-dark" id="registrar">Registrar</button>
+                
+            </form>
+        </div>
 
-      <div class="registrar">
-          <form>
-              <label for="fname">Usuario:</label>
-              <input type="text" id="fname" name="fname"><br><br>
-              <label for="lname">Nombre:</label>
-              <input type="text" id="lname" name="lname"><br><br>
-              <label for="lname">Apellido:</label>
-              <input type="text" id="lname" name="lname"><br><br>
-              <label for="lname">Contraseña</label>
-              <input type="text" id="lname" name="lname"><br><br>
+        <div class="registrar">
+            <form>
+                <label for="fname">Usuario:</label>
+                <input type="text" id="usuarioReg" name="fname"><br><br>
+                <label for="lname">Nombre:</label>
+                <input type="text" id="nombreReg" name="lname"><br><br>
+                <label for="lname">Apellido:</label>
+                <input type="text" id="apellidoReg" name="lname"><br><br>
+                <label for="lname">Contraseña</label>
+                <input type="text" id="passReg" name="lname"><br><br>
 
-              <button class="btn btn-dark">OK</button>
-              <button class="btn btn-dark" id="iniciar">Iniciar</button>
-          </form>
-      </div>
+                <button class="btn btn-dark" onclick="registrar()">OK</button>
+                <button class="btn btn-dark" id="iniciar">Iniciar</button>
+            </form>
+        </div>
 
-      <div class="botonLog">
-          <button class="btn btn-danger" id="logoutt">Log Out</button>
-      </div>
-
-      
-      <div class="botonAdmin">
-          <button class="btn btn"  href="administrdor.html" id="administrador">Administrar Datos</button>
-      </div>
-  </div>
+        <div class="botonLog">
+            <button class="btn btn-danger" id="logoutt">Log Out</button>
+        </div>
+        <div class="botonAdmin">
+            <button class="btn btn"  href="administrdor.html" id="administrador">Administrar Datos</button>
+        </div>
+   
+    </div>
 </div>
 <body>
 
