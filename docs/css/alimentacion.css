@@ -171,7 +171,8 @@ ul li img{
 .card{
  
   color: rgb(0, 0, 0);
-  
+  height: 23rem;
+  border-radius: 1rem ;
 }
 .cardTitulo{
     display: block;
@@ -184,8 +185,10 @@ ul li img{
 }
 .card img{
     width: auto;
-    height: 150px;
+    height: 15rem;
     object-fit: cover;
+    border: 2rem;
+    border-radius: 1rem 1rem 0rem 0rem; 
 }
 
 .cards {
@@ -194,6 +197,7 @@ ul li img{
   display: grid;
   grid-gap: 1rem;
   text-align: center;
+  
 }
 
 /*Footer*/
