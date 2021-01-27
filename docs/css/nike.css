@@ -159,10 +159,6 @@ nav ul i{
   height: 30px;
 }
 
-/* .card__content2 .card__header, b {
-
-
-} */
 
 .card__btn {
   display: block;
@@ -227,10 +223,7 @@ nav ul i{
   position: relative;
 }
 
-/* .Trending, .New, .Random p{
 
-  font-size: x-large;
-} */
 /* random=================================================== */
 .Random{
     margin-bottom: 150px;
@@ -402,7 +395,7 @@ nav ul i{
      list-style: none;
      margin-bottom: 30px;
    }
-/* ========================================================== */
+/* ================secundario======================== */
 
   .box{
     height: 400px;
@@ -546,7 +539,7 @@ nav ul i{
     margin-left: 1.5rem;
 }
 
-/* ============================================ */
+/* ===========footer=================== */
 #body
 #body #container {
   width: 100%;
