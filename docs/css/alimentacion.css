@@ -1,5 +1,10 @@
+
 body{
-    margin: 0;
+  margin: 0;
+
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 /*Navbar*/
 .navbar{
@@ -31,7 +36,7 @@ ul li img{
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    font-family: "Times New Roman", Times, serif;
+
 }
 .navbar a::before {
     content: '';
@@ -156,7 +161,6 @@ ul li img{
 }
 .cardTitulo{
     display: block;
-    font-family: 'Ubuntu', arial, serif;
     font-size: 20px;
     line-height: 1.4em;
     margin-bottom: 10px;
