@@ -456,12 +456,12 @@ nav ul i{
     position: absolute;    
     display: flex !important;
      justify-content: space-between;
-    width: 93.5%;
+    width: 94.7%;
     
 
   }
   .izquierdaBtnMove{
-    background-color: purple;
+    background-color: rgb(80, 80, 80);
     width: 100px;
     height: 400px;
     opacity: 30%;
@@ -469,7 +469,7 @@ nav ul i{
   }
 
   .derechaBtnMove{
-    background-color:palegreen;    
+    background-color:rgb(80, 80, 80);    
     width: 100px;
     height: 400px;
     opacity: 30%;

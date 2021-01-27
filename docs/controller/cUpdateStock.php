@@ -7,19 +7,30 @@ $response=array();
 $data=json_decode(file_get_contents("php://input"),true);
 
 
-for($i=0; $i<$data[$i]; $i++){
+$limite = count($data);
+
+for($i=0; $i<$limite; $i++){
 
     $productoTienda = new productoTiendaModel();
 
-    $id=$data[$i]['idProductoTienda'];
+    $id_productoTienda=$data[$i]['idProductoTienda'];
+
+    // $productoTienda->setId_ProductoTienda($id_productoTienda);    
+
+    // var_dump('$id_productoTienda');
+
+    // var_dump($id_productoTienda);
+
+    // var_dump('$productoTienda');
+
+    // var_dump($productoTienda);
+
 
     $stock=$data[$i]['stock']-$data[$i]['unidades'];
 
-    $productoTienda->setId_productoTienda($id);
-
     $productoTienda->setStock($stock);
 
-    $productoTienda->buy();
+     $productoTienda->buy($id_productoTienda);
 
 }
 
