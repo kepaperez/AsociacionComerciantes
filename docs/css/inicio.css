@@ -98,7 +98,11 @@ body{
 #video{
     width: 100%;
 }
-/*Mapa*/
+/*Mapa
+.mapa , .quienes{
+    padding: 5rem;
+}*/
+
 .informacion .column{
     float: left;
 }

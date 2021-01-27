@@ -107,6 +107,7 @@ function updateTienda(id) {
     })
 
         .catch(error => console.error('Error status:', error));
+    location.reload();
 }
 
 
@@ -198,6 +199,7 @@ function updateProducto(id) {
     })
 
         .catch(error => console.error('Error status:', error));
+        location.reload();
 }
 function eliminarProducto(id) {
     var id = id;
@@ -212,6 +214,7 @@ function eliminarProducto(id) {
     })
 
         .catch(error => console.error('Error status:', error));
+        location.reload();
 }
 
 function cargarComboProductos(idDenda,dendaIzena) {
@@ -284,7 +287,7 @@ function anadirATienda(zenb) {
         })
         .catch(error => console.error('Error status:', error));
     
-    
+        location.reload();
 
    
 } 
