@@ -122,6 +122,7 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.comprar = function () {
+        // ===========Cambiar el saldo en local y bbdd==================
         str = document.getElementById("saldo").innerHTML
         str = str.slice(0, str.length - 1)
 
@@ -141,7 +142,7 @@ miApp.controller('miControlador', function ($scope) {
             })
 
 
-            // ======================================================================
+            // ==================Cambia el stock en la bbdd=============================
 
             var local = JSON.parse(localStorage.getItem(0));
 
@@ -170,16 +171,44 @@ miApp.controller('miControlador', function ($scope) {
                     .then(res => res.json()).then(result => {
 
                         if (result.error == 'no error') {
-                           
+
                         }
                     })
                     .catch(error => console.error('Error status:', error));
 
 
-                // ======================================================================
+                //=====================Rellena la pag de ventas=============================    
+                var ventas = ({});
 
-                setTimeout(function () { localStorage.clear();
-                    window.location.href = "asociaciones.html"; }, 1000,);
+                for (let i = 0; i < local.length; i++) {
+                    ventas[i] = ({
+                        'idProducto': local[i].idProducto,
+                        'idTienda': local[i].idTienda,
+                        'precio' : local[i].precio
+                    })
+                }
+
+                console.log(ventas);
+
+                fetch("controller/cFillVentas.php", {
+                    method: 'POST',
+                    body: JSON.stringify(ventas), // data can be `string` or {object}!
+                    headers: { 'Content-Type': 'application/json' }  //input data
+                })
+                    .then(res => res.json()).then(result => {
+
+                        if (result.error == 'no error') {
+
+                        }
+                    })
+                    .catch(error => console.error('Error status:', error));
+
+                // ====================Recarga la pagina====================================
+
+                setTimeout(function () {
+                    localStorage.clear();
+                    window.location.href = "asociaciones.html";
+                }, 1000);
             }
 
         }

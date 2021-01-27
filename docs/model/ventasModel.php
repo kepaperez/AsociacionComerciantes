@@ -7,7 +7,7 @@ if($_SERVER["SERVER_NAME"]=="grupo3.zerbitzaria.net"){
 
 include_once ("ventasClass.php");
 
-class ventasClass extends ventasClass
+class ventasModel extends ventasClass
 {
     public function OpenConnect()
     {
@@ -27,6 +27,25 @@ class ventasClass extends ventasClass
         mysqli_close($this->link);
     }
    
+    public function fillVenta(){
+
+        $this->OpenConnect();  
+        
+        $idProducto=$this->id_producto;
+        $idTienda=$this->id_tienda;
+        $idUsuario=$this->id_usuario;
+        $fecha=$this->fecha; 
+        $precio=$this->precio;           
+        
+        $sql="call spNewVenta('$idProducto','$idTienda','$idUsuario','$fecha','$precio')";
+
+        $result = $this->link->query($sql);
+        
+        $this->link->query($sql);
+       
+        $this->CloseConnect();
+
+        return $result;
     }
    
     function ObjVars()
