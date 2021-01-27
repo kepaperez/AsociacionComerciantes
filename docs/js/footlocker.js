@@ -57,6 +57,7 @@ miApp.controller('miControlador', function ($scope, $http) {
     }
 
     $scope.loadProduct = function (id) {
+        // carga los datos del producto en el que hemos clickado
         let index = 0;
         for (index; index < $scope.listaTodo.length; index++) {
 
@@ -94,7 +95,7 @@ miApp.controller('miControlador', function ($scope, $http) {
         }
 
 
-        // Buscamos el producto que hemos elegido por el id 
+
 
 
     }
@@ -120,7 +121,7 @@ document.addEventListener('click', function (evt) {
 var sex = '';
 
 function ver(where, titulo, id) {
-
+    //funcion general para el navegador
 
     $("#btn1").removeClass("borde");
     $("#btn2").removeClass("borde");
@@ -141,10 +142,7 @@ function ver(where, titulo, id) {
         angular.element(document.getElementById('miControlador')).scope().loadProduct(id)
     }
 
-    if (where == 'divTodo') {
 
-        // angular.element(document.getElementById('miControlador')).scope().getAll();
-    }
 
     if (id == 'btn2') {
         // seccion mujeres
@@ -164,15 +162,11 @@ function ver(where, titulo, id) {
         angular.element(document.getElementById('miControlador')).scope().loadProductList('2')
     }
 
-    if (id == 'btn4') {
-        // seccion ninos
-        sex = 'Nino';
-        angular.element(document.getElementById('miControlador')).scope().loadProductList('2')
-    }
+
 }
 
 function move(donde, action) {
-
+    // funcion para mover los divs 
     var btn = $(event.target);
     btn.prop('disabled', true);
     setTimeout(function () {

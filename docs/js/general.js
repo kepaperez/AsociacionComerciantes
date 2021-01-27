@@ -1,10 +1,10 @@
 loggedVerify();
 document.addEventListener('click', function (evt) {
-    //  event listener para el boton de añadir al carrito    
+    //  event listener para diferentes botones    
 
     if (evt.target.className === 'añadirBtn') {
 
-      animacionAñadir(evt.target.dataset);
+        animacionAñadir(evt.target.dataset);
         añadirCarrito(evt.target.dataset);
 
     }
@@ -58,11 +58,11 @@ if (localStorage.getItem('0') != null) {
 }
 
 function animacionAñadir(data) {
-
+    //funcion para la animacion del boton 
     var id = data.id;
-    
-    console.log(document.querySelectorAll("[data-id="+id+"]")[0]);
-    document.querySelectorAll("[data-id="+id+"]")[0].innerHTML = "Añadiendo...";
+
+    console.log(document.querySelectorAll("[data-id=" + id + "]")[0]);
+    document.querySelectorAll("[data-id=" + id + "]")[0].innerHTML = "Añadiendo...";
 
     setTimeout(function () { document.querySelectorAll("[data-id=" + id + "]")[0].innerHTML = "Añadido!"; }, 1000,);
 
@@ -70,7 +70,7 @@ function animacionAñadir(data) {
 }
 
 function añadirCarrito(data) {
-
+    //funcion para añadir el producto al carrito de la compra y para el localstorage 
     var thisId_ProductoTienda = data.thisid_productotienda;
     var thisIdProducto = data.thisidproducto;
     var thisIdTienda = data.thisidtienda;
@@ -88,6 +88,7 @@ function añadirCarrito(data) {
     found = false;
     console.log(carritoCompra);
     if (carritoCompra.length == 0) {
+        //si esta vacio el carrito se mete automaticamente
         carritoCompra.push({
             "idProducto": thisIdProducto,
             "idTienda": thisIdTienda,
@@ -129,6 +130,7 @@ function añadirCarrito(data) {
         }
     }
 
+    //limpiamos el carrito subimos de nuevo 
     localStorage.clear();
     localStorage.removeItem(0);
 
@@ -139,7 +141,7 @@ function añadirCarrito(data) {
 
 var accion = 0;
 function desplegable() {
-
+    //funcion para el  desplegable de iniciar sesion/registrar
 
     if (accion == 1) {
         accion = 0;
@@ -155,7 +157,7 @@ function desplegable() {
 }
 
 function login() {
-
+    //funcion para logearse
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
@@ -189,6 +191,7 @@ function login() {
 }
 var user;
 function loggedVerify() {
+    //verifica si hemos logeado anteriormente
     var url = "controller/cLoggedVerify.php";
 
     fetch(url, {
@@ -200,7 +203,7 @@ function loggedVerify() {
 
 
                 console.log(result.user);
-                
+
                 user = result.user;
                 $(".userLoged").html(result.username);
                 $(".saldo").html(result.user.saldo + "€");
@@ -224,7 +227,7 @@ function loggedVerify() {
 }
 
 function registrar() {
-
+    //funcion para registrarnos en la pagina web 
     var usuario = document.getElementById("usuarioReg").value;
     var nombre = document.getElementById("nombreReg").value;
     var apellido = document.getElementById("apellidoReg").value;
@@ -285,6 +288,7 @@ function registrar() {
 }
 
 function logout() {
+    // funcion para deslogearnos
     localStorage.clear();
     var url = "controller/cLogout.php";
 
@@ -294,14 +298,14 @@ function logout() {
         .then(res => res.text()).then(result => {
 
             alert('logout');
-         location.reload();
+            location.reload();
             window.location.href = "cosmetica.html";
         })
         .catch(error => console.error('Error status:', error));
 }
 
 function loadCheckoutData() {
-
+    //cargamos los datos del usuario logeado en la seccion de checkout
     $("#idUser").attr('data-id', user.id);
     $("#nombreCheckout").val(user.nombre);
     $("#apellidoCheckout").val(user.apellido);

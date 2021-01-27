@@ -47,7 +47,7 @@ miApp.controller('miControlador', function ($scope, $http) {
         // Se encarga de recoger los datos dependiendo del genero
         // se limpia el array 
 
-        //Genera un numero randgit om para que se ordene la seccion Variado
+        //Genera un numero random para que se ordene la seccion Variado
         $scope.listaActual = [];
         $scope.random = function () {
             return 0.5 - Math.random();
@@ -118,7 +118,7 @@ document.addEventListener('click', function (evt) {
 var sex = '';
 
 function ver(where, titulo, id) {
-
+    //funcion general para el navegador
     $("#btn1").removeClass("borde");
     $("#btn2").removeClass("borde");
     $("#btn3").removeClass("borde");
@@ -136,11 +136,6 @@ function ver(where, titulo, id) {
     if (titulo == 'loadProducto') {
 
         angular.element(document.getElementById('miControlador')).scope().loadProduct(id)
-    }
-
-    if (where == 'divTodo') {
-
-        // angular.element(document.getElementById('miControlador')).scope().getAll();
     }
 
     if (id == 'btn2') {
@@ -161,15 +156,10 @@ function ver(where, titulo, id) {
         angular.element(document.getElementById('miControlador')).scope().loadProductList('2')
     }
 
-    if (id == 'btn4') {
-        // seccion ninos
-        sex = 'Nino';
-        angular.element(document.getElementById('miControlador')).scope().loadProductList('2')
-    }
 }
 
 function move(donde, action) {
-
+// funcion para mover los divs 
     var btn = $(event.target);
     btn.prop('disabled', true);
     setTimeout(function () {
@@ -186,11 +176,11 @@ function move(donde, action) {
 
     if (action == 'izquierda') {
         if (newMargen != 0 || newMargen != -0) {
-            if(window.innerWidth>760){
-            $('.' + donde).animate({ 'marginLeft': "+=32vw" });
-        }else{
-            $('.' + donde).animate({ 'marginLeft': "+=96vw" });
-        }
+            if (window.innerWidth > 760) {
+                $('.' + donde).animate({ 'marginLeft': "+=32vw" });
+            } else {
+                $('.' + donde).animate({ 'marginLeft': "+=96vw" });
+            }
         }
 
     } else if (action = 'derecha') {
@@ -198,9 +188,9 @@ function move(donde, action) {
 
 
         } else {
-            if(window.innerWidth>760){
+            if (window.innerWidth > 760) {
                 $('.' + donde).animate({ 'marginLeft': "-=32vw" });
-            }else{$('.' + donde).animate({ 'marginLeft': "-=96vw" });}
+            } else { $('.' + donde).animate({ 'marginLeft': "-=96vw" }); }
         }
 
 
@@ -211,13 +201,14 @@ function move(donde, action) {
 var showNavar = false;
 function showNav() {
 
-    if (showNavar) {       
+    // funcion para ver el nav en modo movil
+    if (showNavar) {
         $('.navOculto').hide();
-        $('.navOculto').animate({bottom:'50px'})
-        showNavar=false;
+        $('.navOculto').animate({ bottom: '50px' })
+        showNavar = false;
     }
-    else{        
+    else {
         $('.navOculto').show();
-        showNavar=true;
+        showNavar = true;
     }
 }

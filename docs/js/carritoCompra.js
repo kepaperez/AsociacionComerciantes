@@ -10,7 +10,7 @@ miApp.controller('miControlador', function ($scope) {
     $scope.btnEdit = false;
 
     $scope.list = function () {
-
+        //boton para seguir comprando 
         window.location.href = "asociaciones.html";
     }
 
@@ -39,14 +39,14 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.vaciarProducto = function (index) {
-        // ELIMINO EL BOMBON DEL CARRITO 
+        // ELIMINO EL PRODUCTO DEL CARRITO 
         $scope.carritoCompra.splice(index, 1);
         $scope.calcularTotal();
         $scope.UpdateCarritoLocal();
     }
 
     $scope.UpdateCarritoLocal = function () {
-
+        //ACTUALIZA EL CARRITO EN EL LOCALSTORAGE
         localStorage.clear();
         localStorage.removeItem(0);
         localStorage.setItem(0, angular.toJson($scope.carritoCompra));
@@ -54,11 +54,12 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.CheckOut = function () {
+        //FUNCION PARA EL CHECKOUT
         var url = "controller/cLoggedVerify.php";
 
         fetch(url, {
-            method: 'POST', // or 'POST'
-            headers: { 'Content-Type': 'application/json' }  //input data
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
         })
             .then(res => res.json()).then(result => {
 
@@ -72,6 +73,7 @@ miApp.controller('miControlador', function ($scope) {
 
                 }
                 else {
+                    //SI NO HAS INICIADO SESION SALTA UN ERROR
                     alert('Inicia sesion para poder finalizar la compra');
                 }
             })
@@ -79,6 +81,7 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.editarCarrito = function () {
+        //BOTON PARA EDITAR EL CARRITO 
         $scope.verCheck = false;
         $scope.btnCheck = true;
         $scope.btnEdit = false;
@@ -88,7 +91,7 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.actualizarUser = function () {
-
+        //FUNCION PARA ACTULIZAR LOS DATOS DEL USUARIO
         var thisnombre = document.getElementById('nombreCheckout').value;
         var thisapellido = document.getElementById('apellidoCheckout').value;
         var thisusuario = document.getElementById('usuarioCheckout').value;
@@ -109,9 +112,9 @@ miApp.controller('miControlador', function ($scope) {
         alert('reinicia la sesion');
 
         fetch(url, {
-            method: 'POST', // or 'POST'
-            body: JSON.stringify(data), // data can be `string` or {object}!
-            headers: { 'Content-Type': 'application/json' }  //input data
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: { 'Content-Type': 'application/json' }
 
         })
             .then(res => res.json()).then(result => {
@@ -122,11 +125,14 @@ miApp.controller('miControlador', function ($scope) {
     }
 
     $scope.comprar = function () {
+
         // ===========Cambiar el saldo en local y bbdd==================
+
         str = document.getElementById("saldo").innerHTML
         str = str.slice(0, str.length - 1)
 
         if ($scope.precioFinal > str) {
+            //SI NO TIENES SALDO SUFICIENTE SALTA UN ERROR
             alert('No hay saldo suficiente en la cuenta')
         } else {
 
@@ -165,8 +171,8 @@ miApp.controller('miControlador', function ($scope) {
 
                 fetch("controller/cUpdateStock.php", {
                     method: 'POST',
-                    body: JSON.stringify(carritoFinal), // data can be `string` or {object}!
-                    headers: { 'Content-Type': 'application/json' }  //input data
+                    body: JSON.stringify(carritoFinal),
+                    headers: { 'Content-Type': 'application/json' }
                 })
                     .then(res => res.json()).then(result => {
 
@@ -177,14 +183,14 @@ miApp.controller('miControlador', function ($scope) {
                     .catch(error => console.error('Error status:', error));
 
 
-                //=====================Rellena la pag de ventas=============================    
+                //=====================Rellena la tabla de ventas=============================    
                 var ventas = ({});
 
                 for (let i = 0; i < local.length; i++) {
                     ventas[i] = ({
                         'idProducto': local[i].idProducto,
                         'idTienda': local[i].idTienda,
-                        'precio' : local[i].precio
+                        'precio': local[i].precio
                     })
                 }
 
@@ -192,8 +198,8 @@ miApp.controller('miControlador', function ($scope) {
 
                 fetch("controller/cFillVentas.php", {
                     method: 'POST',
-                    body: JSON.stringify(ventas), // data can be `string` or {object}!
-                    headers: { 'Content-Type': 'application/json' }  //input data
+                    body: JSON.stringify(ventas),
+                    headers: { 'Content-Type': 'application/json' }
                 })
                     .then(res => res.json()).then(result => {
 
