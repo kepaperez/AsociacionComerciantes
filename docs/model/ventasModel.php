@@ -39,6 +39,8 @@ class ventasModel extends ventasClass
         
         $sql="call spNewVenta('$idProducto','$idTienda','$idUsuario','$fecha','$precio')";
 
+        var_dump($sql);
+        
         $result = $this->link->query($sql);
         
         $this->link->query($sql);
