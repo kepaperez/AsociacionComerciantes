@@ -3,6 +3,8 @@ document.addEventListener('click', function (evt) {
     //  event listener para el boton de añadir al carrito    
 
     if (evt.target.className === 'añadirBtn') {
+
+        animacionAñadir(evt.target.dataset);
         añadirCarrito(evt.target.dataset);
 
     }
@@ -53,7 +55,17 @@ if (localStorage.getItem('0') != null) {
 
     alert('Tienes algo guardado en el carrito de la compra');
 }
+function animacionAñadir(data) {
 
+    var id = data.id;
+    console.log(id);
+    console.log(document.querySelectorAll("[data-id="+id+"]")[0]);
+    document.querySelectorAll("[data-id="+id+"]")[0].innerHTML = "Añadiendo...";
+
+    setTimeout(function () { document.querySelectorAll("[data-id="+id+"]")[0].innerHTML = "Añadido!"; }, 1000,);
+
+    setTimeout(function () { document.querySelectorAll("[data-id="+id+"]")[0].innerHTML = "Añadir <span>&rarr;</span>"; }, 2000,)
+}
 function añadirCarrito(data) {
 
     var thisId_ProductoTienda = data.thisid_productotienda;
@@ -117,8 +129,8 @@ function añadirCarrito(data) {
     localStorage.removeItem(0);
 
     localStorage.setItem(0, angular.toJson(carritoCompra));
-    
-    
+
+
 }
 
 var accion = 0;
@@ -159,7 +171,7 @@ function login() {
         .then(res => res.json()).then(result => {
 
             if (result.message === "no error") {
-                
+
                 location.reload();
 
             }
@@ -182,8 +194,8 @@ function loggedVerify() {
 
             if (result.message === "logged") {
 
-               
-                
+
+
                 user = result.user;
                 $(".userLoged").html(result.username);
                 $(".saldo").html(result.user.saldo + "€");
@@ -191,10 +203,10 @@ function loggedVerify() {
                 $(".iniciar").css("display", "none");
                 $(".registrar").css("display", "none");
                 $(".botonLog").css("display", "inline");
-                if(result.user.admin == 0 | result.user.idTienda != null  ){
+                if (result.user.admin == 0 | result.user.idTienda != null) {
                     $(".botonAdmin").css("display", "inline");
                 }
-               
+
                 // ==========================================
                 // checkOut
 
@@ -249,7 +261,7 @@ function registrar() {
                 .then(res => res.json()).then(result => {
 
                     if (result.message === "no error") {
-                        
+
                         location.reload();
 
                     }
@@ -283,8 +295,8 @@ function logout() {
 }
 
 function loadCheckoutData() {
-    
-    $("#idUser").attr('data-id',user.id);
+
+    $("#idUser").attr('data-id', user.id);
     $("#nombreCheckout").val(user.nombre);
     $("#apellidoCheckout").val(user.apellido);
     $("#usuarioCheckout").val(user.nombreUsuario);
