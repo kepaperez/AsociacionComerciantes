@@ -1,4 +1,6 @@
 .InputPequeño{
     width: 12vh;
 }
-
+form{
+    margin-block-end: -1em;
+}
