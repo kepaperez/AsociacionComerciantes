@@ -241,7 +241,7 @@ function añadirProductoTienda() {
     
                     
     
-                        newRow += "<td><form action=''>" +
+                        newRow +=  "<tr>" + "<td><form action=''>" +
                                     "<select name='productoTienda' id='productoTienda'>";
                                     for (let i = 0; i < productosTienda.length; i++) {
                                      newRow += "<option value='" + productosTienda[i].id_producto + " - " + productosTienda[i].producto.nombre + " '> " + productosTienda[i].producto.nombre + "</option>";
@@ -249,8 +249,8 @@ function añadirProductoTienda() {
                                     "</select>" +
                                     "<br><br>" +
                                 "</form></td>" +
-                                "<td><input id ='stock" + productosTienda[i].id_producto + "' value ='" + productosTienda[i].stock + "'></td>" +
-                                "<td><input id ='precio" + productosTienda[i].id_producto + "' value ='" + productosTienda[i].precio + "'></td>" +
+                                "<td><input id ='stock' value =''></td>" +
+                                "<td><input id ='precio' value =''></td>" +
                                 "<td><form action=''>" +
                                     "<select name='productoTienda' id='productoTienda'>";
                                     for (let i = 0; i < productosTienda.length; i++) {
@@ -259,9 +259,6 @@ function añadirProductoTienda() {
                                     "</select>" +
                                     "<br><br>" +
                                 "</form></td>" +
-                                
-                            
-
                             "</tr>";
                     
                     newRow += "</table>";

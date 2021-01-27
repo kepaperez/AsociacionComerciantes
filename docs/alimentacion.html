@@ -69,10 +69,10 @@
         <div class="grid-item">
             <ul class="navbar">
                 <li><img src="{{productos[0].shop.imagen}}"></li>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="asociaciones.html">ASOCIACIONES</a></li>
-                <li><a href="#contact">CONTACT</a></li>
-                <li><a href="#about">ABOUT</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="asociaciones.html">Comercio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
         </div>
         <div class="grid-item">
@@ -97,14 +97,14 @@
         <div class="card w3-hover-shadow pan" id="{{item.producto.id_producto}}" ng-repeat="item in productos" style="width:100%">
             <img src="img/todo/{{item.producto.imagen}}.jpg" style="width:100%">
             <p class="cardTitulo">{{item.producto.nombre}} | {{item.precio}} €</p>
-            <button id="{{item.id_tienda}}" class="añadirBtn" 
+            <button  data-id="{{item.producto.imagen}}"  class="añadirBtn" 
             data-thisid_productotienda="{{item.id_productoTienda}}"
             data-thisidproducto="{{item.id_producto}" data-thisidtienda="{{item.id_tienda}}"
             data-thisnombre="{{item.producto.nombre}}" data-thisimg="{{item.producto.imagen}}"
             data-thismarca="{{item.producto.marca}}" data-thissexo=" "
             data-thisprecio="{{item.precio}}" data-thisstock="{{item.stock}}"
             data-thistienda="{{item.shop.nombre}}">
-            Comprar
+            Añadir <span>&rarr;</span>
         </button>
         </div>
 
