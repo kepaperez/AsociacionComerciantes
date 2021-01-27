@@ -168,11 +168,18 @@ ul li img{
     margin: 80px auto;
     padding: 30px;
 }
-.card{
+.panaderia .card{
  
   color: rgb(0, 0, 0);
   height: 23rem;
   border-radius: 1rem ;
+}
+
+.card{
+ 
+  color: rgb(0, 0, 0);
+  height: 23rem;
+ 
 }
 .cardTitulo{
     display: block;
@@ -183,12 +190,18 @@ ul li img{
     padding-bottom: 10px;
     text-align: center;
 }
-.card img{
+.panaderia .card img{
     width: auto;
     height: 15rem;
     object-fit: cover;
     border: 2rem;
     border-radius: 1rem 1rem 0rem 0rem; 
+}
+.card img{
+  width: auto;
+  height: 15rem;
+  object-fit: cover;
+ 
 }
 
 .cards {
@@ -197,6 +210,7 @@ ul li img{
   display: grid;
   grid-gap: 1rem;
   text-align: center;
+  margin-bottom: 5rem;
   
 }
 

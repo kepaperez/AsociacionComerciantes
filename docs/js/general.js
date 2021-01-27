@@ -293,7 +293,8 @@ function logout() {
         .then(res => res.text()).then(result => {
 
             alert('logout');
-            location.reload();
+         location.reload();
+            window.location.href = "cosmetica.html";
         })
         .catch(error => console.error('Error status:', error));
 }
