@@ -55,17 +55,20 @@ if (localStorage.getItem('0') != null) {
 
     alert('Tienes algo guardado en el carrito de la compra');
 }
+
 function animacionAñadir(data) {
 
     var id = data.id;
     console.log(id);
-    console.log(document.querySelectorAll("[data-id="+id+"]")[0]);
-    document.querySelectorAll("[data-id="+id+"]")[0].innerHTML = "Añadiendo...";
+    
+    console.log(document.querySelectorAll("[data-id=" + id + "]")[0]);
+    document.querySelectorAll("[data-id=" + id + "]")[0].innerHTML = "Añadiendo...";
 
-    setTimeout(function () { document.querySelectorAll("[data-id="+id+"]")[0].innerHTML = "Añadido!"; }, 1000,);
+    setTimeout(function () { document.querySelectorAll("[data-id=" + id + "]")[0].innerHTML = "Añadido!"; }, 1000,);
 
-    setTimeout(function () { document.querySelectorAll("[data-id="+id+"]")[0].innerHTML = "Añadir <span>&rarr;</span>"; }, 2000,)
+    setTimeout(function () { document.querySelectorAll("[data-id=" + id + "]")[0].innerHTML = "Añadir <span>&rarr;</span>"; }, 2000,)
 }
+
 function añadirCarrito(data) {
 
     var thisId_ProductoTienda = data.thisid_productotienda;

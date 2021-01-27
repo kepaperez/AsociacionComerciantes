@@ -87,12 +87,16 @@ class usuarioModel extends usuarioClass{
         $nombre=$this->nombre;
         $apellido=$this->apellido;
         
-
+        
         $sql="call spNewUser('$usuario','$pass','$nombre','$apellido')";
 
+        $result = $this->link->query($sql);
+        
         $this->link->query($sql);
        
         $this->CloseConnect();
+
+        return $result;
 
     }
 

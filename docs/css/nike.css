@@ -523,6 +523,7 @@ nav ul i{
   background-color:#f6f6f6;
   background-repeat: no-repeat;
   background-size: 100%;
+  background-position: center;
 }
 
 .boxData{
@@ -539,6 +540,10 @@ nav ul i{
   border-radius: 50px;
   width: 70%;
   height: 50px;
+}
+.añadirBtn:hover span{
+  transition: 0.5s all;
+    margin-left: 1.5rem;
 }
 
 /* ============================================ */

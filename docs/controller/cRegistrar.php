@@ -18,8 +18,9 @@ $user->setNombre($nombre);
 $user->setApellido($apellido);
 $user->setContrasenaUsuario($pass);
 
-$user->newUser();
+$respuesta = $user->newUser();
 
+$response['respuesta'] = $respuesta;
 $response["msg"] = "usuario creado";
 
 echo json_encode($response);
