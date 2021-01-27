@@ -8,11 +8,25 @@ body{
 }
 /*Navbar*/
 .navbar{
-    
-    display: block;
-    
-    
+  overflow: hidden;
+  display: block;
+  padding: 0rem !important;
 }
+
+li{
+  display: inline;
+}
+ul li img{
+  width: auto;
+  height: 50px;
+  margin-right: 5vh;
+  float: left;
+
+}
+ul{
+  margin-bottom: 0rem !important;
+}
+
 .menu{
   
     padding: 1px;
