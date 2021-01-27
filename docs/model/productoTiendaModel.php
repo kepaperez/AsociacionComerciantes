@@ -136,14 +136,16 @@ class productoTiendaModel extends productoTiendaClass
         $this->CloseConnect();
     }
 
-    public function buy(){
+    public function buy($id){
 
         $this->OpenConnect();  
         
-        $Id=$this->id_productoTienda;
+        // $id=$this->id_productoTienda;
         $stock=$this->stock;
-                          
-        $sql="CALL spBuy('$stock','$Id')"; 
+           
+        $sql="CALL spBuy('$stock','$id')"; 
+        
+       var_dump($sql);
         
         $this->link->query($sql);
        

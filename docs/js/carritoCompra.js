@@ -128,11 +128,25 @@ miApp.controller('miControlador', function ($scope) {
         if ($scope.precioFinal > str) {
             alert('No hay saldo suficiente en la cuenta')
         } else {
-           
-            $scope.saldoFinal = str - $scope.precioFinal;
 
-            var url = "controller/cUpdateSaldo.php";
-            var data = { 'saldo': $scope.saldoFinal };
+            //$scope.saldoFinal = str - $scope.precioFinal;
+
+            // var url = "controller/cUpdateSaldo.php";
+            //var data = { 'saldo': $scope.saldoFinal };
+
+            // fetch(url, {
+            //     method: 'POST', // or 'POST'
+            //     body: JSON.stringify(data), // data can be `string` or {object}!
+            //     headers: { 'Content-Type': 'application/json' }  //input data
+            // })
+            //     .then(res => res.json()).then(result => {
+
+            //         location.reload();
+            //         localStorage.clear();
+            //     })
+            //     .catch(error => console.error('Error status:', error));
+
+            // ======================================================================
 
             var local = JSON.parse(localStorage.getItem(0));
 
@@ -152,30 +166,15 @@ miApp.controller('miControlador', function ($scope) {
                     })
                 }
                 console.log(carritoFinal);
-                
-                // fetch(url, {
-                //     method: 'POST', // or 'POST'
-                //     body: JSON.stringify(data), // data can be `string` or {object}!
-                //     headers: { 'Content-Type': 'application/json' }  //input data
-                // })
-                //     .then(res => res.json()).then(result => {
-
-                //         location.reload();
-                //         localStorage.clear();
-                //     })
-                //     .catch(error => console.error('Error status:', error));
-
-
-                // ======================================================================
 
                 fetch("controller/cUpdateStock.php", {
-                    method: 'POST', 
+                    method: 'POST',
                     body: JSON.stringify(carritoFinal), // data can be `string` or {object}!
                     headers: { 'Content-Type': 'application/json' }  //input data
                 })
                     .then(res => res.json()).then(result => {
 
-                        location.reload();
+                        // location.reload();
                         localStorage.clear();
                     })
                     .catch(error => console.error('Error status:', error));
