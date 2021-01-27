@@ -13,6 +13,7 @@ img#logo {
 .navbar{
     overflow: hidden;
     display: block;
+    padding: 0rem !important;
 }
 
 li{
@@ -23,6 +24,10 @@ ul li img{
     height: 50px;
     margin-right: 5vh;
     float: left;
+ 
+}
+ul{
+    margin-bottom: 0rem !important;
 }
 .navbar a{
     
@@ -53,5 +58,11 @@ ul li img{
     transform-origin: center;
     transform: scaleX(1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+  }
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) ;
+  }
+  .card:hover {
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.445);
   }
   /*Navbar fin*/

@@ -81,6 +81,26 @@ class productoTiendaModel extends productoTiendaClass
         $this->CloseConnect();
         return $list;
     }
+    public function insert(){
+
+    $this->OpenConnect();  // konexio zabaldu  - abrir conexión     
+    $id_producto= $this->id_producto;
+    $stock= $this->stock;
+    $precio= $this->precio;
+    $id_tienda= $this->id_tienda;
+    $sql = "CALL spInsertProductoTienda('$id_producto', '$stock', '$precio', '$id_tienda')";
+      
+      $this->link->query($sql);
+      
+      if ($this->link->affected_rows == 1)
+      {
+          $msg= $sql." El producto se ha insertado con exito. Num de inserts: ".$this->link->affected_rows;
+      } else {
+          $msg=$sql." Fallo al insertar un producto nuevo: (" . $this->link->errno . ") " . $this->link->error;
+      }
+      $this->CloseConnect();
+      return $msg;
+    }
     public function ProductoTiendaList(){
         $this->OpenConnect(); // konexio zabaldu - abrir conexión
         
