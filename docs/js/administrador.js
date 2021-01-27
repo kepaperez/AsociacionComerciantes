@@ -1,37 +1,37 @@
 var miApp = angular.module('miApp', []);
 miApp.controller('miControlador', function ($scope, $http) {
 
-  
-   
+
+
     loggedVerify();
     loadTiendas();
-   
+
     function loggedVerify() {
         var url = "controller/cLoggedVerify.php";
-    
+
         fetch(url, {
             method: 'GET',
         })
             .then(res => res.json()).then(result => {
-    
+
                 if (result.message === "logged") {
-    
+
                     console.log(result.user);
-                    
+
                     user = result.user;
                     if (user.admin != 0) {
                         $(".try").css("display", "none");
                         console.log(user);
-                        $("#"+ user.idTienda+"").css("display", "block");
-                    }else{
+                        $("#" + user.idTienda + "").css("display", "block");
+                    } else {
                         $(".try").css("display", "block");
                     }
-                  
+
                 }
             })
             .catch(error => console.error('Error status:', error));
-    
-    
+
+
     }
     function loadTiendas() {
 
@@ -53,7 +53,7 @@ miApp.controller('miControlador', function ($scope, $http) {
 
                 for (let i = 0; i < tiendas.length; i++) {
 
-                    newRow += "<tr class='try' id ='"+tiendas[i].id+"' >" + "<td> <input id ='nombre" + tiendas[i].id + "' value ='" + tiendas[i].nombre + "'></td>" +
+                    newRow += "<tr class='try' id ='" + tiendas[i].id + "' >" + "<td> <input id ='nombre" + tiendas[i].id + "' value ='" + tiendas[i].nombre + "'></td>" +
                         "<td><input id ='direccion" + tiendas[i].id + "' value ='" + tiendas[i].direccion + "'></td>" +
                         "<td><input id ='horario" + tiendas[i].id + "' value ='" + tiendas[i].horario + "'></td>" +
                         "<td><input id ='tipo" + tiendas[i].id + "' value ='" + tiendas[i].tipo + "'></td>" +
@@ -77,13 +77,13 @@ miApp.controller('miControlador', function ($scope, $http) {
                 newRow += "</table>";
 
                 $('.container1').html(newRow);
-                
 
-                
+
+
             });
     }
-   
- 
+
+
 });
 
 function updateTienda(id) {
@@ -112,7 +112,7 @@ function updateTienda(id) {
 
 function productosDeTienda(id) {
 
-    
+
 
     /*console.log(idEquipo);*/
 
@@ -154,24 +154,21 @@ function productosDeTienda(id) {
                     "</button></td>" +
 
                     "<td class='m-2'><button type='button' class='btn btn-outline-danger m-2' onclick=eliminarProducto('" + productos[i].id_producto + "') >Eliminar</button></td>" +
-
-
-
-
-
                     /*"<td><button type='button' class='btn btn-success' onclick=UpdateUserAdmin(" + usuarios[i].id + ")>+</button></td>" +*/
                     "</tr>";
             }
             newRow += "</table>";
 
             $('.container2').html(newRow);
-            añadirProductoTienda();
+            cargarComboProductos(id,productos[0].shop.nombre);
+            //////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////
         })
         .catch(error => console.error('Error status:', error));
 };
-function loadProductosTienda(){
+function loadProductosTienda() {
     var url = "controller/cAllProductosTienda.php";
-    
+
 
     fetch(url, {
         method: 'POST', // or 'POST'
@@ -217,55 +214,78 @@ function eliminarProducto(id) {
         .catch(error => console.error('Error status:', error));
 }
 
-function añadirProductoTienda() {
+function cargarComboProductos(idDenda,dendaIzena) {
+   
 
-       
-    var url = "controller/cAllProductoTienda.php";
-    
-
+    var url = "controller/cAllProductoCombo.php";
     fetch(url, {
         method: 'POST', // or 'POST
         headers: { 'Content-Type': 'application/json' }  //input data
 
     })
         .then(res => res.json()).then(result => {
-    
-                console.log(result.list);
-    
-                    productosTienda = result.list;
-    
-    
-                    var newRow = "<h2>PRODUCTOS DE TIENDA</h2>";
-                    newRow += "<table>";
-                    newRow += "<tr><th>Producto</th><th>Stock</th><th>Precio</th><th>Tienda</th></tr>";
-    
-                    
-    
-                        newRow +=  "<tr>" + "<td><form action=''>" +
-                                    "<select name='productoTienda' id='productoTienda'>";
-                                    for (let i = 0; i < productosTienda.length; i++) {
-                                     newRow += "<option value='" + productosTienda[i].id_producto + " - " + productosTienda[i].producto.nombre + " '> " + productosTienda[i].producto.nombre + "</option>";
-                                    }
-                                    "</select>" +
-                                    "<br><br>" +
-                                "</form></td>" +
-                                "<td><input id ='stock' value =''></td>" +
-                                "<td><input id ='precio' value =''></td>" +
-                                "<td><form action=''>" +
-                                    "<select name='productoTienda' id='productoTienda'>";
-                                    for (let i = 0; i < productosTienda.length; i++) {
-                                     newRow += "<option value='" + productosTienda[i].id_producto + " - " + productosTienda[i].producto.tienda + " '> " + productosTienda[i].producto.tienda + "</option>";
-                                    }
-                                    "</select>" +
-                                    "<br><br>" +
-                                "</form></td>" +
-                            "</tr>";
-                    
-                    newRow += "</table>";
-    
-                    $('.container3').html(newRow);
-               
+
+            console.log(result.list);
+
+            productos = result.list;
+
+
+            var newRow = "<h2>PRODUCTOS DE TIENDA</h2>";
+            newRow += "<table>";
+            newRow += "<tr><th>Producto</th><th>Stock</th><th>Precio</th><th>Tienda</th></tr>";
+
+
+
+            newRow += "<tr>" + "<td><form action=''>" +
+                "<select name='productoTienda' id='comboProducto'>";
+            for (let i = 0; i < productos.length; i++) {
+                newRow += "<option value='" + productos[i].id + " '> " + productos[i].id + " - " + productos[i].nombre + "</option>";
+            }
+            newRow += "</select>" +
+                "<br><br>" +
+                "</form></td>" +
+                "<td><input id ='stock' value =''></td>" +
+                "<td><input id ='precio' value =''></td>" +
+                "<td><input id ='denda' value ='" + dendaIzena + "' disabled></td>" +
+                "<td class='m-2'><button type='button' class='btn btn-success m-2' onclick=anadirATienda('" + idDenda + "') >" +
+                "<svg width='1em' height='1em' viewBox='0 0 16 16' class='bi bi-cloud-upload-fill' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>" +
+                "<path fill-rule='evenodd' d='M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0zm-.5 14.5V11h1v3.5a.5.5 0 0 1-1 0z' />" +
+                "</svg>" +
+                "</button></td>" +
                 
-            });
-    }
+                "</tr>";
+
+            newRow += "</table>";
+
+            $('.container3').html(newRow);
+
+
+        });
+        
+}
+function anadirATienda(zenb) {
+   
+    var idProducto = $('#comboProducto option.selected').val();
+    var stock = $("#stock").val();
+    var precio = $("#precio").val();
+    var idTienda = zenb;
+    
+    
+    var url = "controller/cInsertProductoTienda.php";
+    var data = { 'idProducto': idProducto, 'stock': stock, 'precio': precio, 'idTienda': idTienda};
+
+    fetch(url, {
+        method: 'POST', // or 'POST'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers:{'Content-Type': 'application/json'}  //input data
+        })
+        .then(res => res.json()).then(result => {
+            console.log(result.error);
+        })
+        .catch(error => console.error('Error status:', error));
+    
+    
+
+   
+} 
 

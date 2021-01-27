@@ -50,6 +50,49 @@ class productoModel extends productoClass
         mysqli_free_result($result);
         $this->CloseConnect();
     }
+    public function setAllProductos()
+    {
+        $this->OpenConnect(); // konexio zabaldu - abrir conexión
+
+        $sql = "CALL spAllProducto()"; // SQL sententzia - sentencia SQL
+
+        $result = $this->link->query($sql);
+      
+        $list = array();
+        
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) { // each row
+
+            $producto = new productoModel();
+
+            $producto->id = $row['id'];
+            $producto->nombre = $row['nombre'];
+            $producto->imagen = $row['imagen'];
+            $producto->descripcion = $row['descripcion'];
+            $producto->marca = $row['marca'];
+            if($producto->sexo == null){
+
+            }else{
+                $producto->sexo = $row['sexo'];
+            }
+            
+            $producto->tipo = $row['tipo'];
+        
+
+            $tienda = new tiendaModel();
+
+            $tienda->setId($row['id']);
+            $tienda->setNombre($row['nombre']);
+            $tienda->setList();
+
+            $producto->tienda = $tienda->ObjVars();
+            
+            array_push($list, get_object_vars($producto));
+    
+        }
+        mysqli_free_result($result);
+        $this->CloseConnect();
+        return $list;
+    }
 
     public function updateProducto(){
         
