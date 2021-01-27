@@ -85,8 +85,7 @@ class usuarioModel extends usuarioClass{
         $usuario=$this->nombreUsuario;
         $pass=$this->contrasenaUsuario;
         $nombre=$this->nombre;
-        $apellido=$this->apellido;
-        
+        $apellido=$this->apellido;        
         
         $sql="call spNewUser('$usuario','$pass','$nombre','$apellido')";
 
@@ -121,6 +120,21 @@ class usuarioModel extends usuarioClass{
     
     }
     
+    public function updateSaldo(){
+        $this->OpenConnect();  
+        
+        $saldo=$this->saldo;
+        $id=$this->id;
+
+        $sql="CALL spUpdateSaldo('$saldo','$id')"; 
+
+        var_dump($sql);
+
+        $this->link->query($sql);
+       
+        $this->CloseConnect();
+
+    }
     public function ObjVars()
     {
         return get_object_vars($this);

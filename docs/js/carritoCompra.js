@@ -129,22 +129,17 @@ miApp.controller('miControlador', function ($scope) {
             alert('No hay saldo suficiente en la cuenta')
         } else {
 
-            //$scope.saldoFinal = str - $scope.precioFinal;
+            $scope.saldoFinal = str - $scope.precioFinal;
 
-            // var url = "controller/cUpdateSaldo.php";
-            //var data = { 'saldo': $scope.saldoFinal };
+            var url = "controller/cUpdateSaldo.php";
+            var data = { 'saldo': $scope.saldoFinal };
 
-            // fetch(url, {
-            //     method: 'POST', // or 'POST'
-            //     body: JSON.stringify(data), // data can be `string` or {object}!
-            //     headers: { 'Content-Type': 'application/json' }  //input data
-            // })
-            //     .then(res => res.json()).then(result => {
+            fetch(url, {
+                method: 'POST', // or 'POST'
+                body: JSON.stringify(data), // data can be `string` or {object}!
+                headers: { 'Content-Type': 'application/json' }  //input data
+            })
 
-            //         location.reload();
-            //         localStorage.clear();
-            //     })
-            //     .catch(error => console.error('Error status:', error));
 
             // ======================================================================
 
@@ -156,8 +151,9 @@ miApp.controller('miControlador', function ($scope) {
 
             if (respuesta == true) {
                 alert('Compra acceptada')
+
                 for (let i = 0; i < local.length; i++) {
-                    console.log(local[i])
+
 
                     carritoFinal[i] = ({
                         'stock': local[i].stock,
@@ -165,7 +161,6 @@ miApp.controller('miControlador', function ($scope) {
                         'idProductoTienda': local[i].idProductoTienda
                     })
                 }
-                console.log(carritoFinal);
 
                 fetch("controller/cUpdateStock.php", {
                     method: 'POST',
@@ -174,10 +169,17 @@ miApp.controller('miControlador', function ($scope) {
                 })
                     .then(res => res.json()).then(result => {
 
-                        // location.reload();
-                        localStorage.clear();
+                        if (result.error == 'no error') {
+                           
+                        }
                     })
                     .catch(error => console.error('Error status:', error));
+
+
+                // ======================================================================
+
+                setTimeout(function () { localStorage.clear();
+                    window.location.href = "asociaciones.html"; }, 1000,);
             }
 
         }

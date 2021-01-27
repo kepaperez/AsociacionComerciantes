@@ -199,7 +199,8 @@ function loggedVerify() {
             if (result.message === "logged") {
 
 
-
+                console.log(result.user);
+                
                 user = result.user;
                 $(".userLoged").html(result.username);
                 $(".saldo").html(result.user.saldo + "€");
