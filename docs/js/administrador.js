@@ -245,13 +245,12 @@ function añadirProductoTienda() {
                                     "<select name='productoTienda' id='productoTienda'>";
                                     for (let i = 0; i < productosTienda.length; i++) {
                                      newRow += "<option value='" + productosTienda[i].id_producto + " - " + productosTienda[i].producto.nombre + " '> " + productosTienda[i].producto.nombre + "</option>";
-                                    
+                                    }
                                     "</select>" +
                                     "<br><br>" +
                                 "</form></td>" +
-                                "<td><input id ='stock" + productosTienda[i].id_producto + "' value ='" + productosTienda[i].stock + "'></td>" +
-                                "<td><input id ='precio" + productosTienda[i].id_producto + "' value ='" + productosTienda[i].precio + "'></td>" +
-                            }
+                                "<td><input id ='' value =''></td>" +
+                                "<td><input id ='' value =''></td>" +
                                 "<td><form action=''>" +
                                     "<select name='productoTienda' id='productoTienda'>";
                                     for (let i = 0; i < productosTienda.length; i++) {
