@@ -59,4 +59,10 @@ ul{
     transform: scaleX(1);
     transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
   }
+  .card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2) ;
+  }
+  .card:hover {
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.541);
+  }
   /*Navbar fin*/
