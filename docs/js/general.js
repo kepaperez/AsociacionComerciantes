@@ -299,7 +299,7 @@ function logout() {
 
             alert('logout');
             location.reload();
-            window.location.href = "cosmetica.html";
+            window.location.href = "index.html";
         })
         .catch(error => console.error('Error status:', error));
 }
