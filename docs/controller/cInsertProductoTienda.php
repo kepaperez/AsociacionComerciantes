@@ -6,12 +6,21 @@
  
  $productoTienda= new productoTiendaModel();
  
- $productoTienda->id_producto=$data['id_producto'];
- $productoTienda->stock=$data['stock'];
- $productoTienda->precio=$data['precio'];
- $productoTienda->id_tienda=$data['id_tienda'];
+$id_producto=$data['id_producto'];
+ $stock=$data['stock'];
+ $precio=$data['precio'];
+ $id_tienda=$data['id_tienda'];
+ 
+$productoTienda->setId_producto($id_producto);
+
+$productoTienda->setStock($stock);
+
+$productoTienda->setPrecio($precio);
+
+$productoTienda->setId_tienda($id_tienda);
  
 $response=array();
+
 
 $response['error']=$productoTienda->insert(); 
 echo json_encode($response);

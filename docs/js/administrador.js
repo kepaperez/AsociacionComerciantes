@@ -239,7 +239,7 @@ function cargarComboProductos(idDenda,dendaIzena) {
             newRow += "<tr>" + "<td><form action=''>" +
                 "<select name='productoTienda' id='comboProducto'>";
             for (let i = 0; i < productos.length; i++) {
-                newRow += "<option value='" + productos[i].id + " '> " + productos[i].id + " - " + productos[i].nombre + "</option>";
+                newRow += "<option value='" + productos[i].id + "'> " + productos[i].id + " - " + productos[i].nombre + "</option>";
             }
             newRow += "</select>" +
                 "<br><br>" +
@@ -265,14 +265,14 @@ function cargarComboProductos(idDenda,dendaIzena) {
 }
 function anadirATienda(zenb) {
    
-    var idProducto = $('#comboProducto option.selected').val();
+    var id_producto = $('#comboProducto').val();
     var stock = $("#stock").val();
     var precio = $("#precio").val();
-    var idTienda = zenb;
+    var id_tienda = zenb;
     
     
     var url = "controller/cInsertProductoTienda.php";
-    var data = { 'idProducto': idProducto, 'stock': stock, 'precio': precio, 'idTienda': idTienda};
+    var data = { 'id_producto': id_producto, 'stock': stock, 'precio': precio, 'id_tienda': id_tienda};
 
     fetch(url, {
         method: 'POST', // or 'POST'

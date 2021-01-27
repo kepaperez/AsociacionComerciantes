@@ -84,11 +84,12 @@ class productoTiendaModel extends productoTiendaClass
     public function insert(){
 
     $this->OpenConnect();  // konexio zabaldu  - abrir conexión     
-    $id_producto= $this->id_producto;
-    $stock= $this->stock;
-    $precio= $this->precio;
-    $id_tienda= $this->id_tienda;
-    $sql = "CALL spInsertProductoTienda('$id_producto', '$stock', '$precio', '$id_tienda')";
+    $Id_producto= $this->id_producto;
+    $Stock= $this->stock;
+    $Precio= $this->precio;
+    $Id_tienda= $this->id_tienda;
+    var_dump($Id_producto);
+    $sql = "CALL spInsertProductoTienda('$Id_producto', '$Stock', '$Precio', '$Id_tienda')";
       
       $this->link->query($sql);
       
@@ -96,7 +97,7 @@ class productoTiendaModel extends productoTiendaClass
       {
           $msg= $sql." El producto se ha insertado con exito. Num de inserts: ".$this->link->affected_rows;
       } else {
-          $msg=$sql." Fallo al insertar un producto nuevo: (" . $this->link->errno . ") " . $this->link->error;
+          $msg=$sql." Fallo al insertar un producto nuevo: (" . $this->link->error . ") " . $this->link->error;
       }
       $this->CloseConnect();
       return $msg;
