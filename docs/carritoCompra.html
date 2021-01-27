@@ -168,8 +168,8 @@
                 <hr>
 
                 <div class="row">
-                    <div class="column" style="background-color:#aaa;">
-                        <h2>Datos Personales</h2>
+                    <div class="column" style="background-color:#f0f0f0;">
+                        <h2 style="margin-bottom: 30px;">Datos Personales</h2>
                         <div id="idUser" class="dataBox row">
                             <div class="column">
                                 <label for="fname">nombre</label>
@@ -188,8 +188,8 @@
                         </div>
                         
                     </div>
-                    <div class="column" style="background-color:#bbb;">
-                        <h2>Datos Facturacion</h2>
+                    <div class="column" style="background-color:#f0f0f0;  ">
+                        <h2 style="margin-bottom: 30px;">Datos Facturacion</h2>
                         <div class="dataBox">
                             <label for="fname">Direccion</label>
                             <input type="text" id="direccionCheckout" name="fname"><br><br>
@@ -201,11 +201,11 @@
                 </div>
                 <hr>
 
-                <div class="ResumenTotal">
-                    <h3 style="display:inline">Saldo en la cuenta:</h3>
+                <div class="ResumenTotal" style="display:inline">
+                    <h4 style="display:inline">Saldo en la cuenta:</h4>
                     <div style="display:inline" class="SaldoCheckout" id ="saldo" ng-model="saldo">0.00€</div>
-                    <hr>
-                    <h2 style="display:inline">Total a pagar:</h2>
+                    
+                    <h4 style="display:inline">Total a pagar:</h4>
                     <div style="display:inline" class="pagarCheckout">{{precioFinal}}€</div>
                    
                 </div>
