@@ -94,7 +94,7 @@
     </div>
     
     <div class="cards panaderia">
-        <div class="card w3-hover-shadow pan" id="{{item.producto.id_producto}}" ng-repeat="item in productos" style="width:100%">
+        <div class="card w3-hover-shadow pan"  data-id="{{item.producto.imagen}}"  ng-repeat="item in productos" style="width:100%">
             <img src="img/todo/{{item.producto.imagen}}.jpg" style="width:100%">
             <p class="cardTitulo">{{item.producto.nombre}} | {{item.precio}} €</p>
             <button id="{{item.id_tienda}}" class="añadirBtn" 
@@ -104,7 +104,7 @@
             data-thismarca="{{item.producto.marca}}" data-thissexo=" "
             data-thisprecio="{{item.precio}}" data-thisstock="{{item.stock}}"
             data-thistienda="{{item.shop.nombre}}">
-            Comprar
+            Añadir <span>&rarr;</span>
         </button>
         </div>
 

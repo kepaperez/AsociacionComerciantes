@@ -4,7 +4,7 @@ document.addEventListener('click', function (evt) {
 
     if (evt.target.className === 'añadirBtn') {
 
-        animacionAñadir(evt.target.dataset);
+      animacionAñadir(evt.target.dataset);
         añadirCarrito(evt.target.dataset);
 
     }
@@ -49,6 +49,7 @@ var productos;
 
 var carritoCompra = [];
 
+
 // miramos si el carrito esta vacio o no para recoger sus datos 
 if (localStorage.getItem('0') != null) {
     carritoCompra = JSON.parse(localStorage.getItem('0'));
@@ -58,7 +59,7 @@ if (localStorage.getItem('0') != null) {
 function animacionAñadir(data) {
 
     var id = data.id;
-    console.log(id);
+    
     console.log(document.querySelectorAll("[data-id="+id+"]")[0]);
     document.querySelectorAll("[data-id="+id+"]")[0].innerHTML = "Añadiendo...";
 
@@ -83,6 +84,7 @@ function añadirCarrito(data) {
 
 
     found = false;
+    console.log(carritoCompra);
     if (carritoCompra.length == 0) {
         carritoCompra.push({
             "idProducto": thisIdProducto,
