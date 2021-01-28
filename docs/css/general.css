@@ -1,4 +1,4 @@
-
+/* ============Navegador general =========== */
 .miniNav{
     background-color: gainsboro;
     width: 100%;
@@ -12,6 +12,9 @@
     position: absolute; /*or fixed*/
     right: 0px;
     z-index: 1000;
+}
+.miniNav2 a{
+    color: black;
 }
 .miniNav p{
     margin-right: 30px;

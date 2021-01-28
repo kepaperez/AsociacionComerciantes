@@ -15,7 +15,7 @@ for($i=0; $i<$limite; $i++){
     $idProducto=$data[$i]['idProducto'];
     $idTienda=$data[$i]['idTienda'];
     $precio=$data[$i]['precio'];
-    var_dump($idProducto);
+    
 
     $venta= new ventasModel();
 
@@ -25,7 +25,7 @@ for($i=0; $i<$limite; $i++){
     $venta->setPrecio($precio);
     $venta->setId_usuario($id);
 
-    var_dump($venta);
+    
 
     $venta->fillVenta();
     
