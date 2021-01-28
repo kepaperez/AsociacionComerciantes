@@ -540,7 +540,7 @@ border-bottom : 2px solid red;
 
   }
   .izquierdaBtnMove{
-    background-color: purple;
+    background-color: rgb(80, 80, 80);
     width: 100px;
     height: 400px;
     opacity: 30%;
@@ -548,7 +548,7 @@ border-bottom : 2px solid red;
   }
 
   .derechaBtnMove{
-    background-color:palegreen;    
+    background-color:rgb(80, 80, 80);    
     width: 100px;
     height: 400px;
     opacity: 30%;
