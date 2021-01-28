@@ -233,11 +233,8 @@ function cargarComboProductos(idDenda,dendaIzena) {
             productos = result.list;
 
 
-            var newRow = "<h2>PRODUCTOS DE TIENDA</h2>";
-            newRow += "<table>";
+            var newRow = "<table>";
             newRow += "<tr><th>Producto</th><th>Stock</th><th>Precio</th><th>Tienda</th></tr>";
-
-
 
             newRow += "<tr>" + "<td><form action=''>" +
                 "<select name='productoTienda' id='comboProducto'>";
